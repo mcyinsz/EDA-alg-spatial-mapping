@@ -229,7 +229,7 @@
           "inter_comm_time_cycles": 578.3703703703704,
           "intra_comm_time_cycles": 3679.201814058957,
           "total_time_us": 4.659857898715042,
-          "solve_time_s": 30.027827501296997,
+          "solve_time_s": 59.9405415058136,
           "partitioning": [
             7,
             6,
@@ -239,27 +239,27 @@
             [
               [
                 0,
-                1
+                0
               ],
               [
                 0,
-                3
+                1
               ],
               [
                 1,
-                3
+                1
+              ],
+              [
+                2,
+                0
               ],
               [
                 2,
                 2
               ],
               [
-                2,
-                3
-              ],
-              [
                 3,
-                1
+                0
               ],
               [
                 3,
@@ -273,7 +273,7 @@
               ],
               [
                 1,
-                1
+                0
               ],
               [
                 1,
@@ -281,29 +281,29 @@
               ],
               [
                 2,
-                0
-              ],
-              [
-                2,
                 1
               ],
               [
-                3,
+                2,
                 3
+              ],
+              [
+                3,
+                1
               ]
             ],
             [
               [
                 0,
-                0
+                3
               ],
               [
                 1,
-                0
+                3
               ],
               [
                 3,
-                0
+                3
               ]
             ]
           ],
@@ -319,7 +319,7 @@
           "inter_comm_time_cycles": 945.7777777777778,
           "intra_comm_time_cycles": 2560.0,
           "total_time_us": 3.9751111111111115,
-          "solve_time_s": 0.1477060317993164,
+          "solve_time_s": 0.1143491268157959,
           "partitioning": [
             6,
             4,
@@ -588,7 +588,7 @@
           "inter_comm_time_cycles": 719.5167346938775,
           "intra_comm_time_cycles": 2647.1967346938777,
           "total_time_us": 3.7817991836734697,
-          "solve_time_s": 0.14590811729431152,
+          "solve_time_s": 0.11258697509765625,
           "partitioning": [
             7,
             5,
@@ -857,7 +857,7 @@
           "inter_comm_time_cycles": 637.44,
           "intra_comm_time_cycles": 2708.48,
           "total_time_us": 3.83232,
-          "solve_time_s": 0.14893722534179688,
+          "solve_time_s": 0.1084604263305664,
           "partitioning": [
             10,
             4,
@@ -1128,7 +1128,7 @@
           "inter_comm_time_cycles": 749.0370370370371,
           "intra_comm_time_cycles": 1877.3333333333335,
           "total_time_us": 3.3943703703703703,
-          "solve_time_s": 0.007091999053955078,
+          "solve_time_s": 0.005128383636474609,
           "partitioning": [
             6,
             3,
@@ -1433,7 +1433,7 @@
           "inter_comm_time_cycles": 1052.4444444444443,
           "intra_comm_time_cycles": 1422.2222222222222,
           "total_time_us": 3.328,
-          "solve_time_s": 0.007178544998168945,
+          "solve_time_s": 0.005289554595947266,
           "partitioning": [
             3,
             4,
@@ -1730,7 +1730,7 @@
           "inter_comm_time_cycles": 649.4814814814815,
           "intra_comm_time_cycles": 2417.777777777778,
           "total_time_us": 3.6645925925925926,
-          "solve_time_s": 0.008886575698852539,
+          "solve_time_s": 0.005620479583740234,
           "partitioning": [
             6,
             6,
@@ -2049,7 +2049,7 @@
           "inter_comm_time_cycles": 681.6024187452759,
           "intra_comm_time_cycles": 2667.3922902494332,
           "total_time_us": 3.7512804232804235,
-          "solve_time_s": 0.007124900817871094,
+          "solve_time_s": 0.004199981689453125,
           "partitioning": [
             7,
             6,
@@ -2436,7 +2436,7 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 15 cores but got 0 (status=Not Solved)"
+          "error": "skipped_large_mesh"
         }
       ],
       "SA": [
@@ -2448,7 +2448,7 @@
           "inter_comm_time_cycles": 538.38785922702,
           "intra_comm_time_cycles": 4756.800408604605,
           "total_time_us": 5.488381741025098,
-          "solve_time_s": 0.3084409236907959,
+          "solve_time_s": 0.19971489906311035,
           "partitioning": [
             13,
             11,
@@ -2797,7 +2797,7 @@
           "inter_comm_time_cycles": 590.8777283322738,
           "intra_comm_time_cycles": 4469.237876342771,
           "total_time_us": 5.258232154791595,
-          "solve_time_s": 0.301525354385376,
+          "solve_time_s": 0.19929170608520508,
           "partitioning": [
             11,
             12,
@@ -3146,7 +3146,7 @@
           "inter_comm_time_cycles": 610.9629629629629,
           "intra_comm_time_cycles": 4462.222222222222,
           "total_time_us": 5.265185185185184,
-          "solve_time_s": 0.29765868186950684,
+          "solve_time_s": 0.1891491413116455,
           "partitioning": [
             12,
             12,
@@ -3497,7 +3497,7 @@
           "inter_comm_time_cycles": 823.5772839506172,
           "intra_comm_time_cycles": 3837.3135802469137,
           "total_time_us": 4.979468641975309,
-          "solve_time_s": 0.01974177360534668,
+          "solve_time_s": 0.012274026870727539,
           "partitioning": [
             5,
             12,
@@ -3866,7 +3866,7 @@
           "inter_comm_time_cycles": 543.5646258503402,
           "intra_comm_time_cycles": 5007.528344671202,
           "total_time_us": 5.746140589569161,
-          "solve_time_s": 0.024638652801513672,
+          "solve_time_s": 0.01467442512512207,
           "partitioning": [
             14,
             12,
@@ -4263,7 +4263,7 @@
           "inter_comm_time_cycles": 581.9063360881543,
           "intra_comm_time_cycles": 5314.321395775942,
           "total_time_us": 6.095985307621671,
-          "solve_time_s": 0.02581334114074707,
+          "solve_time_s": 0.015290260314941406,
           "partitioning": [
             11,
             12,
@@ -4670,7 +4670,7 @@
           "inter_comm_time_cycles": 515.832951085196,
           "intra_comm_time_cycles": 4278.253424036281,
           "total_time_us": 4.972067327502429,
-          "solve_time_s": 0.31351518630981445,
+          "solve_time_s": 0.16707801818847656,
           "partitioning": [
             15,
             14,
@@ -5261,7 +5261,7 @@
           "inter_comm_time_cycles": 406.85920360631104,
           "intra_comm_time_cycles": 6676.4800000000005,
           "total_time_us": 7.189230112697221,
-          "solve_time_s": 0.7091882228851318,
+          "solve_time_s": 0.4085531234741211,
           "partitioning": [
             22,
             22,
@@ -5722,7 +5722,7 @@
           "inter_comm_time_cycles": 445.73933550231686,
           "intra_comm_time_cycles": 6615.7509519951645,
           "total_time_us": 7.172582627041995,
-          "solve_time_s": 0.7974414825439453,
+          "solve_time_s": 0.40851545333862305,
           "partitioning": [
             20,
             21,
@@ -6183,7 +6183,7 @@
           "inter_comm_time_cycles": 434.7587550205968,
           "intra_comm_time_cycles": 7058.433297069299,
           "total_time_us": 7.599275695982236,
-          "solve_time_s": 0.7147514820098877,
+          "solve_time_s": 0.42040085792541504,
           "partitioning": [
             21,
             23,
@@ -6646,7 +6646,7 @@
           "inter_comm_time_cycles": 401.4831062618954,
           "intra_comm_time_cycles": 7651.0154458828765,
           "total_time_us": 8.171155193748781,
-          "solve_time_s": 0.0655057430267334,
+          "solve_time_s": 0.03697824478149414,
           "partitioning": [
             21,
             19,
@@ -7135,7 +7135,7 @@
           "inter_comm_time_cycles": 458.3822222222222,
           "intra_comm_time_cycles": 7595.662222222222,
           "total_time_us": 8.186311111111111,
-          "solve_time_s": 0.06280040740966797,
+          "solve_time_s": 0.03675222396850586,
           "partitioning": [
             15,
             20,
@@ -7620,7 +7620,7 @@
           "inter_comm_time_cycles": 417.77145685361876,
           "intra_comm_time_cycles": 7972.787033431558,
           "total_time_us": 8.507505999723735,
-          "solve_time_s": 0.06675481796264648,
+          "solve_time_s": 0.03790473937988281,
           "partitioning": [
             23,
             17,
@@ -8131,7 +8131,7 @@
           "inter_comm_time_cycles": 361.45692206399156,
           "intra_comm_time_cycles": 6218.7676028685155,
           "total_time_us": 6.681772631997855,
-          "solve_time_s": 1.3838450908660889,
+          "solve_time_s": 0.7410967350006104,
           "partitioning": [
             22,
             29,
@@ -8821,13 +8821,13 @@
       "ILP": [
         {
           "run": 0,
-          "total_time_cycles": 29862.570666666667,
+          "total_time_cycles": 26898.88711111111,
           "compute_time_cycles": 9284.266666666666,
-          "comm_time_cycles": 20578.304,
-          "inter_comm_time_cycles": 4485.575111111111,
-          "intra_comm_time_cycles": 16092.728888888889,
-          "total_time_us": 29.862570666666667,
-          "solve_time_s": 29.7946195602417,
+          "comm_time_cycles": 17614.620444444445,
+          "inter_comm_time_cycles": 4598.442666666667,
+          "intra_comm_time_cycles": 13016.177777777779,
+          "total_time_us": 26.89888711111111,
+          "solve_time_s": 59.816267013549805,
           "partitioning": [
             3,
             5,
@@ -8837,34 +8837,12 @@
           "placement": [
             [
               [
-                1,
-                1
-              ],
-              [
                 2,
-                0
+                3
               ],
               [
                 3,
-                0
-              ]
-            ],
-            [
-              [
-                1,
-                0
-              ],
-              [
-                2,
-                1
-              ],
-              [
-                2,
                 2
-              ],
-              [
-                3,
-                1
               ],
               [
                 3,
@@ -8873,24 +8851,46 @@
             ],
             [
               [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            [
+              [
                 0,
                 0
               ],
               [
-                1,
+                0,
                 2
               ],
               [
                 1,
-                3
+                0
+              ],
+              [
+                1,
+                1
               ],
               [
                 2,
-                3
-              ],
-              [
-                3,
-                2
+                0
               ]
             ],
             [
@@ -8900,10 +8900,10 @@
               ],
               [
                 0,
-                2
+                3
               ],
               [
-                0,
+                1,
                 3
               ]
             ]
@@ -8920,7 +8920,7 @@
           "inter_comm_time_cycles": 4790.272,
           "intra_comm_time_cycles": 10936.320000000002,
           "total_time_us": 25.352192000000002,
-          "solve_time_s": 0.1575164794921875,
+          "solve_time_s": 0.11234593391418457,
           "partitioning": [
             4,
             5,
@@ -9192,7 +9192,7 @@
           "inter_comm_time_cycles": 4559.872,
           "intra_comm_time_cycles": 11991.04,
           "total_time_us": 26.176512000000002,
-          "solve_time_s": 0.15295934677124023,
+          "solve_time_s": 0.10505127906799316,
           "partitioning": [
             4,
             5,
@@ -9464,7 +9464,7 @@
           "inter_comm_time_cycles": 5271.7037037037035,
           "intra_comm_time_cycles": 10524.444444444445,
           "total_time_us": 25.35348148148148,
-          "solve_time_s": 0.15448522567749023,
+          "solve_time_s": 0.10704636573791504,
           "partitioning": [
             2,
             6,
@@ -9738,7 +9738,7 @@
           "inter_comm_time_cycles": 5730.638367346939,
           "intra_comm_time_cycles": 10838.099591836735,
           "total_time_us": 26.282109387755103,
-          "solve_time_s": 0.01020956039428711,
+          "solve_time_s": 0.005992412567138672,
           "partitioning": [
             2,
             7,
@@ -10070,7 +10070,7 @@
           "inter_comm_time_cycles": 6247.765333333333,
           "intra_comm_time_cycles": 12233.386666666667,
           "total_time_us": 27.765418666666665,
-          "solve_time_s": 0.008914947509765625,
+          "solve_time_s": 0.006005525588989258,
           "partitioning": [
             3,
             5,
@@ -10402,7 +10402,7 @@
           "inter_comm_time_cycles": 5399.1348148148145,
           "intra_comm_time_cycles": 10642.773333333334,
           "total_time_us": 25.46270814814815,
-          "solve_time_s": 0.010899782180786133,
+          "solve_time_s": 0.006094217300415039,
           "partitioning": [
             3,
             6,
@@ -10736,7 +10736,7 @@
           "inter_comm_time_cycles": 5308.415999999999,
           "intra_comm_time_cycles": 10594.986666666668,
           "total_time_us": 25.187669333333332,
-          "solve_time_s": 0.008441686630249023,
+          "solve_time_s": 0.004682779312133789,
           "partitioning": [
             3,
             5,
@@ -11317,7 +11317,7 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 6 cores but got 0 (status=Not Solved)"
+          "error": "skipped_large_mesh"
         }
       ],
       "SA": [
@@ -11329,7 +11329,7 @@
           "inter_comm_time_cycles": 4129.564444444444,
           "intra_comm_time_cycles": 21283.12888888889,
           "total_time_us": 29.61109333333333,
-          "solve_time_s": 0.2990851402282715,
+          "solve_time_s": 0.18889093399047852,
           "partitioning": [
             6,
             12,
@@ -11681,7 +11681,7 @@
           "inter_comm_time_cycles": 3720.5797732426304,
           "intra_comm_time_cycles": 22840.819229024946,
           "total_time_us": 30.735418049886626,
-          "solve_time_s": 0.3035719394683838,
+          "solve_time_s": 0.19008183479309082,
           "partitioning": [
             7,
             10,
@@ -12033,7 +12033,7 @@
           "inter_comm_time_cycles": 3310.018394624455,
           "intra_comm_time_cycles": 21775.38775093753,
           "total_time_us": 29.435559103714944,
-          "solve_time_s": 0.29611921310424805,
+          "solve_time_s": 0.18413329124450684,
           "partitioning": [
             9,
             11,
@@ -12387,7 +12387,7 @@
           "inter_comm_time_cycles": 4826.031934156378,
           "intra_comm_time_cycles": 19513.394567901236,
           "total_time_us": 30.665470946502058,
-          "solve_time_s": 0.027283668518066406,
+          "solve_time_s": 0.01574087142944336,
           "partitioning": [
             3,
             9,
@@ -12771,7 +12771,7 @@
           "inter_comm_time_cycles": 3595.1935145764346,
           "intra_comm_time_cycles": 25322.738496071826,
           "total_time_us": 33.37595221266846,
-          "solve_time_s": 0.028148651123046875,
+          "solve_time_s": 0.014911413192749023,
           "partitioning": [
             9,
             11,
@@ -13179,7 +13179,7 @@
           "inter_comm_time_cycles": 4367.282205689132,
           "intra_comm_time_cycles": 25728.855289651827,
           "total_time_us": 34.50317934238281,
-          "solve_time_s": 0.02532029151916504,
+          "solve_time_s": 0.01621222496032715,
           "partitioning": [
             7,
             9,
@@ -13589,7 +13589,7 @@
           "inter_comm_time_cycles": 3158.283382507159,
           "intra_comm_time_cycles": 20880.69819225064,
           "total_time_us": 28.15407714585337,
-          "solve_time_s": 0.050508975982666016,
+          "solve_time_s": 0.027001619338989258,
           "partitioning": [
             6,
             11,
@@ -14374,7 +14374,7 @@
           "inter_comm_time_cycles": 2521.73074554213,
           "intra_comm_time_cycles": 34478.486542169965,
           "total_time_us": 39.35875362856423,
-          "solve_time_s": 0.6598062515258789,
+          "solve_time_s": 0.3710923194885254,
           "partitioning": [
             14,
             19,
@@ -14838,7 +14838,7 @@
           "inter_comm_time_cycles": 2833.901037037037,
           "intra_comm_time_cycles": 34092.60553287982,
           "total_time_us": 39.403611331821615,
-          "solve_time_s": 0.6362075805664062,
+          "solve_time_s": 0.3646845817565918,
           "partitioning": [
             14,
             20,
@@ -15302,7 +15302,7 @@
           "inter_comm_time_cycles": 2784.9896780105523,
           "intra_comm_time_cycles": 36056.98047759409,
           "total_time_us": 41.29823159351314,
-          "solve_time_s": 0.6102433204650879,
+          "solve_time_s": 0.3671839237213135,
           "partitioning": [
             17,
             17,
@@ -15768,7 +15768,7 @@
           "inter_comm_time_cycles": 2982.7081204095443,
           "intra_comm_time_cycles": 37962.1790006768,
           "total_time_us": 43.497184153522504,
-          "solve_time_s": 0.06448912620544434,
+          "solve_time_s": 0.03822755813598633,
           "partitioning": [
             9,
             15,
@@ -16280,7 +16280,7 @@
           "inter_comm_time_cycles": 2712.4358048379213,
           "intra_comm_time_cycles": 36625.69700981423,
           "total_time_us": 41.76622561074494,
-          "solve_time_s": 0.06411862373352051,
+          "solve_time_s": 0.03922843933105469,
           "partitioning": [
             14,
             18,
@@ -16800,7 +16800,7 @@
           "inter_comm_time_cycles": 3093.5703703703703,
           "intra_comm_time_cycles": 34932.90666666666,
           "total_time_us": 41.03021037037036,
-          "solve_time_s": 0.05759286880493164,
+          "solve_time_s": 0.03438520431518555,
           "partitioning": [
             12,
             12,
@@ -17290,7 +17290,7 @@
           "inter_comm_time_cycles": 2910.892260354227,
           "intra_comm_time_cycles": 24240.711530893346,
           "total_time_us": 29.456712016355798,
-          "solve_time_s": 1.753281831741333,
+          "solve_time_s": 0.956463098526001,
           "partitioning": [
             11,
             21,
@@ -18222,7 +18222,7 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 4 cores but got 0 (status=Not Solved)"
+          "error": "skipped_large_mesh"
         }
       ],
       "SA": [
@@ -18234,7 +18234,7 @@
           "inter_comm_time_cycles": 6486.173930803967,
           "intra_comm_time_cycles": 29406.668449716068,
           "total_time_us": 44.96380697148463,
-          "solve_time_s": 0.3013882637023926,
+          "solve_time_s": 0.18996381759643555,
           "partitioning": [
             4,
             9,
@@ -18589,7 +18589,7 @@
           "inter_comm_time_cycles": 6355.256888888889,
           "intra_comm_time_cycles": 31177.955555555556,
           "total_time_us": 47.09054577777778,
-          "solve_time_s": 0.27972888946533203,
+          "solve_time_s": 0.1752636432647705,
           "partitioning": [
             6,
             8,
@@ -18944,7 +18944,7 @@
           "inter_comm_time_cycles": 6332.741556983981,
           "intra_comm_time_cycles": 31494.125089276604,
           "total_time_us": 46.72222018161412,
-          "solve_time_s": 0.28400421142578125,
+          "solve_time_s": 0.1871941089630127,
           "partitioning": [
             4,
             8,
@@ -19301,7 +19301,7 @@
           "inter_comm_time_cycles": 6292.244897959184,
           "intra_comm_time_cycles": 33084.08163265306,
           "total_time_us": 48.88489795918367,
-          "solve_time_s": 0.028087139129638672,
+          "solve_time_s": 0.015722274780273438,
           "partitioning": [
             4,
             8,
@@ -19716,7 +19716,7 @@
           "inter_comm_time_cycles": 6803.151855451175,
           "intra_comm_time_cycles": 32903.32073570169,
           "total_time_us": 49.28005989274016,
-          "solve_time_s": 0.026361703872680664,
+          "solve_time_s": 0.01531362533569336,
           "partitioning": [
             4,
             7,
@@ -20131,7 +20131,7 @@
           "inter_comm_time_cycles": 7254.517551020408,
           "intra_comm_time_cycles": 30475.49387755102,
           "total_time_us": 48.14555428571428,
-          "solve_time_s": 0.02725839614868164,
+          "solve_time_s": 0.015750646591186523,
           "partitioning": [
             2,
             7,
@@ -20544,7 +20544,7 @@
           "inter_comm_time_cycles": 6632.533333333333,
           "intra_comm_time_cycles": 22424.46222222222,
           "total_time_us": 38.13646222222222,
-          "solve_time_s": 0.1636641025543213,
+          "solve_time_s": 0.08333086967468262,
           "partitioning": [
             4,
             8,
@@ -21491,7 +21491,7 @@
           "inter_comm_time_cycles": 5262.218975285126,
           "intra_comm_time_cycles": 48478.06434622314,
           "total_time_us": 58.97039175425199,
-          "solve_time_s": 0.5885851383209229,
+          "solve_time_s": 0.33714890480041504,
           "partitioning": [
             11,
             13,
@@ -21958,7 +21958,7 @@
           "inter_comm_time_cycles": 4881.794280380761,
           "intra_comm_time_cycles": 47662.44478364423,
           "total_time_us": 57.77228817047409,
-          "solve_time_s": 0.5752596855163574,
+          "solve_time_s": 0.34922218322753906,
           "partitioning": [
             11,
             13,
@@ -22425,7 +22425,7 @@
           "inter_comm_time_cycles": 5161.851556218015,
           "intra_comm_time_cycles": 47032.06064355154,
           "total_time_us": 57.43902429551694,
-          "solve_time_s": 0.592797040939331,
+          "solve_time_s": 0.3533463478088379,
           "partitioning": [
             11,
             14,
@@ -22894,7 +22894,7 @@
           "inter_comm_time_cycles": 5127.701069958847,
           "intra_comm_time_cycles": 56218.990617283955,
           "total_time_us": 66.54633613168724,
-          "solve_time_s": 0.061327219009399414,
+          "solve_time_s": 0.03290152549743652,
           "partitioning": [
             8,
             15,
@@ -23417,7 +23417,7 @@
           "inter_comm_time_cycles": 4881.341436130007,
           "intra_comm_time_cycles": 49836.475565633664,
           "total_time_us": 60.20028049382716,
-          "solve_time_s": 0.056484222412109375,
+          "solve_time_s": 0.03331589698791504,
           "partitioning": [
             12,
             10,
@@ -23936,7 +23936,7 @@
           "inter_comm_time_cycles": 5214.494585571914,
           "intra_comm_time_cycles": 54582.36434597817,
           "total_time_us": 64.99206111498756,
-          "solve_time_s": 0.060037851333618164,
+          "solve_time_s": 0.03364706039428711,
           "partitioning": [
             7,
             18,
@@ -24461,7 +24461,7 @@
           "inter_comm_time_cycles": 4760.959792678977,
           "intra_comm_time_cycles": 33333.173696145124,
           "total_time_us": 43.08735253644315,
-          "solve_time_s": 2.4027276039123535,
+          "solve_time_s": 1.3227336406707764,
           "partitioning": [
             7,
             15,
@@ -25061,13 +25061,13 @@
       "ILP": [
         {
           "run": 0,
-          "total_time_cycles": 25220.437333333335,
+          "total_time_cycles": 22256.75377777778,
           "compute_time_cycles": 4642.133333333333,
-          "comm_time_cycles": 20578.304,
-          "inter_comm_time_cycles": 4485.575111111111,
-          "intra_comm_time_cycles": 16092.728888888889,
-          "total_time_us": 25.220437333333336,
-          "solve_time_s": 29.821815490722656,
+          "comm_time_cycles": 17614.620444444445,
+          "inter_comm_time_cycles": 4598.442666666667,
+          "intra_comm_time_cycles": 13016.177777777779,
+          "total_time_us": 22.25675377777778,
+          "solve_time_s": 59.82168388366699,
           "partitioning": [
             3,
             5,
@@ -25077,34 +25077,12 @@
           "placement": [
             [
               [
-                1,
-                1
-              ],
-              [
                 2,
-                0
+                3
               ],
               [
                 3,
-                0
-              ]
-            ],
-            [
-              [
-                1,
-                0
-              ],
-              [
-                2,
-                1
-              ],
-              [
-                2,
                 2
-              ],
-              [
-                3,
-                1
               ],
               [
                 3,
@@ -25113,24 +25091,46 @@
             ],
             [
               [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            [
+              [
                 0,
                 0
               ],
               [
-                1,
+                0,
                 2
               ],
               [
                 1,
-                3
+                0
+              ],
+              [
+                1,
+                1
               ],
               [
                 2,
-                3
-              ],
-              [
-                3,
-                2
+                0
               ]
             ],
             [
@@ -25140,10 +25140,10 @@
               ],
               [
                 0,
-                2
+                3
               ],
               [
-                0,
+                1,
                 3
               ]
             ]
@@ -25160,7 +25160,7 @@
           "inter_comm_time_cycles": 5335.324444444444,
           "intra_comm_time_cycles": 10519.324444444446,
           "total_time_us": 20.735715555555558,
-          "solve_time_s": 0.15865063667297363,
+          "solve_time_s": 0.11038851737976074,
           "partitioning": [
             3,
             5,
@@ -25432,7 +25432,7 @@
           "inter_comm_time_cycles": 5086.321777777777,
           "intra_comm_time_cycles": 11250.346666666668,
           "total_time_us": 20.97880177777778,
-          "solve_time_s": 0.14848613739013672,
+          "solve_time_s": 0.11546492576599121,
           "partitioning": [
             3,
             5,
@@ -25704,7 +25704,7 @@
           "inter_comm_time_cycles": 5451.377777777778,
           "intra_comm_time_cycles": 10903.324444444446,
           "total_time_us": 21.23576888888889,
-          "solve_time_s": 0.14393186569213867,
+          "solve_time_s": 0.11460995674133301,
           "partitioning": [
             3,
             5,
@@ -25978,7 +25978,7 @@
           "inter_comm_time_cycles": 5662.185941043084,
           "intra_comm_time_cycles": 8510.113378684808,
           "total_time_us": 21.145251700680273,
-          "solve_time_s": 0.009137153625488281,
+          "solve_time_s": 0.006987094879150391,
           "partitioning": [
             2,
             3,
@@ -26298,7 +26298,7 @@
           "inter_comm_time_cycles": 5859.555555555556,
           "intra_comm_time_cycles": 9557.333333333334,
           "total_time_us": 21.56088888888889,
-          "solve_time_s": 0.008638858795166016,
+          "solve_time_s": 0.006967306137084961,
           "partitioning": [
             3,
             6,
@@ -26622,7 +26622,7 @@
           "inter_comm_time_cycles": 4956.810158730159,
           "intra_comm_time_cycles": 10908.548934240365,
           "total_time_us": 21.40471147392291,
-          "solve_time_s": 0.009402990341186523,
+          "solve_time_s": 0.006507158279418945,
           "partitioning": [
             3,
             5,
@@ -26956,7 +26956,7 @@
           "inter_comm_time_cycles": 5308.415999999999,
           "intra_comm_time_cycles": 10594.986666666668,
           "total_time_us": 20.545536,
-          "solve_time_s": 0.009151697158813477,
+          "solve_time_s": 0.005274772644042969,
           "partitioning": [
             3,
             5,
@@ -27441,7 +27441,7 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 6 cores but got 0 (status=Not Solved)"
+          "error": "skipped_large_mesh"
         }
       ],
       "SA": [
@@ -27453,7 +27453,7 @@
           "inter_comm_time_cycles": 3708.019931327291,
           "intra_comm_time_cycles": 21693.169068545692,
           "total_time_us": 27.576265478949463,
-          "solve_time_s": 0.2664628028869629,
+          "solve_time_s": 0.18601155281066895,
           "partitioning": [
             7,
             9,
@@ -27805,7 +27805,7 @@
           "inter_comm_time_cycles": 4007.696984966826,
           "intra_comm_time_cycles": 22558.653565129753,
           "total_time_us": 28.707810867556894,
-          "solve_time_s": 0.2818939685821533,
+          "solve_time_s": 0.19275999069213867,
           "partitioning": [
             7,
             9,
@@ -28157,7 +28157,7 @@
           "inter_comm_time_cycles": 3391.5746878306877,
           "intra_comm_time_cycles": 23328.231877047114,
           "total_time_us": 28.878333549004786,
-          "solve_time_s": 0.26711177825927734,
+          "solve_time_s": 0.19101691246032715,
           "partitioning": [
             9,
             10,
@@ -28511,7 +28511,7 @@
           "inter_comm_time_cycles": 4424.319412304867,
           "intra_comm_time_cycles": 22692.32896235078,
           "total_time_us": 30.477230192837464,
-          "solve_time_s": 0.016008853912353516,
+          "solve_time_s": 0.01370859146118164,
           "partitioning": [
             11,
             6,
@@ -28915,7 +28915,7 @@
           "inter_comm_time_cycles": 4468.967979712595,
           "intra_comm_time_cycles": 22234.004047820315,
           "total_time_us": 29.32261158797247,
-          "solve_time_s": 0.03174304962158203,
+          "solve_time_s": 0.014148235321044922,
           "partitioning": [
             5,
             7,
@@ -29303,7 +29303,7 @@
           "inter_comm_time_cycles": 4082.2426446280992,
           "intra_comm_time_cycles": 21051.758016528926,
           "total_time_us": 29.6931279338843,
-          "solve_time_s": 0.017758846282958984,
+          "solve_time_s": 0.015394926071166992,
           "partitioning": [
             16,
             5,
@@ -29705,7 +29705,7 @@
           "inter_comm_time_cycles": 3173.9945920354853,
           "intra_comm_time_cycles": 19811.849606476848,
           "total_time_us": 25.577787157514116,
-          "solve_time_s": 0.05628657341003418,
+          "solve_time_s": 0.030113935470581055,
           "partitioning": [
             6,
             11,
@@ -30394,7 +30394,7 @@
           "inter_comm_time_cycles": 2803.5684908176872,
           "intra_comm_time_cycles": 33392.195604801476,
           "total_time_us": 37.446121990356005,
-          "solve_time_s": 0.5999467372894287,
+          "solve_time_s": 0.3553626537322998,
           "partitioning": [
             15,
             15,
@@ -30858,7 +30858,7 @@
           "inter_comm_time_cycles": 3085.0330710987996,
           "intra_comm_time_cycles": 34239.63518621114,
           "total_time_us": 38.57502615204678,
-          "solve_time_s": 0.5947346687316895,
+          "solve_time_s": 0.37844371795654297,
           "partitioning": [
             15,
             19,
@@ -31322,7 +31322,7 @@
           "inter_comm_time_cycles": 2875.255735512198,
           "intra_comm_time_cycles": 32913.05077325048,
           "total_time_us": 37.02635692893074,
-          "solve_time_s": 0.599750280380249,
+          "solve_time_s": 0.39406514167785645,
           "partitioning": [
             16,
             17,
@@ -31788,7 +31788,7 @@
           "inter_comm_time_cycles": 3083.501831563049,
           "intra_comm_time_cycles": 37741.67291860412,
           "total_time_us": 42.17762374595982,
-          "solve_time_s": 0.054033517837524414,
+          "solve_time_s": 0.03669333457946777,
           "partitioning": [
             12,
             13,
@@ -32300,7 +32300,7 @@
           "inter_comm_time_cycles": 3186.658416160679,
           "intra_comm_time_cycles": 38587.70340745392,
           "total_time_us": 43.15076403578152,
-          "solve_time_s": 0.049257755279541016,
+          "solve_time_s": 0.03611946105957031,
           "partitioning": [
             18,
             13,
@@ -32824,7 +32824,7 @@
           "inter_comm_time_cycles": 2914.200054869684,
           "intra_comm_time_cycles": 35525.53086419753,
           "total_time_us": 39.83919758573388,
-          "solve_time_s": 0.05831623077392578,
+          "solve_time_s": 0.036943674087524414,
           "partitioning": [
             9,
             18,
@@ -33310,7 +33310,7 @@
           "inter_comm_time_cycles": 2910.892260354227,
           "intra_comm_time_cycles": 24240.711530893346,
           "total_time_us": 28.304157903801688,
-          "solve_time_s": 1.6915125846862793,
+          "solve_time_s": 0.963127613067627,
           "partitioning": [
             11,
             21,
@@ -34091,13 +34091,13 @@
       "ILP": [
         {
           "run": 0,
-          "total_time_cycles": 25600.0,
+          "total_time_cycles": 21376.0,
           "compute_time_cycles": 8192.0,
-          "comm_time_cycles": 17408.0,
-          "inter_comm_time_cycles": 10240.0,
-          "intra_comm_time_cycles": 7168.0,
-          "total_time_us": 25.6,
-          "solve_time_s": 28.033443689346313,
+          "comm_time_cycles": 13184.0,
+          "inter_comm_time_cycles": 8576.0,
+          "intra_comm_time_cycles": 4608.0,
+          "total_time_us": 21.376,
+          "solve_time_s": 58.63032865524292,
           "partitioning": [
             1,
             1,
@@ -34115,13 +34115,25 @@
           "placement": [
             [
               [
+                0,
+                3
+              ]
+            ],
+            [
+              [
                 1,
                 3
               ]
             ],
             [
               [
-                0,
+                2,
+                3
+              ]
+            ],
+            [
+              [
+                3,
                 3
               ]
             ],
@@ -34129,50 +34141,26 @@
               [
                 0,
                 2
-              ]
-            ],
-            [
-              [
-                3,
-                2
-              ]
-            ],
-            [
-              [
-                3,
-                0
               ],
               [
                 3,
-                3
+                2
               ]
             ],
             [
+              [
+                1,
+                2
+              ],
               [
                 2,
                 2
-              ],
+              ]
+            ],
+            [
               [
-                3,
+                1,
                 1
-              ]
-            ],
-            [
-              [
-                2,
-                0
-              ]
-            ],
-            [
-              [
-                1,
-                0
-              ]
-            ],
-            [
-              [
-                0,
-                0
               ]
             ],
             [
@@ -34183,21 +34171,33 @@
             ],
             [
               [
-                1,
-                1
-              ],
-              [
-                2,
-                3
+                0,
+                0
               ]
             ],
             [
               [
                 1,
-                2
-              ],
+                0
+              ]
+            ],
+            [
               [
                 2,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              [
+                3,
                 1
               ]
             ]
@@ -34214,7 +34214,7 @@
           "inter_comm_time_cycles": 8561.777777777777,
           "intra_comm_time_cycles": 1422.2222222222222,
           "total_time_us": 21.418666666666667,
-          "solve_time_s": 0.14523816108703613,
+          "solve_time_s": 0.11033511161804199,
           "partitioning": [
             3,
             2,
@@ -34510,7 +34510,7 @@
           "inter_comm_time_cycles": 9728.0,
           "intra_comm_time_cycles": 2048.0,
           "total_time_us": 22.272,
-          "solve_time_s": 0.15752816200256348,
+          "solve_time_s": 0.10797715187072754,
           "partitioning": [
             1,
             1,
@@ -34806,7 +34806,7 @@
           "inter_comm_time_cycles": 9045.333333333334,
           "intra_comm_time_cycles": 1991.111111111111,
           "total_time_us": 20.93511111111111,
-          "solve_time_s": 0.13972043991088867,
+          "solve_time_s": 0.10772085189819336,
           "partitioning": [
             1,
             1,
@@ -35104,7 +35104,7 @@
           "inter_comm_time_cycles": 10752.0,
           "intra_comm_time_cycles": 1024.0,
           "total_time_us": 23.296,
-          "solve_time_s": 0.0172574520111084,
+          "solve_time_s": 0.007292509078979492,
           "partitioning": [
             1,
             2,
@@ -35456,7 +35456,7 @@
           "inter_comm_time_cycles": 9713.777777777777,
           "intra_comm_time_cycles": 1962.6666666666667,
           "total_time_us": 21.319111111111113,
-          "solve_time_s": 0.010001659393310547,
+          "solve_time_s": 0.007245063781738281,
           "partitioning": [
             1,
             1,
@@ -35812,7 +35812,7 @@
           "inter_comm_time_cycles": 10752.0,
           "intra_comm_time_cycles": 3584.0,
           "total_time_us": 24.064,
-          "solve_time_s": 0.012439489364624023,
+          "solve_time_s": 0.00712132453918457,
           "partitioning": [
             1,
             1,
@@ -36170,7 +36170,7 @@
           "inter_comm_time_cycles": 9088.0,
           "intra_comm_time_cycles": 2560.0,
           "total_time_us": 19.84,
-          "solve_time_s": 0.009197473526000977,
+          "solve_time_s": 0.011320352554321289,
           "partitioning": [
             1,
             1,
@@ -36863,7 +36863,7 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 2 cores but got 0 (status=Not Solved)"
+          "error": "skipped_large_mesh"
         }
       ],
       "SA": [
@@ -36875,7 +36875,7 @@
           "inter_comm_time_cycles": 8745.481481481482,
           "intra_comm_time_cycles": 11882.666666666668,
           "total_time_us": 24.76681481481482,
-          "solve_time_s": 0.24575471878051758,
+          "solve_time_s": 0.15425729751586914,
           "partitioning": [
             3,
             3,
@@ -37251,7 +37251,7 @@
           "inter_comm_time_cycles": 9845.333333333334,
           "intra_comm_time_cycles": 11754.666666666668,
           "total_time_us": 25.994666666666667,
-          "solve_time_s": 0.21915769577026367,
+          "solve_time_s": 0.16483116149902344,
           "partitioning": [
             3,
             3,
@@ -37627,7 +37627,7 @@
           "inter_comm_time_cycles": 9627.59111111111,
           "intra_comm_time_cycles": 13239.751111111113,
           "total_time_us": 27.279075555555558,
-          "solve_time_s": 0.2348771095275879,
+          "solve_time_s": 0.17008066177368164,
           "partitioning": [
             2,
             2,
@@ -38005,7 +38005,7 @@
           "inter_comm_time_cycles": 9521.901037037038,
           "intra_comm_time_cycles": 13137.066666666668,
           "total_time_us": 27.360834370370373,
-          "solve_time_s": 0.020583152770996094,
+          "solve_time_s": 0.013144731521606445,
           "partitioning": [
             1,
             3,
@@ -38441,7 +38441,7 @@
           "inter_comm_time_cycles": 8952.888888888889,
           "intra_comm_time_cycles": 12131.555555555557,
           "total_time_us": 26.972444444444445,
-          "solve_time_s": 0.021418094635009766,
+          "solve_time_s": 0.013635396957397461,
           "partitioning": [
             2,
             4,
@@ -38873,7 +38873,7 @@
           "inter_comm_time_cycles": 11281.777777777777,
           "intra_comm_time_cycles": 11318.32888888889,
           "total_time_us": 28.052906666666665,
-          "solve_time_s": 0.019984960556030273,
+          "solve_time_s": 0.013069629669189453,
           "partitioning": [
             1,
             4,
@@ -39303,7 +39303,7 @@
           "inter_comm_time_cycles": 7303.509333333333,
           "intra_comm_time_cycles": 8515.12888888889,
           "total_time_us": 19.692771555555556,
-          "solve_time_s": 0.348801851272583,
+          "solve_time_s": 0.21350669860839844,
           "partitioning": [
             2,
             2,
@@ -40200,7 +40200,7 @@
           "inter_comm_time_cycles": 7737.353481481481,
           "intra_comm_time_cycles": 25017.742222222223,
           "total_time_us": 35.10176237037037,
-          "solve_time_s": 0.3641226291656494,
+          "solve_time_s": 0.24170637130737305,
           "partitioning": [
             6,
             6,
@@ -40688,7 +40688,7 @@
           "inter_comm_time_cycles": 7506.55622675737,
           "intra_comm_time_cycles": 24610.08689342404,
           "total_time_us": 34.51085264399093,
-          "solve_time_s": 0.34950947761535645,
+          "solve_time_s": 0.2483198642730713,
           "partitioning": [
             7,
             6,
@@ -41176,7 +41176,7 @@
           "inter_comm_time_cycles": 8195.982222222223,
           "intra_comm_time_cycles": 25635.271111111113,
           "total_time_us": 36.22058666666667,
-          "solve_time_s": 0.35978221893310547,
+          "solve_time_s": 0.25377702713012695,
           "partitioning": [
             6,
             6,
@@ -41666,7 +41666,7 @@
           "inter_comm_time_cycles": 8249.317369614513,
           "intra_comm_time_cycles": 24443.865396825397,
           "total_time_us": 35.909639909297056,
-          "solve_time_s": 0.03207278251647949,
+          "solve_time_s": 0.02526545524597168,
           "partitioning": [
             7,
             4,
@@ -42194,7 +42194,7 @@
           "inter_comm_time_cycles": 8641.563077153727,
           "intra_comm_time_cycles": 20711.190605873206,
           "total_time_us": 34.01217532804858,
-          "solve_time_s": 0.0431363582611084,
+          "solve_time_s": 0.026485443115234375,
           "partitioning": [
             2,
             6,
@@ -42722,7 +42722,7 @@
           "inter_comm_time_cycles": 10256.848484848484,
           "intra_comm_time_cycles": 17665.39577594123,
           "total_time_us": 33.53678971533517,
-          "solve_time_s": 0.024416208267211914,
+          "solve_time_s": 0.025290727615356445,
           "partitioning": [
             6,
             8,
@@ -43236,7 +43236,7 @@
           "inter_comm_time_cycles": 6391.915102040816,
           "intra_comm_time_cycles": 12862.066938775512,
           "total_time_us": 21.323924897959188,
-          "solve_time_s": 1.8788390159606934,
+          "solve_time_s": 1.162748098373413,
           "partitioning": [
             4,
             4,
@@ -44249,7 +44249,7 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 2 cores but got 0 (status=Not Solved)"
+          "error": "skipped_large_mesh"
         }
       ],
       "SA": [
@@ -44261,7 +44261,7 @@
           "inter_comm_time_cycles": 19147.85185185185,
           "intra_comm_time_cycles": 28828.444444444445,
           "total_time_us": 62.994962962962965,
-          "solve_time_s": 0.2342360019683838,
+          "solve_time_s": 0.17786812782287598,
           "partitioning": [
             3,
             3,
@@ -44637,7 +44637,7 @@
           "inter_comm_time_cycles": 19790.222222222223,
           "intra_comm_time_cycles": 27434.666666666668,
           "total_time_us": 62.58488888888889,
-          "solve_time_s": 0.2275080680847168,
+          "solve_time_s": 0.16881442070007324,
           "partitioning": [
             3,
             3,
@@ -45013,7 +45013,7 @@
           "inter_comm_time_cycles": 18936.88888888889,
           "intra_comm_time_cycles": 29408.71111111111,
           "total_time_us": 64.45653333333334,
-          "solve_time_s": 0.23780536651611328,
+          "solve_time_s": 0.17368006706237793,
           "partitioning": [
             1,
             3,
@@ -45391,7 +45391,7 @@
           "inter_comm_time_cycles": 19760.981333333333,
           "intra_comm_time_cycles": 24978.204444444444,
           "total_time_us": 61.83998577777778,
-          "solve_time_s": 0.01570439338684082,
+          "solve_time_s": 0.015383720397949219,
           "partitioning": [
             2,
             4,
@@ -45827,7 +45827,7 @@
           "inter_comm_time_cycles": 22460.01777777778,
           "intra_comm_time_cycles": 26764.515555555558,
           "total_time_us": 66.73493333333333,
-          "solve_time_s": 0.03224682807922363,
+          "solve_time_s": 0.014608383178710938,
           "partitioning": [
             2,
             2,
@@ -46263,7 +46263,7 @@
           "inter_comm_time_cycles": 20545.232592592594,
           "intra_comm_time_cycles": 29097.52888888889,
           "total_time_us": 65.27582814814815,
-          "solve_time_s": 0.019025564193725586,
+          "solve_time_s": 0.015263795852661133,
           "partitioning": [
             2,
             3,
@@ -46701,7 +46701,7 @@
           "inter_comm_time_cycles": 14518.271999999999,
           "intra_comm_time_cycles": 17530.88,
           "total_time_us": 46.794752,
-          "solve_time_s": 0.3550128936767578,
+          "solve_time_s": 0.21989226341247559,
           "partitioning": [
             2,
             2,
@@ -47726,7 +47726,7 @@
           "inter_comm_time_cycles": 17572.313742360435,
           "intra_comm_time_cycles": 51829.27238095239,
           "total_time_us": 78.06657659950329,
-          "solve_time_s": 0.38933682441711426,
+          "solve_time_s": 0.2525167465209961,
           "partitioning": [
             6,
             6,
@@ -48214,7 +48214,7 @@
           "inter_comm_time_cycles": 15704.458835978836,
           "intra_comm_time_cycles": 55263.515283446715,
           "total_time_us": 79.5451931670446,
-          "solve_time_s": 0.3665890693664551,
+          "solve_time_s": 0.24862051010131836,
           "partitioning": [
             6,
             5,
@@ -48702,7 +48702,7 @@
           "inter_comm_time_cycles": 16950.885925925926,
           "intra_comm_time_cycles": 48213.333333333336,
           "total_time_us": 74.00475259259258,
-          "solve_time_s": 0.3667318820953369,
+          "solve_time_s": 0.2583141326904297,
           "partitioning": [
             5,
             6,
@@ -49192,7 +49192,7 @@
           "inter_comm_time_cycles": 23861.749895019737,
           "intra_comm_time_cycles": 36469.9057697153,
           "total_time_us": 74.58638582346518,
-          "solve_time_s": 0.04663538932800293,
+          "solve_time_s": 0.0245819091796875,
           "partitioning": [
             1,
             1,
@@ -49696,7 +49696,7 @@
           "inter_comm_time_cycles": 18944.007094986144,
           "intra_comm_time_cycles": 50061.28955404384,
           "total_time_us": 78.78856014109347,
-          "solve_time_s": 0.03447914123535156,
+          "solve_time_s": 0.027670860290527344,
           "partitioning": [
             3,
             4,
@@ -50236,7 +50236,7 @@
           "inter_comm_time_cycles": 18559.5423733938,
           "intra_comm_time_cycles": 51071.39628117914,
           "total_time_us": 81.09242436885866,
-          "solve_time_s": 0.046822309494018555,
+          "solve_time_s": 0.027754545211791992,
           "partitioning": [
             6,
             3,
@@ -50778,7 +50778,7 @@
           "inter_comm_time_cycles": 12783.830204081632,
           "intra_comm_time_cycles": 25724.133877551023,
           "total_time_us": 46.78773551020408,
-          "solve_time_s": 1.8936829566955566,
+          "solve_time_s": 1.2309436798095703,
           "partitioning": [
             4,
             4,
@@ -51367,13 +51367,13 @@
       "ILP": [
         {
           "run": 0,
-          "total_time_cycles": 900820.7407407408,
+          "total_time_cycles": 825575.7037037037,
           "compute_time_cycles": 247888.0,
-          "comm_time_cycles": 652932.7407407408,
-          "inter_comm_time_cycles": 254255.4074074074,
-          "intra_comm_time_cycles": 398677.3333333334,
-          "total_time_us": 900.8207407407408,
-          "solve_time_s": 29.84960103034973,
+          "comm_time_cycles": 577687.7037037037,
+          "inter_comm_time_cycles": 242725.92592592593,
+          "intra_comm_time_cycles": 334961.77777777775,
+          "total_time_us": 825.5757037037037,
+          "solve_time_s": 59.86420202255249,
           "partitioning": [
             3,
             6,
@@ -51383,64 +51383,12 @@
           "placement": [
             [
               [
-                1,
-                0
-              ],
-              [
                 2,
                 1
               ],
               [
                 2,
                 2
-              ]
-            ],
-            [
-              [
-                0,
-                1
-              ],
-              [
-                1,
-                1
-              ],
-              [
-                1,
-                2
-              ],
-              [
-                2,
-                0
-              ],
-              [
-                2,
-                3
-              ],
-              [
-                3,
-                1
-              ]
-            ],
-            [
-              [
-                0,
-                0
-              ],
-              [
-                0,
-                2
-              ],
-              [
-                0,
-                3
-              ],
-              [
-                1,
-                3
-              ],
-              [
-                3,
-                0
               ],
               [
                 3,
@@ -51449,8 +51397,60 @@
             ],
             [
               [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
                 3,
                 3
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
               ]
             ]
           ],
@@ -51466,7 +51466,7 @@
           "inter_comm_time_cycles": 292326.9688888889,
           "intra_comm_time_cycles": 248663.48444444448,
           "total_time_us": 857.6312533333335,
-          "solve_time_s": 0.15194916725158691,
+          "solve_time_s": 0.10029840469360352,
           "partitioning": [
             3,
             4,
@@ -51738,7 +51738,7 @@
           "inter_comm_time_cycles": 273416.19200000004,
           "intra_comm_time_cycles": 262164.0,
           "total_time_us": 809.949792,
-          "solve_time_s": 0.15448379516601562,
+          "solve_time_s": 0.10119152069091797,
           "partitioning": [
             4,
             5,
@@ -52010,7 +52010,7 @@
           "inter_comm_time_cycles": 228210.91555555558,
           "intra_comm_time_cycles": 329924.5333333333,
           "total_time_us": 883.807448888889,
-          "solve_time_s": 0.13744235038757324,
+          "solve_time_s": 0.10746622085571289,
           "partitioning": [
             5,
             3,
@@ -52284,7 +52284,7 @@
           "inter_comm_time_cycles": 304014.22222222225,
           "intra_comm_time_cycles": 271246.22222222225,
           "total_time_us": 823.1484444444445,
-          "solve_time_s": 0.008566141128540039,
+          "solve_time_s": 0.006234645843505859,
           "partitioning": [
             3,
             6,
@@ -52616,7 +52616,7 @@
           "inter_comm_time_cycles": 314245.12,
           "intra_comm_time_cycles": 242770.24444444446,
           "total_time_us": 873.6561644444444,
-          "solve_time_s": 0.008987903594970703,
+          "solve_time_s": 0.006535530090332031,
           "partitioning": [
             3,
             4,
@@ -52948,7 +52948,7 @@
           "inter_comm_time_cycles": 255236.71365079365,
           "intra_comm_time_cycles": 306750.09015873016,
           "total_time_us": 815.4921752380952,
-          "solve_time_s": 0.008890867233276367,
+          "solve_time_s": 0.006317615509033203,
           "partitioning": [
             3,
             5,
@@ -53282,7 +53282,7 @@
           "inter_comm_time_cycles": 256075.85185185185,
           "intra_comm_time_cycles": 309475.55555555556,
           "total_time_us": 813.4394074074074,
-          "solve_time_s": 0.011212348937988281,
+          "solve_time_s": 0.006520509719848633,
           "partitioning": [
             3,
             6,
@@ -53735,7 +53735,7 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 7 cores but got 0 (status=Not Solved)"
+          "error": "skipped_large_mesh"
         }
       ],
       "SA": [
@@ -53747,7 +53747,7 @@
           "inter_comm_time_cycles": 211845.3447462277,
           "intra_comm_time_cycles": 472583.12876543205,
           "total_time_us": 826.0235401783265,
-          "solve_time_s": 0.258281946182251,
+          "solve_time_s": 0.1856689453125,
           "partitioning": [
             9,
             9,
@@ -54099,7 +54099,7 @@
           "inter_comm_time_cycles": 208526.34864197532,
           "intra_comm_time_cycles": 486801.3827160494,
           "total_time_us": 849.9606202469135,
-          "solve_time_s": 0.26320481300354004,
+          "solve_time_s": 0.18604183197021484,
           "partitioning": [
             10,
             9,
@@ -54451,7 +54451,7 @@
           "inter_comm_time_cycles": 187935.60493827163,
           "intra_comm_time_cycles": 491665.0982716049,
           "total_time_us": 829.3866587654322,
-          "solve_time_s": 0.27099037170410156,
+          "solve_time_s": 0.20966219902038574,
           "partitioning": [
             9,
             8,
@@ -54805,7 +54805,7 @@
           "inter_comm_time_cycles": 164308.95250688706,
           "intra_comm_time_cycles": 602027.4471258034,
           "total_time_us": 888.5144359963268,
-          "solve_time_s": 0.031485795974731445,
+          "solve_time_s": 0.01510930061340332,
           "partitioning": [
             11,
             10,
@@ -55209,7 +55209,7 @@
           "inter_comm_time_cycles": 263311.23881656805,
           "intra_comm_time_cycles": 529808.643709697,
           "total_time_us": 928.2047880207705,
-          "solve_time_s": 0.01047372817993164,
+          "solve_time_s": 0.01749134063720703,
           "partitioning": [
             5,
             13,
@@ -55617,7 +55617,7 @@
           "inter_comm_time_cycles": 220383.00444444444,
           "intra_comm_time_cycles": 586208.5866666667,
           "total_time_us": 940.3393244444444,
-          "solve_time_s": 0.03156590461730957,
+          "solve_time_s": 0.019689321517944336,
           "partitioning": [
             6,
             10,
@@ -56023,7 +56023,7 @@
           "inter_comm_time_cycles": 212522.672231212,
           "intra_comm_time_cycles": 444443.6979709912,
           "total_time_us": 763.6819042681371,
-          "solve_time_s": 0.1829843521118164,
+          "solve_time_s": 0.10825562477111816,
           "partitioning": [
             7,
             13,
@@ -56680,7 +56680,7 @@
           "inter_comm_time_cycles": 147720.73158675234,
           "intra_comm_time_cycles": 781633.9204858413,
           "total_time_us": 1009.9551898877197,
-          "solve_time_s": 0.5971753597259521,
+          "solve_time_s": 0.387462854385376,
           "partitioning": [
             17,
             16,
@@ -57144,7 +57144,7 @@
           "inter_comm_time_cycles": 150389.09109941556,
           "intra_comm_time_cycles": 805428.0861521079,
           "total_time_us": 1036.4177150666494,
-          "solve_time_s": 0.5689923763275146,
+          "solve_time_s": 0.38116025924682617,
           "partitioning": [
             17,
             17,
@@ -57608,7 +57608,7 @@
           "inter_comm_time_cycles": 148645.60276816608,
           "intra_comm_time_cycles": 807661.4495963091,
           "total_time_us": 1039.0756798154555,
-          "solve_time_s": 0.5713562965393066,
+          "solve_time_s": 0.3939018249511719,
           "partitioning": [
             17,
             16,
@@ -58074,7 +58074,7 @@
           "inter_comm_time_cycles": 174338.12849584277,
           "intra_comm_time_cycles": 870549.2653061225,
           "total_time_us": 1122.644917611489,
-          "solve_time_s": 0.07415199279785156,
+          "solve_time_s": 0.03704333305358887,
           "partitioning": [
             12,
             16,
@@ -58586,7 +58586,7 @@
           "inter_comm_time_cycles": 141668.78463648836,
           "intra_comm_time_cycles": 979427.5308641975,
           "total_time_us": 1196.2389821673526,
-          "solve_time_s": 0.055271148681640625,
+          "solve_time_s": 0.03768491744995117,
           "partitioning": [
             16,
             18,
@@ -59110,7 +59110,7 @@
           "inter_comm_time_cycles": 149697.306122449,
           "intra_comm_time_cycles": 870881.3310657596,
           "total_time_us": 1105.284732426304,
-          "solve_time_s": 0.060343027114868164,
+          "solve_time_s": 0.03405928611755371,
           "partitioning": [
             14,
             16,
@@ -59612,7 +59612,7 @@
           "inter_comm_time_cycles": 156521.0248331361,
           "intra_comm_time_cycles": 631227.0362508876,
           "total_time_us": 847.7724056994083,
-          "solve_time_s": 2.66178560256958,
+          "solve_time_s": 1.5165226459503174,
           "partitioning": [
             13,
             25,

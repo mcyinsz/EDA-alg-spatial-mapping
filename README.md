@@ -21,9 +21,13 @@ EDA-alg-spatial-mapping/
 │   ├── run_full.sh         # 一键全量复现（Bash / Git Bash / WSL）
 │   ├── run_full.ps1        # 一键全量复现（PowerShell）
 │   └── verify_results.py   # 结果自检
-├── report.md               # 报告源文件
-├── report.pdf              # 提交版 PDF
-├── gen_html.py             # Markdown → HTML 导出
+├── logs/                   # 实验运行 LOG（提交要求）
+│   └── full_reproduction.log
+├── report_ieee/            # IEEE 双栏报告源文件（LaTeX）
+│   └── report.tex
+├── report.md               # 中文扩展版报告（非提交版）
+├── report.pdf              # 提交版 PDF（≤4 页 IEEE 双栏）
+├── gen_html.py             # Markdown → HTML 导出（可选）
 ├── requirements.txt
 └── README.md
 ```
@@ -110,13 +114,42 @@ ILP 在 4×4 mesh 上约需 30-60 秒/配置。SA/EA 各跑 3 次独立运行。
 - ILP 因层内通信变量的二次增长，默认仅在 4×4 mesh（≤16 cores）上运行
 - 层内通信模型假设简化的同步模式，未精确模拟 all-reduce / all-gather 的逐链路时序
 
-## Report Export
+## Run Logs
 
-`report.md` 是报告源文件。如需重新导出 PDF：
+课程提交要求包含实验中程序运行的 LOG。`logs/full_reproduction.log` 记录了完整复现流程的终端输出，包括：
+
+- 主实验（含层内通信）：`python src/experiment.py`
+- 对照组（仅层间通信）：`python src/experiment.py --inter-only`
+- 可视化生成与结果自检
+
+重新生成 LOG：
+
+```bash
+mkdir -p logs
+bash scripts/run_full.sh 2>&1 | tee logs/full_reproduction.log
+```
+
+## Report
+
+| 文件 | 说明 |
+|------|------|
+| `report.pdf` | **提交版**：英文 IEEE 双栏，≤4 页 |
+| `report_ieee/report.tex` | IEEE 报告 LaTeX 源文件 |
+| `report.md` | 中文扩展版（含完整图表与分析，非提交版） |
+
+重新编译提交版 PDF（需安装 [Tectonic](https://tectonic-typesetting.github.io/)）：
+
+```bash
+cd report_ieee
+tectonic report.tex
+cp report.pdf ../report.pdf
+```
+
+可选：从 `report.md` 导出 HTML 预览：
 
 ```bash
 python gen_html.py
-# 在浏览器中打开 report.html，Ctrl+P 另存为 PDF
+# 在浏览器中打开 report.html
 ```
 
 ## License

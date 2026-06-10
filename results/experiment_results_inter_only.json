@@ -5,6 +5,8 @@
         "total_time_cycles": 3840.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 1536.0,
+        "inter_comm_time_cycles": 1536.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.84,
         "partitioning": [
           1,
@@ -36,6 +38,8 @@
         "total_time_cycles": 3840.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 1536.0,
+        "inter_comm_time_cycles": 1536.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.84,
         "partitioning": [
           1,
@@ -67,6 +71,8 @@
         "total_time_cycles": 3840.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 1536.0,
+        "inter_comm_time_cycles": 1536.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.84,
         "partitioning": [
           1,
@@ -98,6 +104,8 @@
         "total_time_cycles": 5376.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 3072.0,
+        "inter_comm_time_cycles": 3072.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 5.376,
         "partitioning": [
           1,
@@ -129,6 +137,8 @@
         "total_time_cycles": 1103.1893333333335,
         "compute_time_cycles": 426.6666666666667,
         "comm_time_cycles": 676.5226666666667,
+        "inter_comm_time_cycles": 676.5226666666667,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1.1031893333333336,
         "partitioning": [
           6,
@@ -216,8 +226,10 @@
           "total_time_cycles": 985.687074829932,
           "compute_time_cycles": 402.2857142857143,
           "comm_time_cycles": 583.4013605442177,
+          "inter_comm_time_cycles": 583.4013605442177,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.985687074829932,
-          "solve_time_s": 30.107829093933105,
+          "solve_time_s": 60.02666425704956,
           "partitioning": [
             7,
             6,
@@ -247,11 +259,11 @@
               ],
               [
                 3,
-                0
+                1
               ],
               [
                 3,
-                1
+                3
               ]
             ],
             [
@@ -291,7 +303,7 @@
               ],
               [
                 3,
-                3
+                0
               ]
             ]
           ],
@@ -304,8 +316,10 @@
           "total_time_cycles": 910.2222222222222,
           "compute_time_cycles": 426.66666666666663,
           "comm_time_cycles": 483.55555555555554,
+          "inter_comm_time_cycles": 483.55555555555554,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.9102222222222222,
-          "solve_time_s": 0.134901762008667,
+          "solve_time_s": 0.10180830955505371,
           "partitioning": [
             8,
             6,
@@ -571,8 +585,10 @@
           "total_time_cycles": 913.8251851851852,
           "compute_time_cycles": 446.5777777777778,
           "comm_time_cycles": 467.2474074074074,
+          "inter_comm_time_cycles": 467.2474074074074,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.9138251851851852,
-          "solve_time_s": 0.11062908172607422,
+          "solve_time_s": 0.09477829933166504,
           "partitioning": [
             9,
             5,
@@ -838,8 +854,10 @@
           "total_time_cycles": 910.2222222222222,
           "compute_time_cycles": 426.66666666666663,
           "comm_time_cycles": 483.55555555555554,
+          "inter_comm_time_cycles": 483.55555555555554,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.9102222222222222,
-          "solve_time_s": 0.12796425819396973,
+          "solve_time_s": 0.0889430046081543,
           "partitioning": [
             8,
             6,
@@ -1107,8 +1125,10 @@
           "total_time_cycles": 978.8178382464096,
           "compute_time_cycles": 402.2857142857143,
           "comm_time_cycles": 576.5321239606953,
+          "inter_comm_time_cycles": 576.5321239606953,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.9788178382464096,
-          "solve_time_s": 0.002552032470703125,
+          "solve_time_s": 0.004836082458496094,
           "partitioning": [
             7,
             6,
@@ -1434,8 +1454,10 @@
           "total_time_cycles": 1082.4817777777778,
           "compute_time_cycles": 426.6666666666667,
           "comm_time_cycles": 655.8151111111112,
+          "inter_comm_time_cycles": 655.8151111111112,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 1.0824817777777778,
-          "solve_time_s": 0.0,
+          "solve_time_s": 0.004687786102294922,
           "partitioning": [
             6,
             5,
@@ -1761,8 +1783,10 @@
           "total_time_cycles": 952.3832098765432,
           "compute_time_cycles": 446.5777777777778,
           "comm_time_cycles": 505.80543209876544,
+          "inter_comm_time_cycles": 505.80543209876544,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.9523832098765432,
-          "solve_time_s": 0.018249034881591797,
+          "solve_time_s": 0.004508018493652344,
           "partitioning": [
             9,
             5,
@@ -2090,8 +2114,10 @@
           "total_time_cycles": 945.7777777777777,
           "compute_time_cycles": 426.66666666666663,
           "comm_time_cycles": 519.1111111111111,
+          "inter_comm_time_cycles": 519.1111111111111,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.9457777777777777,
-          "solve_time_s": 0.0020470619201660156,
+          "solve_time_s": 0.005130767822265625,
           "partitioning": [
             8,
             6,
@@ -2180,6 +2206,8 @@
         "total_time_cycles": 11008.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 8704.0,
+        "inter_comm_time_cycles": 8704.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 11.008,
         "partitioning": [
           1,
@@ -2211,6 +2239,8 @@
         "total_time_cycles": 3840.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 1536.0,
+        "inter_comm_time_cycles": 1536.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.84,
         "partitioning": [
           1,
@@ -2242,6 +2272,8 @@
         "total_time_cycles": 3840.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 1536.0,
+        "inter_comm_time_cycles": 1536.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.84,
         "partitioning": [
           1,
@@ -2273,6 +2305,8 @@
         "total_time_cycles": 5376.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 3072.0,
+        "inter_comm_time_cycles": 3072.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 5.376,
         "partitioning": [
           1,
@@ -2304,6 +2338,8 @@
         "total_time_cycles": 696.8888888888889,
         "compute_time_cycles": 192.0,
         "comm_time_cycles": 504.8888888888889,
+        "inter_comm_time_cycles": 504.8888888888889,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 0.6968888888888889,
         "partitioning": [
           12,
@@ -2468,7 +2504,171 @@
       "ILP": [
         {
           "run": 0,
-          "error": "ILP solution invalid: layer 0 needs 15 cores but got 0 (status=Not Solved)"
+          "total_time_cycles": 598.7049692257856,
+          "compute_time_cycles": 177.98095238095237,
+          "comm_time_cycles": 420.72401684483316,
+          "inter_comm_time_cycles": 420.72401684483316,
+          "intra_comm_time_cycles": 0.0,
+          "total_time_us": 0.5987049692257856,
+          "solve_time_s": 60.01296591758728,
+          "partitioning": [
+            15,
+            14,
+            7
+          ],
+          "placement": [
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ]
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                5,
+                0
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                4,
+                4
+              ]
+            ]
+          ],
+          "history": []
         }
       ],
       "SA": [
@@ -2477,8 +2677,10 @@
           "total_time_cycles": 527.2546502057613,
           "compute_time_cycles": 210.48888888888888,
           "comm_time_cycles": 316.76576131687244,
+          "inter_comm_time_cycles": 316.76576131687244,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.5272546502057613,
-          "solve_time_s": 0.2171344757080078,
+          "solve_time_s": 0.1503920555114746,
           "partitioning": [
             18,
             15,
@@ -2824,8 +3026,10 @@
           "total_time_cycles": 521.1428571428571,
           "compute_time_cycles": 194.03174603174602,
           "comm_time_cycles": 327.11111111111114,
+          "inter_comm_time_cycles": 327.11111111111114,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.5211428571428571,
-          "solve_time_s": 0.22968792915344238,
+          "solve_time_s": 0.1575629711151123,
           "partitioning": [
             18,
             14,
@@ -3171,8 +3375,10 @@
           "total_time_cycles": 516.9483234714004,
           "compute_time_cycles": 215.3025641025641,
           "comm_time_cycles": 301.6457593688363,
+          "inter_comm_time_cycles": 301.6457593688363,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.5169483234714004,
-          "solve_time_s": 0.23659157752990723,
+          "solve_time_s": 0.16693401336669922,
           "partitioning": [
             20,
             13,
@@ -3520,8 +3726,10 @@
           "total_time_cycles": 638.984126984127,
           "compute_time_cycles": 184.07619047619048,
           "comm_time_cycles": 454.9079365079365,
+          "inter_comm_time_cycles": 454.9079365079365,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.638984126984127,
-          "solve_time_s": 0.0186007022857666,
+          "solve_time_s": 0.012715339660644531,
           "partitioning": [
             12,
             14,
@@ -3927,8 +4135,10 @@
           "total_time_cycles": 654.2222222222222,
           "compute_time_cycles": 192.0,
           "comm_time_cycles": 462.2222222222222,
+          "inter_comm_time_cycles": 462.2222222222222,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.6542222222222221,
-          "solve_time_s": 0.018252849578857422,
+          "solve_time_s": 0.011639833450317383,
           "partitioning": [
             12,
             12,
@@ -4334,8 +4544,10 @@
           "total_time_cycles": 667.8518518518518,
           "compute_time_cycles": 192.0,
           "comm_time_cycles": 475.85185185185185,
+          "inter_comm_time_cycles": 475.85185185185185,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.6678518518518518,
-          "solve_time_s": 0.01877117156982422,
+          "solve_time_s": 0.011777162551879883,
           "partitioning": [
             12,
             12,
@@ -4743,8 +4955,10 @@
           "total_time_cycles": 528.0343555868806,
           "compute_time_cycles": 196.66396761133603,
           "comm_time_cycles": 331.3703879755446,
+          "inter_comm_time_cycles": 331.3703879755446,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.5280343555868806,
-          "solve_time_s": 0.189178466796875,
+          "solve_time_s": 0.1188344955444336,
           "partitioning": [
             19,
             13,
@@ -4913,6 +5127,8 @@
         "total_time_cycles": 9984.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 7680.0,
+        "inter_comm_time_cycles": 7680.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 9.984,
         "partitioning": [
           1,
@@ -4944,6 +5160,8 @@
         "total_time_cycles": 3840.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 1536.0,
+        "inter_comm_time_cycles": 1536.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.84,
         "partitioning": [
           1,
@@ -4975,6 +5193,8 @@
         "total_time_cycles": 3840.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 1536.0,
+        "inter_comm_time_cycles": 1536.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.84,
         "partitioning": [
           1,
@@ -5006,6 +5226,8 @@
         "total_time_cycles": 12544.0,
         "compute_time_cycles": 2304.0,
         "comm_time_cycles": 10240.0,
+        "inter_comm_time_cycles": 10240.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 12.544,
         "partitioning": [
           1,
@@ -5037,6 +5259,8 @@
         "total_time_cycles": 483.24234660412765,
         "compute_time_cycles": 107.4978354978355,
         "comm_time_cycles": 375.7445111062922,
+        "inter_comm_time_cycles": 375.7445111062922,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 0.4832423466041276,
         "partitioning": [
           22,
@@ -5322,8 +5546,10 @@
           "total_time_cycles": 350.9892692944993,
           "compute_time_cycles": 124.16618357487923,
           "comm_time_cycles": 226.82308571962005,
+          "inter_comm_time_cycles": 226.82308571962005,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.3509892692944993,
-          "solve_time_s": 0.44212770462036133,
+          "solve_time_s": 0.2992210388183594,
           "partitioning": [
             36,
             23,
@@ -5781,8 +6007,10 @@
           "total_time_cycles": 353.1747298653411,
           "compute_time_cycles": 124.16618357487923,
           "comm_time_cycles": 229.00854629046185,
+          "inter_comm_time_cycles": 229.00854629046185,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.3531747298653411,
-          "solve_time_s": 0.426145076751709,
+          "solve_time_s": 0.2825329303741455,
           "partitioning": [
             36,
             23,
@@ -6240,8 +6468,10 @@
           "total_time_cycles": 350.9196212207795,
           "compute_time_cycles": 119.1042471042471,
           "comm_time_cycles": 231.81537411653244,
+          "inter_comm_time_cycles": 231.81537411653244,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.3509196212207795,
-          "solve_time_s": 0.4433310031890869,
+          "solve_time_s": 0.29303789138793945,
           "partitioning": [
             37,
             21,
@@ -6701,8 +6931,10 @@
           "total_time_cycles": 462.2790498857289,
           "compute_time_cycles": 107.4978354978355,
           "comm_time_cycles": 354.78121438789344,
+          "inter_comm_time_cycles": 354.78121438789344,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.46227904988572893,
-          "solve_time_s": 0.05136585235595703,
+          "solve_time_s": 0.02802896499633789,
           "partitioning": [
             22,
             21,
@@ -7220,8 +7452,10 @@
           "total_time_cycles": 464.58299757001055,
           "compute_time_cycles": 107.4978354978355,
           "comm_time_cycles": 357.0851620721751,
+          "inter_comm_time_cycles": 357.0851620721751,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.46458299757001054,
-          "solve_time_s": 0.035895347595214844,
+          "solve_time_s": 0.02966904640197754,
           "partitioning": [
             22,
             21,
@@ -7739,8 +7973,10 @@
           "total_time_cycles": 435.0362380617023,
           "compute_time_cycles": 102.2472293265132,
           "comm_time_cycles": 332.7890087351891,
+          "inter_comm_time_cycles": 332.7890087351891,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.43503623806170233,
-          "solve_time_s": 0.048482656478881836,
+          "solve_time_s": 0.028705358505249023,
           "partitioning": [
             24,
             23,
@@ -8260,8 +8496,10 @@
           "total_time_cycles": 354.553503941259,
           "compute_time_cycles": 113.77777777777777,
           "comm_time_cycles": 240.77572616348124,
+          "inter_comm_time_cycles": 240.77572616348124,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 0.354553503941259,
-          "solve_time_s": 1.7299282550811768,
+          "solve_time_s": 1.0666720867156982,
           "partitioning": [
             36,
             21,
@@ -8542,6 +8780,8 @@
         "total_time_cycles": 17166.336,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 6516.736,
+        "inter_comm_time_cycles": 6516.736,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 17.166335999999998,
         "partitioning": [
           2,
@@ -8620,6 +8860,8 @@
         "total_time_cycles": 15699.968,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 5050.368,
+        "inter_comm_time_cycles": 5050.368,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 15.699968,
         "partitioning": [
           2,
@@ -8698,6 +8940,8 @@
         "total_time_cycles": 15699.968,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 5050.368,
+        "inter_comm_time_cycles": 5050.368,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 15.699968,
         "partitioning": [
           2,
@@ -8776,6 +9020,8 @@
         "total_time_cycles": 15699.968,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 5050.368,
+        "inter_comm_time_cycles": 5050.368,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 15.699968,
         "partitioning": [
           2,
@@ -8854,6 +9100,8 @@
         "total_time_cycles": 13597.202962962961,
         "compute_time_cycles": 9420.8,
         "comm_time_cycles": 4176.402962962963,
+        "inter_comm_time_cycles": 4176.402962962963,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 13.597202962962962,
         "partitioning": [
           3,
@@ -8941,11 +9189,13 @@
       "ILP": [
         {
           "run": 0,
-          "total_time_cycles": 13722.510222222223,
+          "total_time_cycles": 13635.128888888888,
           "compute_time_cycles": 9284.266666666666,
-          "comm_time_cycles": 4438.243555555556,
-          "total_time_us": 13.722510222222223,
-          "solve_time_s": 30.065497398376465,
+          "comm_time_cycles": 4350.862222222222,
+          "inter_comm_time_cycles": 4350.862222222222,
+          "intra_comm_time_cycles": 0.0,
+          "total_time_us": 13.635128888888888,
+          "solve_time_s": 59.97711372375488,
           "partitioning": [
             3,
             5,
@@ -8955,73 +9205,73 @@
           "placement": [
             [
               [
-                0,
-                0
-              ],
-              [
-                2,
+                3,
                 0
               ],
               [
                 3,
-                0
-              ]
-            ],
-            [
-              [
-                0,
                 2
-              ],
-              [
-                1,
-                0
-              ],
-              [
-                1,
-                2
-              ],
-              [
-                2,
-                1
               ],
               [
                 3,
-                1
+                3
               ]
             ],
             [
-              [
-                0,
-                1
-              ],
-              [
-                1,
-                1
-              ],
               [
                 1,
                 3
               ],
               [
                 2,
+                0
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
                 2
               ],
               [
                 3,
-                2
+                1
               ]
             ],
             [
               [
                 0,
-                3
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
               ],
               [
                 2,
                 3
+              ]
+            ],
+            [
+              [
+                0,
+                0
               ],
               [
-                3,
+                0,
+                2
+              ],
+              [
+                0,
                 3
               ]
             ]
@@ -9035,8 +9285,10 @@
           "total_time_cycles": 13428.811851851851,
           "compute_time_cycles": 9420.8,
           "comm_time_cycles": 4008.0118518518516,
+          "inter_comm_time_cycles": 4008.0118518518516,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.428811851851851,
-          "solve_time_s": 0.13451695442199707,
+          "solve_time_s": 0.10353493690490723,
           "partitioning": [
             3,
             6,
@@ -9305,8 +9557,10 @@
           "total_time_cycles": 13421.226666666666,
           "compute_time_cycles": 9420.8,
           "comm_time_cycles": 4000.4266666666663,
+          "inter_comm_time_cycles": 4000.4266666666663,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.421226666666666,
-          "solve_time_s": 0.1140739917755127,
+          "solve_time_s": 0.10033559799194336,
           "partitioning": [
             3,
             6,
@@ -9575,8 +9829,10 @@
           "total_time_cycles": 13369.647407407407,
           "compute_time_cycles": 9420.8,
           "comm_time_cycles": 3948.8474074074074,
+          "inter_comm_time_cycles": 3948.8474074074074,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.369647407407406,
-          "solve_time_s": 0.12750029563903809,
+          "solve_time_s": 0.10535645484924316,
           "partitioning": [
             3,
             6,
@@ -9847,8 +10103,10 @@
           "total_time_cycles": 13469.77185185185,
           "compute_time_cycles": 9420.8,
           "comm_time_cycles": 4048.9718518518516,
+          "inter_comm_time_cycles": 4048.9718518518516,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.469771851851851,
-          "solve_time_s": 0.01600027084350586,
+          "solve_time_s": 0.005470991134643555,
           "partitioning": [
             3,
             6,
@@ -10177,8 +10435,10 @@
           "total_time_cycles": 13754.974814814814,
           "compute_time_cycles": 9420.8,
           "comm_time_cycles": 4334.174814814814,
+          "inter_comm_time_cycles": 4334.174814814814,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.754974814814814,
-          "solve_time_s": 0.0,
+          "solve_time_s": 0.005423784255981445,
           "partitioning": [
             3,
             6,
@@ -10507,8 +10767,10 @@
           "total_time_cycles": 13701.878518518519,
           "compute_time_cycles": 9420.8,
           "comm_time_cycles": 4281.078518518519,
+          "inter_comm_time_cycles": 4281.078518518519,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.70187851851852,
-          "solve_time_s": 0.015769004821777344,
+          "solve_time_s": 0.005543947219848633,
           "partitioning": [
             3,
             6,
@@ -10839,8 +11101,10 @@
           "total_time_cycles": 13576.874666666667,
           "compute_time_cycles": 9284.266666666666,
           "comm_time_cycles": 4292.608,
+          "inter_comm_time_cycles": 4292.608,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.576874666666667,
-          "solve_time_s": 0.016794443130493164,
+          "solve_time_s": 0.008341789245605469,
           "partitioning": [
             3,
             5,
@@ -10932,6 +11196,8 @@
         "total_time_cycles": 19517.440000000002,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 8867.84,
+        "inter_comm_time_cycles": 8867.84,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.51744,
         "partitioning": [
           2,
@@ -11010,6 +11276,8 @@
         "total_time_cycles": 16977.92,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 6328.32,
+        "inter_comm_time_cycles": 6328.32,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 16.977919999999997,
         "partitioning": [
           2,
@@ -11088,6 +11356,8 @@
         "total_time_cycles": 16977.92,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 6328.32,
+        "inter_comm_time_cycles": 6328.32,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 16.977919999999997,
         "partitioning": [
           2,
@@ -11166,6 +11436,8 @@
         "total_time_cycles": 17645.568,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 6995.968,
+        "inter_comm_time_cycles": 6995.968,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 17.645568,
         "partitioning": [
           2,
@@ -11244,6 +11516,8 @@
         "total_time_cycles": 7147.009208972845,
         "compute_time_cycles": 4224.9974025974025,
         "comm_time_cycles": 2922.0118063754426,
+        "inter_comm_time_cycles": 2922.0118063754426,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 7.147009208972845,
         "partitioning": [
           8,
@@ -11420,8 +11694,10 @@
           "total_time_cycles": 7067.438246409674,
           "compute_time_cycles": 4135.009523809524,
           "comm_time_cycles": 2932.428722600151,
+          "inter_comm_time_cycles": 2932.428722600151,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 7.067438246409674,
-          "solve_time_s": 0.24071311950683594,
+          "solve_time_s": 0.19034218788146973,
           "partitioning": [
             7,
             12,
@@ -11770,8 +12046,10 @@
           "total_time_cycles": 7060.8578656964555,
           "compute_time_cycles": 4268.883116883117,
           "comm_time_cycles": 2791.974748813339,
+          "inter_comm_time_cycles": 2791.974748813339,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 7.060857865696455,
-          "solve_time_s": 0.22899317741394043,
+          "solve_time_s": 0.16742968559265137,
           "partitioning": [
             7,
             14,
@@ -12120,8 +12398,10 @@
           "total_time_cycles": 7009.812188211389,
           "compute_time_cycles": 4154.105094905095,
           "comm_time_cycles": 2855.707093306294,
+          "inter_comm_time_cycles": 2855.707093306294,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 7.009812188211389,
-          "solve_time_s": 0.2290968894958496,
+          "solve_time_s": 0.16627264022827148,
           "partitioning": [
             7,
             13,
@@ -12472,8 +12752,10 @@
           "total_time_cycles": 7317.834128091507,
           "compute_time_cycles": 4149.194805194806,
           "comm_time_cycles": 3168.6393228967017,
+          "inter_comm_time_cycles": 3168.6393228967017,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 7.317834128091508,
-          "solve_time_s": 0.007428884506225586,
+          "solve_time_s": 0.01217031478881836,
           "partitioning": [
             7,
             11,
@@ -12882,8 +13164,10 @@
           "total_time_cycles": 7345.028934240363,
           "compute_time_cycles": 4174.019047619047,
           "comm_time_cycles": 3171.009886621315,
+          "inter_comm_time_cycles": 3171.009886621315,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 7.345028934240363,
-          "solve_time_s": 0.031162023544311523,
+          "solve_time_s": 0.01187276840209961,
           "partitioning": [
             7,
             12,
@@ -13292,8 +13576,10 @@
           "total_time_cycles": 7349.989665588249,
           "compute_time_cycles": 4149.194805194806,
           "comm_time_cycles": 3200.7948603934437,
+          "inter_comm_time_cycles": 3200.7948603934437,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 7.349989665588249,
-          "solve_time_s": 0.009958028793334961,
+          "solve_time_s": 0.01400613784790039,
           "partitioning": [
             7,
             11,
@@ -13704,8 +13990,10 @@
           "total_time_cycles": 7054.222222222223,
           "compute_time_cycles": 4096.0,
           "comm_time_cycles": 2958.2222222222226,
+          "inter_comm_time_cycles": 2958.2222222222226,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 7.054222222222223,
-          "solve_time_s": 0.1354668140411377,
+          "solve_time_s": 0.09385967254638672,
           "partitioning": [
             6,
             12,
@@ -13877,6 +14165,8 @@
         "total_time_cycles": 23728.128,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 13078.528,
+        "inter_comm_time_cycles": 13078.528,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 23.728128,
         "partitioning": [
           2,
@@ -13955,6 +14245,8 @@
         "total_time_cycles": 18354.176,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 7704.576,
+        "inter_comm_time_cycles": 7704.576,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 18.354176,
         "partitioning": [
           2,
@@ -14033,6 +14325,8 @@
         "total_time_cycles": 18354.176,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 7704.576,
+        "inter_comm_time_cycles": 7704.576,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 18.354176,
         "partitioning": [
           2,
@@ -14111,6 +14405,8 @@
         "total_time_cycles": 19767.296000000002,
         "compute_time_cycles": 10649.6,
         "comm_time_cycles": 9117.696,
+        "inter_comm_time_cycles": 9117.696,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.767296,
         "partitioning": [
           2,
@@ -14189,6 +14485,8 @@
         "total_time_cycles": 4740.785734424489,
         "compute_time_cycles": 2439.6250233426704,
         "comm_time_cycles": 2301.1607110818186,
+        "inter_comm_time_cycles": 2301.1607110818186,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 4.740785734424489,
         "partitioning": [
           15,
@@ -14477,8 +14775,10 @@
           "total_time_cycles": 4487.550291215719,
           "compute_time_cycles": 2432.8731393701646,
           "comm_time_cycles": 2054.6771518455544,
+          "inter_comm_time_cycles": 2054.6771518455544,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.487550291215719,
-          "solve_time_s": 0.4736306667327881,
+          "solve_time_s": 0.30571961402893066,
           "partitioning": [
             15,
             23,
@@ -14939,8 +15239,10 @@
           "total_time_cycles": 4498.9524783432635,
           "compute_time_cycles": 2379.235044132069,
           "comm_time_cycles": 2119.7174342111944,
+          "inter_comm_time_cycles": 2119.7174342111944,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.498952478343264,
-          "solve_time_s": 0.4711952209472656,
+          "solve_time_s": 0.3119618892669678,
           "partitioning": [
             14,
             23,
@@ -15401,8 +15703,10 @@
           "total_time_cycles": 4518.176389211392,
           "compute_time_cycles": 2448.185919343814,
           "comm_time_cycles": 2069.9904698675787,
+          "inter_comm_time_cycles": 2069.9904698675787,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.518176389211392,
-          "solve_time_s": 0.44460177421569824,
+          "solve_time_s": 0.296525239944458,
           "partitioning": [
             16,
             22,
@@ -15865,8 +16169,10 @@
           "total_time_cycles": 4845.258231568055,
           "compute_time_cycles": 2380.186363344258,
           "comm_time_cycles": 2465.0718682237966,
+          "inter_comm_time_cycles": 2465.0718682237966,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.845258231568055,
-          "solve_time_s": 0.04278731346130371,
+          "solve_time_s": 0.030833721160888672,
           "partitioning": [
             13,
             19,
@@ -16387,8 +16693,10 @@
           "total_time_cycles": 4815.253335357282,
           "compute_time_cycles": 2411.223352498894,
           "comm_time_cycles": 2404.029982858387,
+          "inter_comm_time_cycles": 2404.029982858387,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.815253335357282,
-          "solve_time_s": 0.037667036056518555,
+          "solve_time_s": 0.02825474739074707,
           "partitioning": [
             14,
             19,
@@ -16909,8 +17217,10 @@
           "total_time_cycles": 4877.274778120471,
           "compute_time_cycles": 2411.223352498894,
           "comm_time_cycles": 2466.0514256215765,
+          "inter_comm_time_cycles": 2466.0514256215765,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.877274778120471,
-          "solve_time_s": 0.04378843307495117,
+          "solve_time_s": 0.027410507202148438,
           "partitioning": [
             14,
             19,
@@ -17433,8 +17743,10 @@
           "total_time_cycles": 4531.842386761868,
           "compute_time_cycles": 2306.8813852813855,
           "comm_time_cycles": 2224.961001480482,
+          "inter_comm_time_cycles": 2224.961001480482,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.531842386761868,
-          "solve_time_s": 1.9395205974578857,
+          "solve_time_s": 1.2569386959075928,
           "partitioning": [
             11,
             21,
@@ -17718,6 +18030,8 @@
         "total_time_cycles": 25406.577777777777,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 11116.08888888889,
+        "inter_comm_time_cycles": 11116.08888888889,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 25.406577777777777,
         "partitioning": [
           2,
@@ -17835,6 +18149,8 @@
         "total_time_cycles": 21969.983209876544,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 7679.494320987655,
+        "inter_comm_time_cycles": 7679.494320987655,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 21.969983209876542,
         "partitioning": [
           2,
@@ -17952,6 +18268,8 @@
         "total_time_cycles": 21969.983209876544,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 7679.494320987655,
+        "inter_comm_time_cycles": 7679.494320987655,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 21.969983209876542,
         "partitioning": [
           2,
@@ -18069,6 +18387,8 @@
         "total_time_cycles": 21969.983209876544,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 7679.494320987655,
+        "inter_comm_time_cycles": 7679.494320987655,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 21.969983209876542,
         "partitioning": [
           2,
@@ -18186,6 +18506,8 @@
         "total_time_cycles": 14095.383219954649,
         "compute_time_cycles": 8962.438095238094,
         "comm_time_cycles": 5132.945124716553,
+        "inter_comm_time_cycles": 5132.945124716553,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 14.095383219954648,
         "partitioning": [
           5,
@@ -18365,8 +18687,10 @@
           "total_time_cycles": 14077.758496113473,
           "compute_time_cycles": 9187.924963924963,
           "comm_time_cycles": 4889.83353218851,
+          "inter_comm_time_cycles": 4889.83353218851,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 14.077758496113473,
-          "solve_time_s": 0.22572731971740723,
+          "solve_time_s": 0.1529695987701416,
           "partitioning": [
             6,
             9,
@@ -18718,8 +19042,10 @@
           "total_time_cycles": 14088.689359061653,
           "compute_time_cycles": 9187.924963924963,
           "comm_time_cycles": 4900.764395136689,
+          "inter_comm_time_cycles": 4900.764395136689,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 14.088689359061652,
-          "solve_time_s": 0.20931005477905273,
+          "solve_time_s": 0.15613627433776855,
           "partitioning": [
             6,
             9,
@@ -19071,8 +19397,10 @@
           "total_time_cycles": 14058.605938169574,
           "compute_time_cycles": 9031.886868686868,
           "comm_time_cycles": 5026.719069482706,
+          "inter_comm_time_cycles": 5026.719069482706,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 14.058605938169574,
-          "solve_time_s": 0.21490764617919922,
+          "solve_time_s": 0.15145516395568848,
           "partitioning": [
             5,
             9,
@@ -19426,8 +19754,10 @@
           "total_time_cycles": 14671.883636363636,
           "compute_time_cycles": 8918.10909090909,
           "comm_time_cycles": 5753.774545454546,
+          "inter_comm_time_cycles": 5753.774545454546,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 14.671883636363637,
-          "solve_time_s": 0.030660629272460938,
+          "solve_time_s": 0.012757301330566406,
           "partitioning": [
             5,
             8,
@@ -19839,8 +20169,10 @@
           "total_time_cycles": 14513.798095238095,
           "compute_time_cycles": 8962.438095238094,
           "comm_time_cycles": 5551.360000000001,
+          "inter_comm_time_cycles": 5551.360000000001,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 14.513798095238094,
-          "solve_time_s": 0.0143890380859375,
+          "solve_time_s": 0.011890172958374023,
           "partitioning": [
             5,
             8,
@@ -20252,8 +20584,10 @@
           "total_time_cycles": 14271.178594104307,
           "compute_time_cycles": 8962.438095238094,
           "comm_time_cycles": 5308.740498866213,
+          "inter_comm_time_cycles": 5308.740498866213,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 14.271178594104308,
-          "solve_time_s": 0.015698671340942383,
+          "solve_time_s": 0.011796951293945312,
           "partitioning": [
             5,
             8,
@@ -20667,8 +21001,10 @@
           "total_time_cycles": 13946.666666666666,
           "compute_time_cycles": 8874.666666666666,
           "comm_time_cycles": 5072.0,
+          "inter_comm_time_cycles": 5072.0,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.946666666666665,
-          "solve_time_s": 0.16017794609069824,
+          "solve_time_s": 0.09005475044250488,
           "partitioning": [
             4,
             8,
@@ -20843,6 +21179,8 @@
         "total_time_cycles": 29356.94222222222,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 15066.453333333333,
+        "inter_comm_time_cycles": 15066.453333333333,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 29.35694222222222,
         "partitioning": [
           2,
@@ -20960,6 +21298,8 @@
         "total_time_cycles": 23717.60987654321,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 9427.120987654322,
+        "inter_comm_time_cycles": 9427.120987654322,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 23.71760987654321,
         "partitioning": [
           2,
@@ -21077,6 +21417,8 @@
         "total_time_cycles": 23717.60987654321,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 9427.120987654322,
+        "inter_comm_time_cycles": 9427.120987654322,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 23.71760987654321,
         "partitioning": [
           2,
@@ -21194,6 +21536,8 @@
         "total_time_cycles": 24301.921975308644,
         "compute_time_cycles": 14290.488888888889,
         "comm_time_cycles": 10011.433086419753,
+        "inter_comm_time_cycles": 10011.433086419753,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 24.301921975308645,
         "partitioning": [
           2,
@@ -21311,6 +21655,8 @@
         "total_time_cycles": 9144.310516787398,
         "compute_time_cycles": 5230.1084327437275,
         "comm_time_cycles": 3914.20208404367,
+        "inter_comm_time_cycles": 3914.20208404367,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 9.144310516787398,
         "partitioning": [
           11,
@@ -21602,8 +21948,10 @@
           "total_time_cycles": 9034.822732374247,
           "compute_time_cycles": 5287.563636363636,
           "comm_time_cycles": 3747.2590960106113,
+          "inter_comm_time_cycles": 3747.2590960106113,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.034822732374247,
-          "solve_time_s": 0.42663073539733887,
+          "solve_time_s": 0.27266812324523926,
           "partitioning": [
             11,
             18,
@@ -22067,8 +22415,10 @@
           "total_time_cycles": 8976.371271378022,
           "compute_time_cycles": 5177.503977137414,
           "comm_time_cycles": 3798.867294240608,
+          "inter_comm_time_cycles": 3798.867294240608,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.976371271378023,
-          "solve_time_s": 0.42340731620788574,
+          "solve_time_s": 0.28082799911499023,
           "partitioning": [
             10,
             17,
@@ -22532,8 +22882,10 @@
           "total_time_cycles": 9019.76613714738,
           "compute_time_cycles": 5225.7363408521305,
           "comm_time_cycles": 3794.0297962952495,
+          "inter_comm_time_cycles": 3794.0297962952495,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.01976613714738,
-          "solve_time_s": 0.4170684814453125,
+          "solve_time_s": 0.28656959533691406,
           "partitioning": [
             12,
             14,
@@ -22999,8 +23351,10 @@
           "total_time_cycles": 9733.55004241451,
           "compute_time_cycles": 5115.748962148962,
           "comm_time_cycles": 4617.801080265549,
+          "inter_comm_time_cycles": 4617.801080265549,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.73355004241451,
-          "solve_time_s": 0.03852534294128418,
+          "solve_time_s": 0.02745819091796875,
           "partitioning": [
             9,
             14,
@@ -23524,8 +23878,10 @@
           "total_time_cycles": 9566.750467603215,
           "compute_time_cycles": 5115.748962148962,
           "comm_time_cycles": 4451.001505454253,
+          "inter_comm_time_cycles": 4451.001505454253,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.566750467603216,
-          "solve_time_s": 0.04257035255432129,
+          "solve_time_s": 0.027186870574951172,
           "partitioning": [
             9,
             13,
@@ -24049,8 +24405,10 @@
           "total_time_cycles": 9619.844535028125,
           "compute_time_cycles": 5069.237606837607,
           "comm_time_cycles": 4550.606928190518,
+          "inter_comm_time_cycles": 4550.606928190518,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.619844535028125,
-          "solve_time_s": 0.04758882522583008,
+          "solve_time_s": 0.028405427932739258,
           "partitioning": [
             9,
             13,
@@ -24576,8 +24934,10 @@
           "total_time_cycles": 8771.012789115644,
           "compute_time_cycles": 5012.723809523809,
           "comm_time_cycles": 3758.2889795918363,
+          "inter_comm_time_cycles": 3758.2889795918363,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.771012789115645,
-          "solve_time_s": 1.4689455032348633,
+          "solve_time_s": 0.8977782726287842,
           "partitioning": [
             7,
             15,
@@ -24864,6 +25224,8 @@
         "total_time_cycles": 19418.074074074073,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 9860.74074074074,
+        "inter_comm_time_cycles": 9860.74074074074,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.418074074074074,
         "partitioning": [
           1,
@@ -24918,6 +25280,8 @@
         "total_time_cycles": 18052.740740740737,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 8495.407407407407,
+        "inter_comm_time_cycles": 8495.407407407407,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 18.052740740740738,
         "partitioning": [
           1,
@@ -24972,6 +25336,8 @@
         "total_time_cycles": 18052.740740740737,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 8495.407407407407,
+        "inter_comm_time_cycles": 8495.407407407407,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 18.052740740740738,
         "partitioning": [
           1,
@@ -25026,6 +25392,8 @@
         "total_time_cycles": 18811.259259259255,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 9253.925925925925,
+        "inter_comm_time_cycles": 9253.925925925925,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 18.811259259259256,
         "partitioning": [
           1,
@@ -25080,6 +25448,8 @@
         "total_time_cycles": 9266.062222222223,
         "compute_time_cycles": 4642.133333333333,
         "comm_time_cycles": 4623.928888888889,
+        "inter_comm_time_cycles": 4623.928888888889,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 9.266062222222223,
         "partitioning": [
           3,
@@ -25167,11 +25537,13 @@
       "ILP": [
         {
           "run": 0,
-          "total_time_cycles": 9080.376888888888,
+          "total_time_cycles": 8992.995555555555,
           "compute_time_cycles": 4642.133333333333,
-          "comm_time_cycles": 4438.243555555556,
-          "total_time_us": 9.080376888888889,
-          "solve_time_s": 30.057746648788452,
+          "comm_time_cycles": 4350.862222222222,
+          "inter_comm_time_cycles": 4350.862222222222,
+          "intra_comm_time_cycles": 0.0,
+          "total_time_us": 8.992995555555556,
+          "solve_time_s": 59.96909689903259,
           "partitioning": [
             3,
             5,
@@ -25181,73 +25553,73 @@
           "placement": [
             [
               [
-                0,
-                0
-              ],
-              [
-                2,
+                3,
                 0
               ],
               [
                 3,
-                0
-              ]
-            ],
-            [
-              [
-                0,
                 2
-              ],
-              [
-                1,
-                0
-              ],
-              [
-                1,
-                2
-              ],
-              [
-                2,
-                1
               ],
               [
                 3,
-                1
+                3
               ]
             ],
             [
-              [
-                0,
-                1
-              ],
-              [
-                1,
-                1
-              ],
               [
                 1,
                 3
               ],
               [
                 2,
+                0
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                2,
                 2
               ],
               [
                 3,
-                2
+                1
               ]
             ],
             [
               [
                 0,
-                3
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
               ],
               [
                 2,
                 3
+              ]
+            ],
+            [
+              [
+                0,
+                0
               ],
               [
-                3,
+                0,
+                2
+              ],
+              [
+                0,
                 3
               ]
             ]
@@ -25261,8 +25633,10 @@
           "total_time_cycles": 8718.222222222223,
           "compute_time_cycles": 4949.333333333333,
           "comm_time_cycles": 3768.8888888888887,
+          "inter_comm_time_cycles": 3768.8888888888887,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.718222222222222,
-          "solve_time_s": 0.13106298446655273,
+          "solve_time_s": 0.11015534400939941,
           "partitioning": [
             4,
             6,
@@ -25531,8 +25905,10 @@
           "total_time_cycles": 8703.24148148148,
           "compute_time_cycles": 4710.4,
           "comm_time_cycles": 3992.8414814814814,
+          "inter_comm_time_cycles": 3992.8414814814814,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.70324148148148,
-          "solve_time_s": 0.127272367477417,
+          "solve_time_s": 0.11005878448486328,
           "partitioning": [
             3,
             6,
@@ -25801,8 +26177,10 @@
           "total_time_cycles": 8754.82074074074,
           "compute_time_cycles": 4710.4,
           "comm_time_cycles": 4044.4207407407407,
+          "inter_comm_time_cycles": 4044.4207407407407,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.75482074074074,
-          "solve_time_s": 0.11877202987670898,
+          "solve_time_s": 0.10546278953552246,
           "partitioning": [
             3,
             6,
@@ -26073,8 +26451,10 @@
           "total_time_cycles": 9196.885333333332,
           "compute_time_cycles": 4642.133333333333,
           "comm_time_cycles": 4554.7519999999995,
+          "inter_comm_time_cycles": 4554.7519999999995,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.196885333333332,
-          "solve_time_s": 0.007374286651611328,
+          "solve_time_s": 0.0062596797943115234,
           "partitioning": [
             3,
             5,
@@ -26403,8 +26783,10 @@
           "total_time_cycles": 9149.553777777777,
           "compute_time_cycles": 4642.133333333333,
           "comm_time_cycles": 4507.420444444444,
+          "inter_comm_time_cycles": 4507.420444444444,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.149553777777777,
-          "solve_time_s": 0.0019478797912597656,
+          "solve_time_s": 0.0067598819732666016,
           "partitioning": [
             3,
             5,
@@ -26733,8 +27115,10 @@
           "total_time_cycles": 9156.835555555555,
           "compute_time_cycles": 4642.133333333333,
           "comm_time_cycles": 4514.702222222222,
+          "inter_comm_time_cycles": 4514.702222222222,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.156835555555556,
-          "solve_time_s": 0.0,
+          "solve_time_s": 0.005685329437255859,
           "partitioning": [
             3,
             5,
@@ -27065,8 +27449,10 @@
           "total_time_cycles": 8934.741333333333,
           "compute_time_cycles": 4642.133333333333,
           "comm_time_cycles": 4292.608,
+          "inter_comm_time_cycles": 4292.608,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.934741333333333,
-          "solve_time_s": 0.014849424362182617,
+          "solve_time_s": 0.008940696716308594,
           "partitioning": [
             3,
             5,
@@ -27158,6 +27544,8 @@
         "total_time_cycles": 27761.777777777777,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 18204.444444444445,
+        "inter_comm_time_cycles": 18204.444444444445,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 27.761777777777777,
         "partitioning": [
           1,
@@ -27212,6 +27600,8 @@
         "total_time_cycles": 19569.777777777777,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 10012.444444444445,
+        "inter_comm_time_cycles": 10012.444444444445,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.569777777777777,
         "partitioning": [
           1,
@@ -27266,6 +27656,8 @@
         "total_time_cycles": 19569.777777777777,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 10012.444444444445,
+        "inter_comm_time_cycles": 10012.444444444445,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.569777777777777,
         "partitioning": [
           1,
@@ -27320,6 +27712,8 @@
         "total_time_cycles": 22907.25925925926,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 13349.925925925927,
+        "inter_comm_time_cycles": 13349.925925925927,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 22.90725925925926,
         "partitioning": [
           1,
@@ -27374,6 +27768,8 @@
         "total_time_cycles": 5240.832,
         "compute_time_cycles": 2150.4,
         "comm_time_cycles": 3090.432,
+        "inter_comm_time_cycles": 3090.432,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 5.240832,
         "partitioning": [
           8,
@@ -27550,8 +27946,10 @@
           "total_time_cycles": 4859.1960493827155,
           "compute_time_cycles": 2224.3555555555554,
           "comm_time_cycles": 2634.8404938271606,
+          "inter_comm_time_cycles": 2634.8404938271606,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.8591960493827155,
-          "solve_time_s": 0.2377636432647705,
+          "solve_time_s": 0.1787416934967041,
           "partitioning": [
             8,
             15,
@@ -27900,8 +28298,10 @@
           "total_time_cycles": 4809.36860670194,
           "compute_time_cycles": 2234.9206349206347,
           "comm_time_cycles": 2574.447971781305,
+          "inter_comm_time_cycles": 2574.447971781305,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.809368606701939,
-          "solve_time_s": 0.226334810256958,
+          "solve_time_s": 0.18141531944274902,
           "partitioning": [
             9,
             14,
@@ -28250,8 +28650,10 @@
           "total_time_cycles": 4842.21387755102,
           "compute_time_cycles": 2172.342857142857,
           "comm_time_cycles": 2669.871020408163,
+          "inter_comm_time_cycles": 2669.871020408163,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.84221387755102,
-          "solve_time_s": 0.22573280334472656,
+          "solve_time_s": 0.1876051425933838,
           "partitioning": [
             8,
             14,
@@ -28602,8 +29004,10 @@
           "total_time_cycles": 5157.949186586731,
           "compute_time_cycles": 2074.597402597403,
           "comm_time_cycles": 3083.3517839893284,
+          "inter_comm_time_cycles": 3083.3517839893284,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 5.157949186586731,
-          "solve_time_s": 0.01701045036315918,
+          "solve_time_s": 0.012560367584228516,
           "partitioning": [
             7,
             11,
@@ -29012,8 +29416,10 @@
           "total_time_cycles": 5347.84,
           "compute_time_cycles": 2150.4,
           "comm_time_cycles": 3197.44,
+          "inter_comm_time_cycles": 3197.44,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 5.34784,
-          "solve_time_s": 0.01470327377319336,
+          "solve_time_s": 0.0132293701171875,
           "partitioning": [
             8,
             10,
@@ -29422,8 +29828,10 @@
           "total_time_cycles": 5295.128352167313,
           "compute_time_cycles": 2112.4987012987012,
           "comm_time_cycles": 3182.629650868612,
+          "inter_comm_time_cycles": 3182.629650868612,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 5.295128352167313,
-          "solve_time_s": 0.019932270050048828,
+          "solve_time_s": 0.012846708297729492,
           "partitioning": [
             7,
             11,
@@ -29834,8 +30242,10 @@
           "total_time_cycles": 4951.771428571428,
           "compute_time_cycles": 2172.342857142857,
           "comm_time_cycles": 2779.4285714285716,
+          "inter_comm_time_cycles": 2779.4285714285716,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 4.951771428571428,
-          "solve_time_s": 0.1526472568511963,
+          "solve_time_s": 0.10125517845153809,
           "partitioning": [
             8,
             14,
@@ -30007,6 +30417,8 @@
         "total_time_cycles": 29127.111111111113,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 19569.77777777778,
+        "inter_comm_time_cycles": 19569.77777777778,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 29.127111111111113,
         "partitioning": [
           1,
@@ -30061,6 +30473,8 @@
         "total_time_cycles": 19114.666666666664,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 9557.333333333334,
+        "inter_comm_time_cycles": 9557.333333333334,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.114666666666665,
         "partitioning": [
           1,
@@ -30115,6 +30529,8 @@
         "total_time_cycles": 19114.666666666664,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 9557.333333333334,
+        "inter_comm_time_cycles": 9557.333333333334,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.114666666666665,
         "partitioning": [
           1,
@@ -30169,6 +30585,8 @@
         "total_time_cycles": 19114.666666666664,
         "compute_time_cycles": 9557.333333333332,
         "comm_time_cycles": 9557.333333333334,
+        "inter_comm_time_cycles": 9557.333333333334,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.114666666666665,
         "partitioning": [
           1,
@@ -30223,6 +30641,8 @@
         "total_time_cycles": 3597.8733392134245,
         "compute_time_cycles": 1236.8313725490195,
         "comm_time_cycles": 2361.0419666644048,
+        "inter_comm_time_cycles": 2361.0419666644048,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3.5978733392134243,
         "partitioning": [
           15,
@@ -30511,8 +30931,10 @@
           "total_time_cycles": 3212.618693062481,
           "compute_time_cycles": 1391.2028070175438,
           "comm_time_cycles": 1821.415886044937,
+          "inter_comm_time_cycles": 1821.415886044937,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 3.2126186930624807,
-          "solve_time_s": 0.47231602668762207,
+          "solve_time_s": 0.35532498359680176,
           "partitioning": [
             19,
             25,
@@ -30973,8 +31395,10 @@
           "total_time_cycles": 3290.016480859895,
           "compute_time_cycles": 1256.6651411136536,
           "comm_time_cycles": 2033.3513397462416,
+          "inter_comm_time_cycles": 2033.3513397462416,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 3.290016480859895,
-          "solve_time_s": 0.45496630668640137,
+          "solve_time_s": 0.36637282371520996,
           "partitioning": [
             16,
             23,
@@ -31435,8 +31859,10 @@
           "total_time_cycles": 3299.074379250193,
           "compute_time_cycles": 1312.0342245989305,
           "comm_time_cycles": 1987.0401546512626,
+          "inter_comm_time_cycles": 1987.0401546512626,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 3.299074379250193,
-          "solve_time_s": 0.45679712295532227,
+          "solve_time_s": 0.3397347927093506,
           "partitioning": [
             17,
             22,
@@ -31899,8 +32325,10 @@
           "total_time_cycles": 3735.1617559732686,
           "compute_time_cycles": 1219.8125116713352,
           "comm_time_cycles": 2515.349244301933,
+          "inter_comm_time_cycles": 2515.349244301933,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 3.7351617559732686,
-          "solve_time_s": 0.04375100135803223,
+          "solve_time_s": 0.031598567962646484,
           "partitioning": [
             14,
             17,
@@ -32421,8 +32849,10 @@
           "total_time_cycles": 3697.459829707656,
           "compute_time_cycles": 1207.1120425498134,
           "comm_time_cycles": 2490.3477871578425,
+          "inter_comm_time_cycles": 2490.3477871578425,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 3.6974598297076557,
-          "solve_time_s": 0.04495096206665039,
+          "solve_time_s": 0.03210115432739258,
           "partitioning": [
             13,
             19,
@@ -32943,8 +33373,10 @@
           "total_time_cycles": 3672.1374778285017,
           "compute_time_cycles": 1238.0504201680671,
           "comm_time_cycles": 2434.0870576604343,
+          "inter_comm_time_cycles": 2434.0870576604343,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 3.672137477828502,
-          "solve_time_s": 0.04017448425292969,
+          "solve_time_s": 0.030353307723999023,
           "partitioning": [
             16,
             17,
@@ -33467,8 +33899,10 @@
           "total_time_cycles": 3326.5796243938103,
           "compute_time_cycles": 1175.997335997336,
           "comm_time_cycles": 2150.5822883964743,
+          "inter_comm_time_cycles": 2150.5822883964743,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 3.32657962439381,
-          "solve_time_s": 1.9359831809997559,
+          "solve_time_s": 1.3441715240478516,
           "partitioning": [
             13,
             22,
@@ -33752,6 +34186,8 @@
         "total_time_cycles": 35840.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 23552.0,
+        "inter_comm_time_cycles": 23552.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 35.84,
         "partitioning": [
           1,
@@ -33846,6 +34282,8 @@
         "total_time_cycles": 24064.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 11776.0,
+        "inter_comm_time_cycles": 11776.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 24.064,
         "partitioning": [
           1,
@@ -33940,6 +34378,8 @@
         "total_time_cycles": 24064.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 11776.0,
+        "inter_comm_time_cycles": 11776.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 24.064,
         "partitioning": [
           1,
@@ -34034,6 +34474,8 @@
         "total_time_cycles": 24064.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 11776.0,
+        "inter_comm_time_cycles": 11776.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 24.064,
         "partitioning": [
           1,
@@ -34128,6 +34570,8 @@
         "total_time_cycles": 22144.0,
         "compute_time_cycles": 11264.0,
         "comm_time_cycles": 10880.0,
+        "inter_comm_time_cycles": 10880.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 22.144,
         "partitioning": [
           2,
@@ -34242,8 +34686,10 @@
           "total_time_cycles": 18048.0,
           "compute_time_cycles": 8192.0,
           "comm_time_cycles": 9856.0,
+          "inter_comm_time_cycles": 9856.0,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 18.048,
-          "solve_time_s": 28.727606058120728,
+          "solve_time_s": 58.89832925796509,
           "partitioning": [
             1,
             1,
@@ -34262,10 +34708,76 @@
             [
               [
                 3,
+                0
+              ]
+            ],
+            [
+              [
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                2,
                 1
               ]
             ],
             [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              [
+                1,
+                3
+              ]
+            ],
+            [
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              [
+                2,
+                2
+              ],
               [
                 3,
                 3
@@ -34273,78 +34785,12 @@
             ],
             [
               [
-                2,
-                3
-              ]
-            ],
-            [
-              [
-                1,
-                3
-              ]
-            ],
-            [
-              [
-                0,
-                3
-              ],
-              [
-                1,
-                2
-              ]
-            ],
-            [
-              [
-                0,
+                3,
                 1
               ],
-              [
-                0,
-                2
-              ]
-            ],
-            [
-              [
-                2,
-                2
-              ]
-            ],
-            [
               [
                 3,
                 2
-              ]
-            ],
-            [
-              [
-                3,
-                0
-              ]
-            ],
-            [
-              [
-                0,
-                0
-              ]
-            ],
-            [
-              [
-                1,
-                0
-              ],
-              [
-                2,
-                1
-              ]
-            ],
-            [
-              [
-                1,
-                1
-              ],
-              [
-                2,
-                0
               ]
             ]
           ],
@@ -34357,8 +34803,10 @@
           "total_time_cycles": 20864.0,
           "compute_time_cycles": 11264.0,
           "comm_time_cycles": 9600.0,
+          "inter_comm_time_cycles": 9600.0,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 20.864,
-          "solve_time_s": 0.13056230545043945,
+          "solve_time_s": 0.11133313179016113,
           "partitioning": [
             2,
             2,
@@ -34651,8 +35099,10 @@
           "total_time_cycles": 19840.0,
           "compute_time_cycles": 10496.0,
           "comm_time_cycles": 9344.0,
+          "inter_comm_time_cycles": 9344.0,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 19.84,
-          "solve_time_s": 0.14512372016906738,
+          "solve_time_s": 0.11127805709838867,
           "partitioning": [
             1,
             1,
@@ -34945,8 +35395,10 @@
           "total_time_cycles": 20323.555555555555,
           "compute_time_cycles": 10410.666666666666,
           "comm_time_cycles": 9912.888888888889,
+          "inter_comm_time_cycles": 9912.888888888889,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 20.323555555555554,
-          "solve_time_s": 0.1412830352783203,
+          "solve_time_s": 0.10971641540527344,
           "partitioning": [
             2,
             1,
@@ -35241,8 +35693,10 @@
           "total_time_cycles": 19328.0,
           "compute_time_cycles": 9728.0,
           "comm_time_cycles": 9600.0,
+          "inter_comm_time_cycles": 9600.0,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 19.328,
-          "solve_time_s": 0.0010027885437011719,
+          "solve_time_s": 0.0072841644287109375,
           "partitioning": [
             2,
             1,
@@ -35595,8 +36049,10 @@
           "total_time_cycles": 19825.777777777777,
           "compute_time_cycles": 10410.666666666666,
           "comm_time_cycles": 9415.111111111111,
+          "inter_comm_time_cycles": 9415.111111111111,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 19.825777777777777,
-          "solve_time_s": 0.016724824905395508,
+          "solve_time_s": 0.0073621273040771484,
           "partitioning": [
             1,
             1,
@@ -35949,8 +36405,10 @@
           "total_time_cycles": 19072.0,
           "compute_time_cycles": 8192.0,
           "comm_time_cycles": 10880.0,
+          "inter_comm_time_cycles": 10880.0,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 19.072,
-          "solve_time_s": 0.0,
+          "solve_time_s": 0.007333040237426758,
           "partitioning": [
             1,
             1,
@@ -36305,8 +36763,10 @@
           "total_time_cycles": 16896.0,
           "compute_time_cycles": 8192.0,
           "comm_time_cycles": 8704.0,
+          "inter_comm_time_cycles": 8704.0,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 16.896,
-          "solve_time_s": 0.0314183235168457,
+          "solve_time_s": 0.015458822250366211,
           "partitioning": [
             1,
             1,
@@ -36422,6 +36882,8 @@
         "total_time_cycles": 54272.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 41984.0,
+        "inter_comm_time_cycles": 41984.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 54.272,
         "partitioning": [
           1,
@@ -36516,6 +36978,8 @@
         "total_time_cycles": 23552.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 11264.0,
+        "inter_comm_time_cycles": 11264.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 23.552,
         "partitioning": [
           1,
@@ -36610,6 +37074,8 @@
         "total_time_cycles": 23552.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 11264.0,
+        "inter_comm_time_cycles": 11264.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 23.552,
         "partitioning": [
           1,
@@ -36704,6 +37170,8 @@
         "total_time_cycles": 40960.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 28672.0,
+        "inter_comm_time_cycles": 28672.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 40.96,
         "partitioning": [
           1,
@@ -36798,6 +37266,8 @@
         "total_time_cycles": 13653.333333333334,
         "compute_time_cycles": 4096.0,
         "comm_time_cycles": 9557.333333333334,
+        "inter_comm_time_cycles": 9557.333333333334,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 13.653333333333334,
         "partitioning": [
           3,
@@ -36998,8 +37468,10 @@
           "total_time_cycles": 11976.296296296296,
           "compute_time_cycles": 4394.666666666666,
           "comm_time_cycles": 7581.62962962963,
+          "inter_comm_time_cycles": 7581.62962962963,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 11.976296296296296,
-          "solve_time_s": 0.19964003562927246,
+          "solve_time_s": 0.13548684120178223,
           "partitioning": [
             3,
             3,
@@ -37372,8 +37844,10 @@
           "total_time_cycles": 11448.888888888889,
           "compute_time_cycles": 4309.333333333333,
           "comm_time_cycles": 7139.555555555556,
+          "inter_comm_time_cycles": 7139.555555555556,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 11.448888888888888,
-          "solve_time_s": 0.1915445327758789,
+          "solve_time_s": 0.14118576049804688,
           "partitioning": [
             3,
             3,
@@ -37746,8 +38220,10 @@
           "total_time_cycles": 11842.962962962964,
           "compute_time_cycles": 4181.333333333333,
           "comm_time_cycles": 7661.62962962963,
+          "inter_comm_time_cycles": 7661.62962962963,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 11.842962962962963,
-          "solve_time_s": 0.1958026885986328,
+          "solve_time_s": 0.14998793601989746,
           "partitioning": [
             2,
             3,
@@ -38122,8 +38598,10 @@
           "total_time_cycles": 12483.555555555555,
           "compute_time_cycles": 3882.6666666666665,
           "comm_time_cycles": 8600.888888888889,
+          "inter_comm_time_cycles": 8600.888888888889,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 12.483555555555554,
-          "solve_time_s": 0.016938447952270508,
+          "solve_time_s": 0.011441707611083984,
           "partitioning": [
             3,
             2,
@@ -38556,8 +39034,10 @@
           "total_time_cycles": 13179.25925925926,
           "compute_time_cycles": 4096.0,
           "comm_time_cycles": 9083.25925925926,
+          "inter_comm_time_cycles": 9083.25925925926,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.17925925925926,
-          "solve_time_s": 0.015649795532226562,
+          "solve_time_s": 0.011260986328125,
           "partitioning": [
             3,
             3,
@@ -38990,8 +39470,10 @@
           "total_time_cycles": 13368.888888888889,
           "compute_time_cycles": 4096.0,
           "comm_time_cycles": 9272.888888888889,
+          "inter_comm_time_cycles": 9272.888888888889,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 13.368888888888888,
-          "solve_time_s": 0.01650404930114746,
+          "solve_time_s": 0.012345552444458008,
           "partitioning": [
             3,
             3,
@@ -39426,8 +39908,10 @@
           "total_time_cycles": 9319.196444444444,
           "compute_time_cycles": 3720.5333333333333,
           "comm_time_cycles": 5598.663111111111,
+          "inter_comm_time_cycles": 5598.663111111111,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.319196444444444,
-          "solve_time_s": 0.2605299949645996,
+          "solve_time_s": 0.17417550086975098,
           "partitioning": [
             2,
             2,
@@ -39623,6 +40107,8 @@
         "total_time_cycles": 65536.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 53248.0,
+        "inter_comm_time_cycles": 53248.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 65.536,
         "partitioning": [
           1,
@@ -39717,6 +40203,8 @@
         "total_time_cycles": 24576.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 12288.0,
+        "inter_comm_time_cycles": 12288.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 24.576,
         "partitioning": [
           1,
@@ -39811,6 +40299,8 @@
         "total_time_cycles": 24576.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 12288.0,
+        "inter_comm_time_cycles": 12288.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 24.576,
         "partitioning": [
           1,
@@ -39905,6 +40395,8 @@
         "total_time_cycles": 51200.0,
         "compute_time_cycles": 12288.0,
         "comm_time_cycles": 38912.0,
+        "inter_comm_time_cycles": 38912.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 51.2,
         "partitioning": [
           1,
@@ -39999,6 +40491,8 @@
         "total_time_cycles": 8189.76237037037,
         "compute_time_cycles": 2389.3333333333335,
         "comm_time_cycles": 5800.429037037036,
+        "inter_comm_time_cycles": 5800.429037037036,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 8.18976237037037,
         "partitioning": [
           6,
@@ -40311,8 +40805,10 @@
           "total_time_cycles": 8858.619017384732,
           "compute_time_cycles": 2494.7809523809524,
           "comm_time_cycles": 6363.83806500378,
+          "inter_comm_time_cycles": 6363.83806500378,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.858619017384731,
-          "solve_time_s": 0.2934894561767578,
+          "solve_time_s": 0.1908266544342041,
           "partitioning": [
             8,
             7,
@@ -40797,8 +41293,10 @@
           "total_time_cycles": 8854.905517762661,
           "compute_time_cycles": 2479.5428571428574,
           "comm_time_cycles": 6375.362660619804,
+          "inter_comm_time_cycles": 6375.362660619804,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.854905517762662,
-          "solve_time_s": 0.2904794216156006,
+          "solve_time_s": 0.1933574676513672,
           "partitioning": [
             6,
             6,
@@ -41283,8 +41781,10 @@
           "total_time_cycles": 8770.487437641723,
           "compute_time_cycles": 2283.2761904761905,
           "comm_time_cycles": 6487.211247165533,
+          "inter_comm_time_cycles": 6487.211247165533,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 8.770487437641723,
-          "solve_time_s": 0.2808716297149658,
+          "solve_time_s": 0.2092578411102295,
           "partitioning": [
             6,
             6,
@@ -41771,8 +42271,10 @@
           "total_time_cycles": 9516.77097505669,
           "compute_time_cycles": 2419.4031746031746,
           "comm_time_cycles": 7097.367800453515,
+          "inter_comm_time_cycles": 7097.367800453515,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.51677097505669,
-          "solve_time_s": 0.03521323204040527,
+          "solve_time_s": 0.021028518676757812,
           "partitioning": [
             4,
             4,
@@ -42317,8 +42819,10 @@
           "total_time_cycles": 9458.365629629629,
           "compute_time_cycles": 2198.7555555555555,
           "comm_time_cycles": 7259.610074074074,
+          "inter_comm_time_cycles": 7259.610074074074,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.458365629629629,
-          "solve_time_s": 0.02106332778930664,
+          "solve_time_s": 0.020260334014892578,
           "partitioning": [
             4,
             5,
@@ -42863,8 +43367,10 @@
           "total_time_cycles": 9372.561124716554,
           "compute_time_cycles": 2355.809523809524,
           "comm_time_cycles": 7016.75160090703,
+          "inter_comm_time_cycles": 7016.75160090703,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 9.372561124716555,
-          "solve_time_s": 0.03392291069030762,
+          "solve_time_s": 0.02204108238220215,
           "partitioning": [
             5,
             5,
@@ -43411,8 +43917,10 @@
           "total_time_cycles": 6353.188571428571,
           "compute_time_cycles": 2090.2603174603173,
           "comm_time_cycles": 4262.928253968254,
+          "inter_comm_time_cycles": 4262.928253968254,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 6.3531885714285705,
-          "solve_time_s": 1.3513448238372803,
+          "solve_time_s": 0.8575427532196045,
           "partitioning": [
             4,
             4,
@@ -43720,6 +44228,8 @@
         "total_time_cycles": 80706.37037037036,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 53399.7037037037,
+        "inter_comm_time_cycles": 53399.7037037037,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 80.70637037037037,
         "partitioning": [
           1,
@@ -43846,6 +44356,8 @@
         "total_time_cycles": 51882.666666666664,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 24576.0,
+        "inter_comm_time_cycles": 24576.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 51.882666666666665,
         "partitioning": [
           1,
@@ -43972,6 +44484,8 @@
         "total_time_cycles": 51882.666666666664,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 24576.0,
+        "inter_comm_time_cycles": 24576.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 51.882666666666665,
         "partitioning": [
           1,
@@ -44098,6 +44612,8 @@
         "total_time_cycles": 51882.666666666664,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 24576.0,
+        "inter_comm_time_cycles": 24576.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 51.882666666666665,
         "partitioning": [
           1,
@@ -44224,6 +44740,8 @@
         "total_time_cycles": 31530.666666666664,
         "compute_time_cycles": 15018.666666666666,
         "comm_time_cycles": 16512.0,
+        "inter_comm_time_cycles": 16512.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 31.530666666666665,
         "partitioning": [
           3,
@@ -44424,8 +44942,10 @@
           "total_time_cycles": 30551.324444444443,
           "compute_time_cycles": 15223.466666666667,
           "comm_time_cycles": 15327.857777777777,
+          "inter_comm_time_cycles": 15327.857777777777,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 30.551324444444443,
-          "solve_time_s": 0.1963801383972168,
+          "solve_time_s": 0.14433622360229492,
           "partitioning": [
             3,
             2,
@@ -44798,8 +45318,10 @@
           "total_time_cycles": 31024.92444444444,
           "compute_time_cycles": 15462.4,
           "comm_time_cycles": 15562.524444444443,
+          "inter_comm_time_cycles": 15562.524444444443,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 31.02492444444444,
-          "solve_time_s": 0.19926214218139648,
+          "solve_time_s": 0.1508636474609375,
           "partitioning": [
             2,
             3,
@@ -45172,8 +45694,10 @@
           "total_time_cycles": 31440.59259259259,
           "compute_time_cycles": 15018.666666666666,
           "comm_time_cycles": 16421.925925925927,
+          "inter_comm_time_cycles": 16421.925925925927,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 31.44059259259259,
-          "solve_time_s": 0.21537137031555176,
+          "solve_time_s": 0.14957332611083984,
           "partitioning": [
             3,
             3,
@@ -45548,8 +46072,10 @@
           "total_time_cycles": 32789.333333333336,
           "compute_time_cycles": 15018.666666666666,
           "comm_time_cycles": 17770.666666666668,
+          "inter_comm_time_cycles": 17770.666666666668,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 32.78933333333334,
-          "solve_time_s": 0.01820850372314453,
+          "solve_time_s": 0.012699604034423828,
           "partitioning": [
             2,
             3,
@@ -45982,8 +46508,10 @@
           "total_time_cycles": 33920.94814814815,
           "compute_time_cycles": 15291.733333333334,
           "comm_time_cycles": 18629.214814814815,
+          "inter_comm_time_cycles": 18629.214814814815,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 33.92094814814815,
-          "solve_time_s": 0.0180208683013916,
+          "solve_time_s": 0.011603355407714844,
           "partitioning": [
             3,
             3,
@@ -46416,8 +46944,10 @@
           "total_time_cycles": 32526.22222222222,
           "compute_time_cycles": 15018.666666666666,
           "comm_time_cycles": 17507.555555555555,
+          "inter_comm_time_cycles": 17507.555555555555,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 32.526222222222216,
-          "solve_time_s": 0.017110586166381836,
+          "solve_time_s": 0.012965917587280273,
           "partitioning": [
             3,
             2,
@@ -46852,8 +47382,10 @@
           "total_time_cycles": 26079.459555555557,
           "compute_time_cycles": 14882.133333333333,
           "comm_time_cycles": 11197.326222222222,
+          "inter_comm_time_cycles": 11197.326222222222,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 26.079459555555555,
-          "solve_time_s": 0.2773885726928711,
+          "solve_time_s": 0.17629098892211914,
           "partitioning": [
             2,
             2,
@@ -47049,6 +47581,8 @@
         "total_time_cycles": 95914.66666666666,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 68608.0,
+        "inter_comm_time_cycles": 68608.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 95.91466666666666,
         "partitioning": [
           1,
@@ -47175,6 +47709,8 @@
         "total_time_cycles": 51427.555555555555,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 24120.88888888889,
+        "inter_comm_time_cycles": 24120.88888888889,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 51.42755555555556,
         "partitioning": [
           1,
@@ -47301,6 +47837,8 @@
         "total_time_cycles": 51427.555555555555,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 24120.88888888889,
+        "inter_comm_time_cycles": 24120.88888888889,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 51.42755555555556,
         "partitioning": [
           1,
@@ -47427,6 +47965,8 @@
         "total_time_cycles": 73500.44444444444,
         "compute_time_cycles": 27306.666666666664,
         "comm_time_cycles": 46193.777777777774,
+        "inter_comm_time_cycles": 46193.777777777774,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 73.50044444444444,
         "partitioning": [
           1,
@@ -47553,6 +48093,8 @@
         "total_time_cycles": 19752.9380516143,
         "compute_time_cycles": 8552.838095238096,
         "comm_time_cycles": 11200.099956376202,
+        "inter_comm_time_cycles": 11200.099956376202,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 19.7529380516143,
         "partitioning": [
           5,
@@ -47865,8 +48407,10 @@
           "total_time_cycles": 22063.138387647123,
           "compute_time_cycles": 8860.038095238095,
           "comm_time_cycles": 13203.100292409026,
+          "inter_comm_time_cycles": 13203.100292409026,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 22.063138387647122,
-          "solve_time_s": 0.2982902526855469,
+          "solve_time_s": 0.21268200874328613,
           "partitioning": [
             5,
             5,
@@ -48351,8 +48895,10 @@
           "total_time_cycles": 21346.910814814815,
           "compute_time_cycles": 8635.733333333334,
           "comm_time_cycles": 12711.177481481482,
+          "inter_comm_time_cycles": 12711.177481481482,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 21.346910814814816,
-          "solve_time_s": 0.29271554946899414,
+          "solve_time_s": 0.20844364166259766,
           "partitioning": [
             6,
             5,
@@ -48837,8 +49383,10 @@
           "total_time_cycles": 22008.342639455783,
           "compute_time_cycles": 8586.971428571429,
           "comm_time_cycles": 13421.371210884354,
+          "inter_comm_time_cycles": 13421.371210884354,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 22.008342639455783,
-          "solve_time_s": 0.2815582752227783,
+          "solve_time_s": 0.2104642391204834,
           "partitioning": [
             6,
             5,
@@ -49325,8 +49873,10 @@
           "total_time_cycles": 23203.282721088435,
           "compute_time_cycles": 8508.952380952382,
           "comm_time_cycles": 14694.330340136054,
+          "inter_comm_time_cycles": 14694.330340136054,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 23.203282721088435,
-          "solve_time_s": 0.03626751899719238,
+          "solve_time_s": 0.021223783493041992,
           "partitioning": [
             4,
             4,
@@ -49871,8 +50421,10 @@
           "total_time_cycles": 23299.134417449517,
           "compute_time_cycles": 8562.590476190477,
           "comm_time_cycles": 14736.543941259042,
+          "inter_comm_time_cycles": 14736.543941259042,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 23.299134417449515,
-          "solve_time_s": 0.0350496768951416,
+          "solve_time_s": 0.02085280418395996,
           "partitioning": [
             3,
             6,
@@ -50417,8 +50969,10 @@
           "total_time_cycles": 22620.101784256556,
           "compute_time_cycles": 8460.190476190475,
           "comm_time_cycles": 14159.911308066083,
+          "inter_comm_time_cycles": 14159.911308066083,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 22.620101784256555,
-          "solve_time_s": 0.028874874114990234,
+          "solve_time_s": 0.02069997787475586,
           "partitioning": [
             5,
             5,
@@ -50965,8 +51519,10 @@
           "total_time_cycles": 16876.811287477954,
           "compute_time_cycles": 8257.015873015873,
           "comm_time_cycles": 8619.795414462082,
+          "inter_comm_time_cycles": 8619.795414462082,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 16.876811287477956,
-          "solve_time_s": 1.3776228427886963,
+          "solve_time_s": 0.8357584476470947,
           "partitioning": [
             4,
             4,
@@ -51274,6 +51830,8 @@
         "total_time_cycles": 1610035.5555555555,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 669923.5555555555,
+        "inter_comm_time_cycles": 669923.5555555555,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1610.0355555555554,
         "partitioning": [
           1,
@@ -51320,6 +51878,8 @@
         "total_time_cycles": 1464400.0,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 524288.0,
+        "inter_comm_time_cycles": 524288.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1464.4,
         "partitioning": [
           1,
@@ -51366,6 +51926,8 @@
         "total_time_cycles": 1464400.0,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 524288.0,
+        "inter_comm_time_cycles": 524288.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1464.4,
         "partitioning": [
           1,
@@ -51412,6 +51974,8 @@
         "total_time_cycles": 1857616.0,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 917504.0,
+        "inter_comm_time_cycles": 917504.0,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1857.616,
         "partitioning": [
           1,
@@ -51458,6 +52022,8 @@
         "total_time_cycles": 561185.4933333334,
         "compute_time_cycles": 303847.4666666667,
         "comm_time_cycles": 257338.02666666667,
+        "inter_comm_time_cycles": 257338.02666666667,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 561.1854933333334,
         "partitioning": [
           4,
@@ -51548,8 +52114,10 @@
           "total_time_cycles": 488186.6666666666,
           "compute_time_cycles": 247888.0,
           "comm_time_cycles": 240298.66666666666,
+          "inter_comm_time_cycles": 240298.66666666666,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 488.1866666666666,
-          "solve_time_s": 30.025091886520386,
+          "solve_time_s": 59.95032572746277,
           "partitioning": [
             3,
             6,
@@ -51559,8 +52127,22 @@
           "placement": [
             [
               [
-                0,
+                1,
                 1
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            [
+              [
+                1,
+                0
               ],
               [
                 1,
@@ -51568,7 +52150,19 @@
               ],
               [
                 2,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
                 0
+              ],
+              [
+                3,
+                1
               ]
             ],
             [
@@ -51578,54 +52172,28 @@
               ],
               [
                 0,
+                1
+              ],
+              [
+                0,
                 2
               ],
               [
                 1,
-                0
-              ],
-              [
-                1,
-                1
+                3
               ],
               [
                 2,
-                1
+                3
               ],
               [
-                2,
-                2
+                3,
+                3
               ]
             ],
             [
               [
                 0,
-                3
-              ],
-              [
-                1,
-                3
-              ],
-              [
-                2,
-                3
-              ],
-              [
-                3,
-                0
-              ],
-              [
-                3,
-                1
-              ],
-              [
-                3,
-                2
-              ]
-            ],
-            [
-              [
-                3,
                 3
               ]
             ]
@@ -51639,8 +52207,10 @@
           "total_time_cycles": 478590.6488888889,
           "compute_time_cycles": 254748.8,
           "comm_time_cycles": 223841.8488888889,
+          "inter_comm_time_cycles": 223841.8488888889,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 478.5906488888889,
-          "solve_time_s": 0.11666154861450195,
+          "solve_time_s": 0.10019826889038086,
           "partitioning": [
             4,
             6,
@@ -51909,8 +52479,10 @@
           "total_time_cycles": 471017.6,
           "compute_time_cycles": 254748.8,
           "comm_time_cycles": 216268.8,
+          "inter_comm_time_cycles": 216268.8,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 471.01759999999996,
-          "solve_time_s": 0.12153959274291992,
+          "solve_time_s": 0.1016077995300293,
           "partitioning": [
             4,
             5,
@@ -52179,8 +52751,10 @@
           "total_time_cycles": 470677.632,
           "compute_time_cycles": 266729.6,
           "comm_time_cycles": 203948.032,
+          "inter_comm_time_cycles": 203948.032,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 470.67763199999996,
-          "solve_time_s": 0.11413764953613281,
+          "solve_time_s": 0.09111905097961426,
           "partitioning": [
             5,
             5,
@@ -52451,8 +53025,10 @@
           "total_time_cycles": 500241.306122449,
           "compute_time_cycles": 270196.5714285714,
           "comm_time_cycles": 230044.73469387754,
+          "inter_comm_time_cycles": 230044.73469387754,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 500.241306122449,
-          "solve_time_s": 0.01591801643371582,
+          "solve_time_s": 0.0052182674407958984,
           "partitioning": [
             4,
             4,
@@ -52781,8 +53357,10 @@
           "total_time_cycles": 482449.9911111111,
           "compute_time_cycles": 254748.8,
           "comm_time_cycles": 227701.1911111111,
+          "inter_comm_time_cycles": 227701.1911111111,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 482.4499911111111,
-          "solve_time_s": 0.0,
+          "solve_time_s": 0.005457878112792969,
           "partitioning": [
             4,
             5,
@@ -53111,8 +53689,10 @@
           "total_time_cycles": 487911.32444444444,
           "compute_time_cycles": 254748.8,
           "comm_time_cycles": 233162.52444444445,
+          "inter_comm_time_cycles": 233162.52444444445,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 487.91132444444446,
-          "solve_time_s": 0.00953221321105957,
+          "solve_time_s": 0.00634765625,
           "partitioning": [
             4,
             5,
@@ -53443,8 +54023,10 @@
           "total_time_cycles": 479537.28,
           "compute_time_cycles": 254748.8,
           "comm_time_cycles": 224788.48,
+          "inter_comm_time_cycles": 224788.48,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 479.53728,
-          "solve_time_s": 0.0061187744140625,
+          "solve_time_s": 0.005884408950805664,
           "partitioning": [
             4,
             5,
@@ -53536,6 +54118,8 @@
         "total_time_cycles": 3277562.6666666665,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 2337450.6666666665,
+        "inter_comm_time_cycles": 2337450.6666666665,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 3277.5626666666667,
         "partitioning": [
           1,
@@ -53582,6 +54166,8 @@
         "total_time_cycles": 1508090.6666666665,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 567978.6666666666,
+        "inter_comm_time_cycles": 567978.6666666666,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1508.0906666666665,
         "partitioning": [
           1,
@@ -53628,6 +54214,8 @@
         "total_time_cycles": 1508090.6666666665,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 567978.6666666666,
+        "inter_comm_time_cycles": 567978.6666666666,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1508.0906666666665,
         "partitioning": [
           1,
@@ -53674,6 +54262,8 @@
         "total_time_cycles": 1508090.6666666665,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 567978.6666666666,
+        "inter_comm_time_cycles": 567978.6666666666,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1508.0906666666665,
         "partitioning": [
           1,
@@ -53720,6 +54310,8 @@
         "total_time_cycles": 316974.43698216736,
         "compute_time_cycles": 141595.06666666668,
         "comm_time_cycles": 175379.37031550068,
+        "inter_comm_time_cycles": 175379.37031550068,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 316.97443698216733,
         "partitioning": [
           9,
@@ -53896,8 +54488,10 @@
           "total_time_cycles": 252125.75768573306,
           "compute_time_cycles": 120029.78461538462,
           "comm_time_cycles": 132095.97307034844,
+          "inter_comm_time_cycles": 132095.97307034844,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 252.12575768573305,
-          "solve_time_s": 0.2602500915527344,
+          "solve_time_s": 0.15723037719726562,
           "partitioning": [
             13,
             12,
@@ -54246,8 +54840,10 @@
           "total_time_cycles": 253284.13835322927,
           "compute_time_cycles": 112347.63636363637,
           "comm_time_cycles": 140936.50198959289,
+          "inter_comm_time_cycles": 140936.50198959289,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 253.28413835322928,
-          "solve_time_s": 0.22369384765625,
+          "solve_time_s": 0.153059720993042,
           "partitioning": [
             11,
             12,
@@ -54596,8 +55192,10 @@
           "total_time_cycles": 251308.0722375268,
           "compute_time_cycles": 115652.36363636365,
           "comm_time_cycles": 135655.70860116315,
+          "inter_comm_time_cycles": 135655.70860116315,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 251.3080722375268,
-          "solve_time_s": 0.21088671684265137,
+          "solve_time_s": 0.16312646865844727,
           "partitioning": [
             12,
             12,
@@ -54948,8 +55546,10 @@
           "total_time_cycles": 269544.9173333333,
           "compute_time_cycles": 113744.0,
           "comm_time_cycles": 155800.91733333332,
+          "inter_comm_time_cycles": 155800.91733333332,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 269.5449173333333,
-          "solve_time_s": 0.015691041946411133,
+          "solve_time_s": 0.013217926025390625,
           "partitioning": [
             10,
             10,
@@ -55358,8 +55958,10 @@
           "total_time_cycles": 282722.17380700423,
           "compute_time_cycles": 135516.49523809523,
           "comm_time_cycles": 147205.67856890903,
+          "inter_comm_time_cycles": 147205.67856890903,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 282.72217380700425,
-          "solve_time_s": 0.03263974189758301,
+          "solve_time_s": 0.012090921401977539,
           "partitioning": [
             14,
             9,
@@ -55768,8 +56370,10 @@
           "total_time_cycles": 272673.6531864095,
           "compute_time_cycles": 122124.70303030303,
           "comm_time_cycles": 150548.9501561065,
+          "inter_comm_time_cycles": 150548.9501561065,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 272.6736531864095,
-          "solve_time_s": 0.006275177001953125,
+          "solve_time_s": 0.011746883392333984,
           "partitioning": [
             11,
             12,
@@ -56180,8 +56784,10 @@
           "total_time_cycles": 259570.5611824977,
           "compute_time_cycles": 108428.95238095238,
           "comm_time_cycles": 151141.6088015453,
+          "inter_comm_time_cycles": 151141.6088015453,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 259.5705611824977,
-          "solve_time_s": 0.1702265739440918,
+          "solve_time_s": 0.10637664794921875,
           "partitioning": [
             9,
             12,
@@ -56353,6 +56959,8 @@
         "total_time_cycles": 2833374.222222222,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 1893262.2222222222,
+        "inter_comm_time_cycles": 1893262.2222222222,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 2833.374222222222,
         "partitioning": [
           1,
@@ -56399,6 +57007,8 @@
         "total_time_cycles": 1508090.6666666665,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 567978.6666666666,
+        "inter_comm_time_cycles": 567978.6666666666,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1508.0906666666665,
         "partitioning": [
           1,
@@ -56445,6 +57055,8 @@
         "total_time_cycles": 1508090.6666666665,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 567978.6666666666,
+        "inter_comm_time_cycles": 567978.6666666666,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 1508.0906666666665,
         "partitioning": [
           1,
@@ -56491,6 +57103,8 @@
         "total_time_cycles": 2498412.4444444445,
         "compute_time_cycles": 940112.0,
         "comm_time_cycles": 1558300.4444444445,
+        "inter_comm_time_cycles": 1558300.4444444445,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 2498.4124444444446,
         "partitioning": [
           1,
@@ -56537,6 +57151,8 @@
         "total_time_cycles": 213631.01453287198,
         "compute_time_cycles": 81164.86274509804,
         "comm_time_cycles": 132466.15178777394,
+        "inter_comm_time_cycles": 132466.15178777394,
+        "intra_comm_time_cycles": 0.0,
         "total_time_us": 213.63101453287197,
         "partitioning": [
           16,
@@ -56825,8 +57441,10 @@
           "total_time_cycles": 167368.38433462643,
           "compute_time_cycles": 64639.875324675326,
           "comm_time_cycles": 102728.5090099511,
+          "inter_comm_time_cycles": 102728.5090099511,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 167.36838433462643,
-          "solve_time_s": 0.4437987804412842,
+          "solve_time_s": 0.3054392337799072,
           "partitioning": [
             22,
             21,
@@ -57287,8 +57905,10 @@
           "total_time_cycles": 212226.5827966619,
           "compute_time_cycles": 79636.39215686274,
           "comm_time_cycles": 132590.19063979917,
+          "inter_comm_time_cycles": 132590.19063979917,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 212.22658279666192,
-          "solve_time_s": 0.4079287052154541,
+          "solve_time_s": 0.2915341854095459,
           "partitioning": [
             15,
             17,
@@ -57749,8 +58369,10 @@
           "total_time_cycles": 207860.21869488538,
           "compute_time_cycles": 82267.04761904762,
           "comm_time_cycles": 125593.17107583774,
+          "inter_comm_time_cycles": 125593.17107583774,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 207.8602186948854,
-          "solve_time_s": 0.3953511714935303,
+          "solve_time_s": 0.27285122871398926,
           "partitioning": [
             18,
             16,
@@ -58213,8 +58835,10 @@
           "total_time_cycles": 220748.6708189158,
           "compute_time_cycles": 81164.86274509804,
           "comm_time_cycles": 139583.80807381775,
+          "inter_comm_time_cycles": 139583.80807381775,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 220.7486708189158,
-          "solve_time_s": 0.04487299919128418,
+          "solve_time_s": 0.027983903884887695,
           "partitioning": [
             16,
             16,
@@ -58735,8 +59359,10 @@
           "total_time_cycles": 214025.33569829317,
           "compute_time_cycles": 78996.7731092437,
           "comm_time_cycles": 135028.56258904946,
+          "inter_comm_time_cycles": 135028.56258904946,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 214.02533569829316,
-          "solve_time_s": 0.03421902656555176,
+          "solve_time_s": 0.030194520950317383,
           "partitioning": [
             16,
             17,
@@ -59257,8 +59883,10 @@
           "total_time_cycles": 202780.50809327845,
           "compute_time_cycles": 74077.33333333333,
           "comm_time_cycles": 128703.17475994513,
+          "inter_comm_time_cycles": 128703.17475994513,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 202.78050809327846,
-          "solve_time_s": 0.048363685607910156,
+          "solve_time_s": 0.028612375259399414,
           "partitioning": [
             18,
             18,
@@ -59781,8 +60409,10 @@
           "total_time_cycles": 172762.76072898295,
           "compute_time_cycles": 61276.19047619047,
           "comm_time_cycles": 111486.57025279247,
+          "inter_comm_time_cycles": 111486.57025279247,
+          "intra_comm_time_cycles": 0.0,
           "total_time_us": 172.76276072898295,
-          "solve_time_s": 1.8221912384033203,
+          "solve_time_s": 1.0947022438049316,
           "partitioning": [
             18,
             24,

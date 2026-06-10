@@ -8,3 +8,13 @@ build/
 report.html
 .DS_Store
 *.swp
+node_modules/
+
+# LaTeX build artifacts
+report_ieee/*.aux
+report_ieee/*.log
+report_ieee/*.out
+report_ieee/*.bbl
+report_ieee/*.blg
+report_ieee/*.synctex.gz
+report_ieee/report.pdf
