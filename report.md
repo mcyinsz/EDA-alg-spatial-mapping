@@ -201,9 +201,10 @@ $$\sum_{k} \sum_{l} z_{i,k} \cdot z_{i+1,l} \cdot d_{k,l}$$
 - 含层内通信（主实验）：`python src/experiment.py` → `results/experiment_results.json`
 - 仅层间通信（对照组）：`python src/experiment.py --inter-only` → `results/experiment_results_inter_only.json`
 - 层内并行注入假设 ablation：`python src/experiment.py --intra-parallel` → `results/experiment_results_intra_parallel.json`
-- κ 敏感性扫描：`python scripts/sweep_kappa.py` → `results/sensitivity_kappa.json` + `.png`
+- 通信敏感性研究：`python scripts/sweep_sensitivity.py` → `results/sensitivity_study.json`、`sensitivity_comm.json`、`sensitivity_kappa.png`、`sensitivity_core_usage.png`、`mapping_detail_Large-MLP_8x8-mesh_beta0.1.png`；日志 `logs/sensitivity_study.log`
+- 仅重画敏感性对比图（β=0.1 满核）：`python scripts/sweep_sensitivity.py --mapping-only`
 
-画图：`python src/visualize.py`（主实验）或 `python src/visualize.py --results <json>`（对照/ablation 自动输出到子目录）。一键复现：`bash scripts/run_full.sh`。
+画图：`python src/visualize.py`（主实验，含 `mapping_detail_Large-MLP_8x8-mesh.png` 主模型 24/64）或 `python src/visualize.py --results <json>`（对照/ablation）。报告 Fig. mapping 左栏来自主实验 visualize，右栏来自 `sweep_sensitivity.py`。一键复现：`bash scripts/run_full.sh`。
 
 **表 3b：求解器平均计算预算（主实验）**
 
@@ -336,9 +337,13 @@ EA 在有限的 evaluation budget（约 322 次/运行）下，仅在 Transforme
 
 **Large-MLP/8×8**（图 3d，最优求解器 Greedy+KL）：Greedy+KL（42.65 μs）优于 SA（52.18 μs）和 EA（59.43 μs）。
 
-![映射细节：Large-MLP/8×8](results/mapping_detail_Large-MLP_8x8-mesh.png)
+![映射细节：Large-MLP/8×8（主模型 24/64 核）](results/mapping_detail_Large-MLP_8x8-mesh.png)
 
-*图 3d：Large-MLP/8×8 的四联映射图（最优求解器 Greedy+KL，42.65 μs）*
+*图 3d：Large-MLP/8×8 主模型（κ=β=1）下 Greedy+KL 仅用 24/64 核，42.65 μs*
+
+![映射细节：Large-MLP/8×8（β=0.1 满核 64/64）](results/mapping_detail_Large-MLP_8x8-mesh_beta0.1.png)
+
+*图 3d'：通信敏感性样例——β=0.1（intra 仍开启）时 Greedy+KL 铺满 64/64 核，9.03 μs，partition `[5,11,19,17,12]`，与图 3d 主模型对比*
 
 ![Partitioning 对比：Large-MLP/8×8](results/partitioning_Large-MLP_8x8-mesh.png)
 
@@ -378,9 +383,11 @@ EA 在有限的 evaluation budget（约 322 次/运行）下，仅在 Transforme
 
 *图 3k：Medium-MLP/4×4 的 per-core 计算利用率热力图*
 
-#### 4.3.9 κ 敏感性分析
+#### 4.3.9 通信敏感性研究（κ / β 与核心利用率）
 
-对 κ 全局乘子扫描 [0, 0.25, 0.5, 1.0, 2.0]，统计各求解器获胜次数：
+`scripts/sweep_sensitivity.py` 从两个维度研究通信代价对最优映射的影响（完整日志见 `logs/sensitivity_study.log`）。
+
+**κ 全局乘子扫描**（19 配置，统计获胜次数）：
 
 | κ 乘子 | SA | EA | Greedy+KL |
 |--------|----|----|-----------|
@@ -392,7 +399,23 @@ EA 在有限的 evaluation budget（约 322 次/运行）下，仅在 Transforme
 
 ![κ 敏感性](results/sensitivity_kappa.png)
 
-*图 7：各求解器获胜次数随 κ 乘子变化。κ 较小时 SA 与 Greedy 并列；κ=0.25 时 EA 占优；κ≥0.5 时 Greedy+KL 领先。*
+*图 7：各求解器获胜次数随 κ 乘子变化。*
+
+**通信代价与核心利用率（Large-MLP/8×8）**：当层内通信便宜时，Greedy+KL 会铺满 64 核；默认参数下仅用 24/64（38%），对应 mesh 图上左侧窄条占用。
+
+| 设置 | 用核数 | 利用率 | 延迟 (μs) |
+|------|--------|--------|-----------|
+| κ=0 / inter-only | 64/64 | 100% | 8.75 |
+| β=0.1 | 64/64 | 100% | 9.03 |
+| β=0.25 | 24/64 | 38% | 20.87 |
+| κ=β=1.0（主模型） | 24/64 | 38% | 42.65 |
+| 均分 64 核（强制铺满） | 64/64 | 100% | 49.48 |
+
+β 在 0.1–0.25 之间存在尖锐阈值：低于阈值时并行加速收益大于通信惩罚，优化器主动用满 mesh；高于阈值时加核主要放大层内通信，保留闲置核更优。报告 PDF 中与主模型 24/64 核映射（图 3d）并排展示的满核样例为 **β=0.1**（intra 仍开启），由 `python scripts/sweep_sensitivity.py --mapping-only` 生成。
+
+![核心利用率敏感性](results/sensitivity_core_usage.png)
+
+*图 7b：Large-MLP/8×8 上 Greedy+KL 用核数随 κ（左）和 β（右）变化，虚线为 mesh 总容量 K=64。*
 
 #### 4.3.10 层内并行注入假设 ablation
 

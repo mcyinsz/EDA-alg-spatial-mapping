@@ -22,7 +22,8 @@ EDA-alg-spatial-mapping/
 ├── scripts/
 │   ├── run_full.sh         # 一键全量复现
 │   ├── run_full.ps1
-│   ├── sweep_kappa.py      # κ 敏感性扫描
+│   ├── sweep_kappa.py      # κ 敏感性扫描（已由 sweep_sensitivity 覆盖）
+│   ├── sweep_sensitivity.py # κ/β 敏感性 + 报告用 β=0.1 映射图
 │   └── verify_results.py
 ├── logs/full_reproduction.log
 ├── report_ieee/report.tex
@@ -57,9 +58,13 @@ python src/experiment.py --inter-only                 # 仅层间通信
 python src/visualize.py --results results/experiment_results_inter_only.json
 python src/experiment.py --intra-parallel             # intra 并行注入 ablation
 python src/visualize.py --results results/experiment_results_intra_parallel.json
-python scripts/sweep_kappa.py                         # κ 敏感性
+python scripts/sweep_sensitivity.py                   # 通信敏感性（κ/β + 核心利用率 + β=0.1 映射图）
 python scripts/verify_results.py
 ```
+
+报告 Fig. mapping 左右两栏分别来自：
+- 左（主模型 24/64）：`python src/visualize.py` → `mapping_detail_Large-MLP_8x8-mesh.png`
+- 右（β=0.1 满核 64/64）：`python scripts/sweep_sensitivity.py --mapping-only` → `mapping_detail_Large-MLP_8x8-mesh_beta0.1.png`
 
 ## Expected Outputs
 
@@ -68,7 +73,11 @@ python scripts/verify_results.py
 | `results/experiment_results.json` | 主实验（19 配置 × 4 solver × baselines） |
 | `results/experiment_results_inter_only.json` | 仅层间通信对照 |
 | `results/experiment_results_intra_parallel.json` | intra 项除以 $x_i$ 的 ablation |
-| `results/sensitivity_kappa.json` + `.png` | κ 敏感性扫描 |
+| `results/sensitivity_study.json` | 通信敏感性汇总 |
+| `results/sensitivity_comm.json` | κ/β 与核心利用率数据 |
+| `results/sensitivity_kappa.png` + `sensitivity_core_usage.png` | 敏感性图表 |
+| `results/mapping_detail_Large-MLP_8x8-mesh_beta0.1.png` | 报告敏感性对比（β=0.1，Greedy+KL 64/64） |
+| `logs/sensitivity_study.log` | 敏感性实验运行日志 |
 | `results/*.png` | 报告引用的图表 |
 
 ## 运行时长
@@ -76,7 +85,7 @@ python scripts/verify_results.py
 | 步骤 | 预估时间 |
 |------|---------|
 | 主实验 + inter-only + intra-parallel | 30–40 分钟 |
-| κ 敏感性扫描 | 15–25 分钟 |
+| 通信敏感性研究 | 15–20 分钟 |
 | visualize.py（全部） | 3–5 分钟 |
 
 ILP 在 4×4 mesh 上约 60s/配置。SA/EA 各 5 次独立运行。

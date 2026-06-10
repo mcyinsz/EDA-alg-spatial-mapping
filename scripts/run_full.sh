@@ -39,9 +39,9 @@ python src/visualize.py --results results/experiment_results_intra_parallel.json
 
 echo ""
 echo "============================================"
-echo "  Step 7/9: κ sensitivity sweep"
+echo "  Step 7/9: Communication sensitivity study"
 echo "============================================"
-python scripts/sweep_kappa.py
+python scripts/sweep_sensitivity.py 2>&1 | tee logs/sensitivity_study.log
 
 echo ""
 echo "============================================"

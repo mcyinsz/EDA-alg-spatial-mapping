@@ -1,0 +1,162 @@
+
+============================================================
+  κ multiplier = 0.0
+============================================================
+  Small-MLP/4x4-mesh: best=SA (0.91 us)
+  Small-MLP/6x6-mesh: best=SA (0.52 us)
+  Small-MLP/8x8-mesh: best=SA (0.35 us)
+  Medium-MLP/4x4-mesh: best=SA (13.37 us)
+  Medium-MLP/6x6-mesh: best=Greedy (6.94 us)
+  Medium-MLP/8x8-mesh: best=Greedy (4.42 us)
+  Large-MLP/6x6-mesh: best=Greedy (13.87 us)
+  Large-MLP/8x8-mesh: best=Greedy (8.75 us)
+  Sparse-MLP/4x4-mesh: best=Greedy (8.70 us)
+  Sparse-MLP/6x6-mesh: best=Greedy (4.76 us)
+  Sparse-MLP/8x8-mesh: best=SA (3.27 us)
+  Transformer-S/4x4-mesh: best=EA (18.05 us)
+  Transformer-S/6x6-mesh: best=EA (12.48 us)
+  Transformer-S/8x8-mesh: best=EA (9.32 us)
+  Transformer-L/6x6-mesh: best=Greedy (28.48 us)
+  Transformer-L/8x8-mesh: best=Greedy (18.04 us)
+  ConvNet/4x4-mesh: best=SA (469.10 us)
+  ConvNet/6x6-mesh: best=SA (251.78 us)
+  ConvNet/8x8-mesh: best=SA (176.00 us)
+
+============================================================
+  κ multiplier = 0.25
+============================================================
+  Small-MLP/4x4-mesh: best=EA (1.70 us)
+  Small-MLP/6x6-mesh: best=SA (1.80 us)
+  Small-MLP/8x8-mesh: best=SA (2.04 us)
+  Medium-MLP/4x4-mesh: best=SA (16.81 us)
+  Medium-MLP/6x6-mesh: best=EA (14.03 us)
+  Medium-MLP/8x8-mesh: best=EA (14.55 us)
+  Large-MLP/6x6-mesh: best=Greedy (20.85 us)
+  Large-MLP/8x8-mesh: best=EA (22.92 us)
+  Sparse-MLP/4x4-mesh: best=Greedy (12.00 us)
+  Sparse-MLP/6x6-mesh: best=EA (11.84 us)
+  Sparse-MLP/8x8-mesh: best=EA (13.43 us)
+  Transformer-S/4x4-mesh: best=EA (19.15 us)
+  Transformer-S/6x6-mesh: best=EA (16.26 us)
+  Transformer-S/8x8-mesh: best=EA (16.84 us)
+  Transformer-L/6x6-mesh: best=Greedy (39.56 us)
+  Transformer-L/8x8-mesh: best=EA (39.44 us)
+  ConvNet/4x4-mesh: best=SA (567.59 us)
+  ConvNet/6x6-mesh: best=Greedy (400.45 us)
+  ConvNet/8x8-mesh: best=EA (433.33 us)
+
+============================================================
+  κ multiplier = 0.5
+============================================================
+  Small-MLP/4x4-mesh: best=SA (2.42 us)
+  Small-MLP/6x6-mesh: best=SA (2.47 us)
+  Small-MLP/8x8-mesh: best=SA (2.55 us)
+  Medium-MLP/4x4-mesh: best=SA (19.73 us)
+  Medium-MLP/6x6-mesh: best=Greedy (18.29 us)
+  Medium-MLP/8x8-mesh: best=Greedy (19.83 us)
+  Large-MLP/6x6-mesh: best=Greedy (28.31 us)
+  Large-MLP/8x8-mesh: best=Greedy (33.22 us)
+  Sparse-MLP/4x4-mesh: best=Greedy (14.69 us)
+  Sparse-MLP/6x6-mesh: best=EA (17.71 us)
+  Sparse-MLP/8x8-mesh: best=EA (21.37 us)
+  Transformer-S/4x4-mesh: best=EA (19.58 us)
+  Transformer-S/6x6-mesh: best=EA (20.30 us)
+  Transformer-S/8x8-mesh: best=Greedy (20.99 us)
+  Transformer-L/6x6-mesh: best=Greedy (47.50 us)
+  Transformer-L/8x8-mesh: best=EA (51.07 us)
+  ConvNet/4x4-mesh: best=Greedy (649.64 us)
+  ConvNet/6x6-mesh: best=Greedy (576.71 us)
+  ConvNet/8x8-mesh: best=EA (638.72 us)
+
+============================================================
+  κ multiplier = 1.0
+============================================================
+  Small-MLP/4x4-mesh: best=SA (3.20 us)
+  Small-MLP/6x6-mesh: best=SA (3.20 us)
+  Small-MLP/8x8-mesh: best=SA (3.20 us)
+  Medium-MLP/4x4-mesh: best=SA (24.98 us)
+  Medium-MLP/6x6-mesh: best=Greedy (26.05 us)
+  Medium-MLP/8x8-mesh: best=Greedy (28.06 us)
+  Large-MLP/6x6-mesh: best=Greedy (39.98 us)
+  Large-MLP/8x8-mesh: best=Greedy (42.65 us)
+  Sparse-MLP/4x4-mesh: best=SA (20.61 us)
+  Sparse-MLP/6x6-mesh: best=Greedy (22.30 us)
+  Sparse-MLP/8x8-mesh: best=Greedy (24.58 us)
+  Transformer-S/4x4-mesh: best=EA (21.32 us)
+  Transformer-S/6x6-mesh: best=Greedy (23.55 us)
+  Transformer-S/8x8-mesh: best=Greedy (21.89 us)
+  Transformer-L/6x6-mesh: best=Greedy (57.01 us)
+  Transformer-L/8x8-mesh: best=Greedy (54.38 us)
+  ConvNet/4x4-mesh: best=Greedy (811.08 us)
+  ConvNet/6x6-mesh: best=Greedy (781.58 us)
+  ConvNet/8x8-mesh: best=SA (1032.25 us)
+
+============================================================
+  κ multiplier = 2.0
+============================================================
+  Small-MLP/4x4-mesh: best=SA (3.84 us)
+  Small-MLP/6x6-mesh: best=SA (3.84 us)
+  Small-MLP/8x8-mesh: best=SA (3.84 us)
+  Medium-MLP/4x4-mesh: best=Greedy (35.15 us)
+  Medium-MLP/6x6-mesh: best=Greedy (36.20 us)
+  Medium-MLP/8x8-mesh: best=Greedy (38.21 us)
+  Large-MLP/6x6-mesh: best=Greedy (57.40 us)
+  Large-MLP/8x8-mesh: best=Greedy (62.01 us)
+  Sparse-MLP/4x4-mesh: best=SA (27.52 us)
+  Sparse-MLP/6x6-mesh: best=SA (28.98 us)
+  Sparse-MLP/8x8-mesh: best=Greedy (30.04 us)
+  Transformer-S/4x4-mesh: best=EA (22.14 us)
+  Transformer-S/6x6-mesh: best=Greedy (23.55 us)
+  Transformer-S/8x8-mesh: best=Greedy (22.91 us)
+  Transformer-L/6x6-mesh: best=Greedy (67.08 us)
+  Transformer-L/8x8-mesh: best=Greedy (69.80 us)
+  ConvNet/4x4-mesh: best=EA (1095.93 us)
+  ConvNet/6x6-mesh: best=SA (1211.97 us)
+  ConvNet/8x8-mesh: best=Greedy (1292.94 us)
+
+Saved /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/sensitivity_kappa.json
+Saved /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/sensitivity_kappa.png
+
+--- Core usage: Large-MLP/8x8-mesh (K=64) ---
+  κ= 0.0  cores=64/64  util=100%  part=[9, 15, 19, 15, 6]  8.75 us
+  κ=0.25  cores=24/64  util=38%  part=[3, 5, 9, 5, 2]  26.05 us
+  κ= 0.5  cores=24/64  util=38%  part=[3, 5, 9, 5, 2]  33.22 us
+  κ= 1.0  cores=24/64  util=38%  part=[3, 5, 9, 5, 2]  42.65 us
+  κ= 2.0  cores=23/64  util=36%  part=[2, 5, 9, 5, 2]  62.01 us
+  β= 0.0  cores=64/64  util=100%  part=[7, 15, 21, 14, 7]  4.99 us
+  β= 0.1  cores=64/64  util=100%  part=[5, 11, 19, 17, 12]  9.03 us
+  β=0.25  cores=24/64  util=38%  part=[3, 5, 9, 5, 2]  20.87 us
+  β= 0.5  cores=24/64  util=38%  part=[3, 5, 9, 5, 2]  28.13 us
+  β= 1.0  cores=24/64  util=38%  part=[3, 5, 9, 5, 2]  42.65 us
+  inter-only  cores=64/64  part=[9, 15, 19, 15, 6]  8.75 us
+
+--- Core usage: Medium-MLP/8x8-mesh (K=64) ---
+  κ= 0.0  cores=64/64  util=100%  part=[14, 22, 19, 9]  4.42 us
+  κ=0.25  cores=16/64  util=25%  part=[3, 5, 6, 2]  17.22 us
+  κ= 0.5  cores=16/64  util=25%  part=[3, 5, 6, 2]  19.83 us
+  κ= 1.0  cores=16/64  util=25%  part=[3, 5, 6, 2]  28.06 us
+  κ= 2.0  cores=15/64  util=23%  part=[3, 5, 5, 2]  38.21 us
+  β= 0.0  cores=64/64  util=100%  part=[11, 21, 21, 11]  2.31 us
+  β= 0.1  cores=48/64  util=75%  part=[5, 11, 20, 12]  5.90 us
+  β=0.25  cores=16/64  util=25%  part=[3, 5, 5, 3]  13.92 us
+  β= 0.5  cores=16/64  util=25%  part=[3, 5, 5, 3]  18.55 us
+  β= 1.0  cores=16/64  util=25%  part=[3, 5, 6, 2]  28.06 us
+  inter-only  cores=64/64  part=[14, 22, 19, 9]  4.42 us
+
+--- Core usage: Small-MLP/8x8-mesh (K=64) ---
+  κ= 0.0  cores= 8/64  util=12%  part=[5, 2, 1]  1.88 us
+  κ=0.25  cores= 8/64  util=12%  part=[4, 3, 1]  2.52 us
+  κ= 0.5  cores= 6/64  util=9%  part=[3, 2, 1]  2.93 us
+  κ= 1.0  cores= 5/64  util=8%  part=[2, 2, 1]  3.46 us
+  κ= 2.0  cores= 3/64  util=5%  part=[1, 1, 1]  3.84 us
+  β= 0.0  cores=64/64  util=100%  part=[26, 25, 13]  0.10 us
+  β= 0.1  cores= 8/64  util=12%  part=[3, 3, 2]  1.11 us
+  β=0.25  cores= 8/64  util=12%  part=[3, 3, 2]  1.55 us
+  β= 0.5  cores= 8/64  util=12%  part=[3, 3, 2]  2.28 us
+  β= 1.0  cores= 5/64  util=8%  part=[2, 2, 1]  3.46 us
+  inter-only  cores=8/64  part=[5, 2, 1]  1.88 us
+
+Saved /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/sensitivity_comm.json
+Saved /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/sensitivity_core_usage.png
+
+Saved combined summary /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/sensitivity_study.json

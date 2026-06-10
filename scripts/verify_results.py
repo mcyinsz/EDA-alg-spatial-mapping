@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from model import (
     Workload, Accelerator, MappingSolution, compute_latency,
-    conv2d_spec, linear_spec,
+    conv2d_spec, linear_spec, cycles_to_us,
 )
 
 # Must match experiment.py definitions
@@ -160,6 +160,78 @@ def _check_solution(data: dict, wl: Workload, acc: Accelerator, label: str) -> b
     return all_ok
 
 
+def verify_sensitivity_artifacts(results_dir: Path) -> bool:
+    """Check sensitivity JSON and report-facing β=0.1 mapping figure."""
+    import copy
+
+    from solvers.greedy_solver import solve_greedy
+
+    comm_path = results_dir / "sensitivity_comm.json"
+    fig_path = results_dir / "mapping_detail_Large-MLP_8x8-mesh_beta0.1.png"
+    ok = True
+
+    print(f"\n{'='*60}")
+    print("  Verifying: sensitivity artifacts")
+    print(f"{'='*60}")
+
+    if not fig_path.exists():
+        print(f"  FAIL: missing {fig_path.name} (run scripts/sweep_sensitivity.py)")
+        ok = False
+    else:
+        print(f"  OK: {fig_path.name} exists")
+
+    if not comm_path.exists():
+        print(f"  SKIP: {comm_path.name} not found")
+        return ok
+
+    with open(comm_path) as f:
+        comm = json.load(f)
+
+    key = "Large-MLP/8x8-mesh"
+    beta_rows = comm.get("beta_sweep", {}).get(key, [])
+    beta_row = next((r for r in beta_rows if r.get("beta") == 0.1), None)
+    if beta_row is None:
+        print("  FAIL: beta_sweep missing β=0.1 row for Large-MLP/8x8-mesh")
+        ok = False
+    else:
+        if beta_row["cores_used"] != 64 or beta_row["cores_total"] != 64:
+            print(f"  FAIL: β=0.1 expected 64/64 cores, got "
+                  f"{beta_row['cores_used']}/{beta_row['cores_total']}")
+            ok = False
+        else:
+            print(f"  OK: β=0.1 uses 64/64 cores, {beta_row['latency_us']:.2f} μs")
+
+    report = comm.get("report_mapping")
+    if report:
+        if report.get("figure") != fig_path.name:
+            print(f"  FAIL: report_mapping.figure={report.get('figure')}")
+            ok = False
+        elif report.get("cores_used") != 64:
+            print(f"  FAIL: report_mapping cores_used={report.get('cores_used')}")
+            ok = False
+        else:
+            print(f"  OK: report_mapping metadata matches ({report['partitioning']})")
+
+    # Recompute Greedy+KL @ β=0.1
+    wl = WORKLOADS["Large-MLP"]
+    acc = copy.copy(ACCELERATORS["8x8-mesh"])
+    acc.comm_beta = 0.1
+    acc.intra_comm_enabled = True
+    acc.intra_serialized = True
+    sol, lat, _ = solve_greedy(wl, acc)
+    us = cycles_to_us(lat["total_time"], acc.frequency_ghz)
+    if abs(us - 9.03) > 0.05:
+        print(f"  FAIL: recomputed β=0.1 latency {us:.2f} μs (expected ~9.03)")
+        ok = False
+    elif sum(sol.partitioning) != 64:
+        print(f"  FAIL: recomputed partitioning uses {sum(sol.partitioning)} cores")
+        ok = False
+    else:
+        print(f"  OK: recomputed β=0.1 Greedy+KL {sum(sol.partitioning)}/64, {us:.2f} μs")
+
+    return ok
+
+
 def main():
     results_dir = Path(__file__).parent.parent / "results"
     all_ok = True
@@ -175,6 +247,8 @@ def main():
             all_ok = all_ok and ok
         else:
             print(f"SKIP: {path} not found")
+
+    all_ok = all_ok and verify_sensitivity_artifacts(results_dir)
 
     print(f"\n{'='*60}")
     if all_ok:

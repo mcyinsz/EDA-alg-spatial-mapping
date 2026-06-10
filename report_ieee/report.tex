@@ -1,6 +1,7 @@
 \documentclass[conference]{IEEEtran}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{cite}
@@ -143,6 +144,13 @@ ConvNet/8$\times$8      & 937  & ---  & \textbf{1032} & 1070 & 1166 \\
 \end{tabular}
 \end{table*}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{../results/latency_comparison.png}
+\caption{Best inference latency per solver across all 19 configurations (log-scale y-axis for ConvNet).}
+\label{fig:latency}
+\end{figure*}
+
 \subsection{Why Greedy+KL Leads on Large Workloads}
 Greedy+KL's contiguous, column-major placement keeps intra-layer average distance near 1--2 hops, whereas SA's random swaps and EA's mutations fragment a layer's cores (3--5 hops). On the 8$\times$8 mesh, where distances reach 14 hops, this gap widens: on Transformer-L/8$\times$8 Greedy+KL (54.4\,$\mu$s) beats SA (68.2) by 20\% and EA (74.6) by 27\%. The compute-/inter-/intra-layer breakdown (Fig.~\ref{fig:breakdown}) confirms Greedy+KL keeps the intra-layer share lowest. Its cost-aware partitioning also avoids over-provisioning on tiny workloads, fixing the previous degradation where forced core-filling inflated communication.
 
@@ -151,9 +159,18 @@ SA's idle-core moves dominate Small-MLP (3.20 vs.\ Greedy 3.46\,$\mu$s) and rema
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\linewidth]{../results/normalized_heatmap.png}
-\caption{Normalized latency (best joint optimizer per config $=$ 1.0).}
-\label{fig:heatmap}
+\begin{subfigure}[b]{0.48\linewidth}
+  \includegraphics[width=\linewidth]{../results/normalized_heatmap.png}
+  \caption{Normalized latency.}
+  \label{fig:heatmap}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\linewidth}
+  \includegraphics[width=\linewidth]{../results/algorithm_wins_by_type.png}
+  \caption{Wins by network type.}
+  \label{fig:wins}
+\end{subfigure}
+\caption{Relative performance heatmap and per-family win counts (main model).}
 \end{figure}
 
 \begin{figure}[!t]
@@ -164,72 +181,68 @@ SA's idle-core moves dominate Small-MLP (3.20 vs.\ Greedy 3.46\,$\mu$s) and rema
 \end{figure}
 
 \subsection{Ablation 1: Inter-only Model}
-Removing the intra-layer term (Table~\ref{tab:inter}) re-balances the ranking to SA~8, Greedy+KL~8, EA~3. Without a compactness incentive, Greedy+KL's contiguous bias loses value and its KL swaps can even fragment a layer badly (e.g., ConvNet/8$\times$8 1005\,$\mu$s, Sparse-MLP/8$\times$8 18.2\,$\mu$s), while EA's locality-preserving reordering wins all three Transformer-S meshes. This single term thus flips the headline conclusion.
+Removing the intra-layer term re-balances the ranking to SA~8, Greedy+KL~8, EA~3. Without a compactness incentive, Greedy+KL's KL swaps can fragment layers badly (ConvNet/8$\times$8 1005\,$\mu$s), while EA wins all three Transformer-S meshes.
+
+\subsection{Ablations and Communication Sensitivity}
+\textbf{Intra-parallel assumption.} Dividing $T_{\text{intra}}$ by $x_i$ shifts the ranking to EA~9, SA~7, Greedy+KL~3, removing Greedy+KL's compactness advantage. \textbf{$\kappa$ sweep.} Table~\ref{tab:kappa} and Fig.~\ref{fig:kappa} show solver wins vs.\ a global $\kappa$ multiplier: at $\kappa{=}0$ SA and Greedy+KL tie (8 each); EA peaks at $\kappa{=}0.25$ (11); Greedy+KL leads for $\kappa{\ge}0.5$ (9--12). Three internally consistent models (main, inter-only, intra-parallel) each crown a different winner.
+
+\textbf{Communication cost and core utilization.} Sweeping $\beta$ (Table~\ref{tab:comm}, Fig.~\ref{fig:kappa}) shows Greedy+KL fills 64/64 cores when comm is cheap ($\kappa{=}0$, $\beta{\le}0.1$) but uses only 24/64 at $\kappa{=}\beta{=}1.0$ (Fig.~\ref{fig:mapping}); equal 64-core partitioning at default $\kappa$ is slower (49.5 vs.\ 42.7\,$\mu$s).
 
 \begin{table}[t]
 \centering
-\caption{Inter-only ablation: best latency ($\mu$s) and winner. SA 8 / Greedy+KL 8 / EA 3.}
-\label{tab:inter}
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{lrrrl}
-\toprule
-Config & SA & EA & Greedy & Best \\
-\midrule
-Small-MLP/8$\times$8     & 0.35 & 0.39 & 1.88 & SA \\
-Medium-MLP/8$\times$8    & 4.50 & 4.82 & 4.42 & Greedy \\
-Large-MLP/8$\times$8     & 8.94 & 9.57 & 8.75 & Greedy \\
-Sparse-MLP/8$\times$8    & 3.27 & 3.67 & 18.2 & SA \\
-Transformer-S/6$\times$6 & 19.1 & 12.5 & 23.6 & EA \\
-Transformer-S/8$\times$8 & 24.2 & 9.32 & 18.1 & EA \\
-Transformer-L/8$\times$8 & 47.0 & 22.6 & 18.0 & Greedy \\
-ConvNet/6$\times$6       & 252  & 263  & 342  & SA \\
-ConvNet/8$\times$8       & 176  & 197  & 1005 & SA \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Ablation 2: Intra-Parallel Assumption}
-Making the intra term parallel (dividing by $x_i$, consistent with the inter term) shifts the ranking again to EA~9, SA~7, Greedy+KL~3. The weaker intra penalty removes Greedy+KL's structural advantage and rewards EA's broader partition search, especially on Transformers (EA wins all three Transformer-S meshes). The fact that three internally consistent models (main, inter-only, intra-parallel) each crown a different winner is the paper's core message.
-
-\subsection{Ablation 3: $\kappa$ Sensitivity}
-Sweeping a global $\kappa$ multiplier (Table~\ref{tab:kappa}, Fig.~\ref{fig:kappa}) traces the transition: at $\kappa{=}0$ SA and Greedy+KL tie (8 each); at $\kappa{=}0.25$ EA peaks (11); for $\kappa{\ge}0.5$ Greedy+KL leads (9, 12, 11). The ranking is therefore a continuous function of one modeling coefficient, not an intrinsic property of the algorithms.
-
-\begin{table}[t]
-\centering
-\caption{Solver wins vs.\ global $\kappa$ multiplier (19 configs).}
+\caption{Solver wins vs.\ $\kappa$ (19 configs).}
 \label{tab:kappa}
 \footnotesize
 \begin{tabular}{lrrrrr}
 \toprule
 & $\kappa{=}0$ & $0.25$ & $0.5$ & $1.0$ & $2.0$ \\
 \midrule
-SA        & 8 & 4 & 4 & 6 & 6 \\
-EA        & 3 & 11 & 6 & 1 & 2 \\
+SA & 8 & 4 & 4 & 6 & 6 \\
+EA & 3 & 11 & 6 & 1 & 2 \\
 Greedy+KL & 8 & 4 & 9 & 12 & 11 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Greedy+KL core usage on Large-MLP/8$\times$8 vs.\ comm parameters.}
+\label{tab:comm}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrl}
+\toprule
+Setting & Cores & Util. & Latency ($\mu$s) \\
+\midrule
+$\kappa{=}0$ / inter-only & 64/64 & 100\% & 8.75 \\
+$\beta{=}0.1$ & 64/64 & 100\% & 9.03 \\
+$\beta{=}0.25$ & 24/64 & 38\% & 20.87 \\
+$\kappa{=}\beta{=}1.0$ (main) & 24/64 & 38\% & 42.65 \\
+Equal-partition 64 cores & 64/64 & 100\% & 49.48 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.92\linewidth]{../results/sensitivity_kappa.png}
-\caption{Solver wins as a function of the $\kappa$ multiplier.}
+\includegraphics[width=0.48\linewidth]{../results/sensitivity_kappa.png}
+\hfill
+\includegraphics[width=0.48\linewidth]{../results/sensitivity_core_usage.png}
+\caption{Left: solver wins vs.\ $\kappa$. Right: Greedy+KL cores used on Large-MLP/8$\times$8 vs.\ $\kappa$ and $\beta$ (dashed $=$ full mesh).}
 \label{fig:kappa}
 \end{figure}
 
-\subsection{Representative Mappings}
-Fig.~\ref{fig:mapping} shows Greedy+KL on Large-MLP/8$\times$8: a near-symmetric partition with compact per-layer clusters that minimize both inter- and intra-layer distance. Such structure is exactly what the main model rewards and what random-neighborhood solvers fail to maintain at scale.
-
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\linewidth]{../results/mapping_detail_Large-MLP_8x8-mesh.png}
-\caption{Greedy+KL mapping for Large-MLP/8$\times$8 (42.7\,$\mu$s): mesh placement, partition, communication overlay, and per-layer latency.}
+\includegraphics[width=0.49\linewidth,height=0.14\textheight,keepaspectratio]{../results/mapping_detail_Large-MLP_8x8-mesh.png}
+\hfill
+\includegraphics[width=0.49\linewidth,height=0.14\textheight,keepaspectratio]{../results/mapping_detail_Large-MLP_8x8-mesh_beta0.1.png}
+\caption{Greedy+KL on Large-MLP/8$\times$8: main model $\kappa{=}\beta{=}1$, 24/64 cores (left, 42.7\,$\mu$s) vs.\ cheap-comm sensitivity $\beta{=}0.1$, 64/64 cores (right, 9.03\,$\mu$s).}
 \label{fig:mapping}
 \end{figure}
 
 \section{Conclusion}
-We formulated DNN mapping on spatial accelerators as joint partitioning-placement optimization with a three-term latency model and compared four solvers under a corrected, fair setup. The headline result is methodological: the algorithm ranking is not robust to the cost model. Greedy+KL (12/19) suits the compactness-rewarding main model; SA (6/19) gains from idle-core search on small workloads; and the inter-only, intra-parallel, and $\kappa$-swept variants each produce a different winner. \textbf{Limitations.} The execution model is serial (no pipelining); the inter and intra terms use inconsistent parallelism assumptions by default; the Transformer workloads are linear-chain approximations without an attention DAG; and $\kappa,\beta$ are assumed. \textbf{Future work}: block-move neighborhoods to give SA/EA a compactness bias, surrogate-accelerated fitness, pipelined (max-over-stage) objectives, and validation against real hardware mappings.
+We compared four mapping solvers under a corrected setup where idle cores are allowed. Rankings are not robust to the cost model: Greedy+KL leads the main model (12/19), while inter-only, intra-parallel, and $\kappa$ sweeps each crown a different winner. \textbf{Limitations}: serial execution, inconsistent inter/intra parallelism, linear-chain Transformers, assumed $\kappa,\beta$. \textbf{Future work}: compactness-biased neighborhoods for SA/EA, pipelined objectives, and hardware validation.
 
 \begin{thebibliography}{00}
 \bibitem{yik2025} J.~Yik \textit{et al.}, ``Modeling and optimizing performance bottlenecks for neuromorphic accelerators,'' arXiv:2511.21549, 2025.

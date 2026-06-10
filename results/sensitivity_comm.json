@@ -1,0 +1,463 @@
+{
+  "kappa_sweep": {
+    "Large-MLP/8x8-mesh": [
+      {
+        "kappa": 0.0,
+        "cores_used": 64,
+        "cores_total": 64,
+        "utilization": 1.0,
+        "partitioning": [
+          9,
+          15,
+          19,
+          15,
+          6
+        ],
+        "latency_us": 8.75194402015435
+      },
+      {
+        "kappa": 0.25,
+        "cores_used": 24,
+        "cores_total": 64,
+        "utilization": 0.375,
+        "partitioning": [
+          3,
+          5,
+          9,
+          5,
+          2
+        ],
+        "latency_us": 26.04556641975309
+      },
+      {
+        "kappa": 0.5,
+        "cores_used": 24,
+        "cores_total": 64,
+        "utilization": 0.375,
+        "partitioning": [
+          3,
+          5,
+          9,
+          5,
+          2
+        ],
+        "latency_us": 33.22070913580247
+      },
+      {
+        "kappa": 1.0,
+        "cores_used": 24,
+        "cores_total": 64,
+        "utilization": 0.375,
+        "partitioning": [
+          3,
+          5,
+          9,
+          5,
+          2
+        ],
+        "latency_us": 42.65377185185185
+      },
+      {
+        "kappa": 2.0,
+        "cores_used": 23,
+        "cores_total": 64,
+        "utilization": 0.359375,
+        "partitioning": [
+          2,
+          5,
+          9,
+          5,
+          2
+        ],
+        "latency_us": 62.01419851851852
+      }
+    ],
+    "Medium-MLP/8x8-mesh": [
+      {
+        "kappa": 0.0,
+        "cores_used": 64,
+        "cores_total": 64,
+        "utilization": 1.0,
+        "partitioning": [
+          14,
+          22,
+          19,
+          9
+        ],
+        "latency_us": 4.423304506632059
+      },
+      {
+        "kappa": 0.25,
+        "cores_used": 16,
+        "cores_total": 64,
+        "utilization": 0.25,
+        "partitioning": [
+          3,
+          5,
+          6,
+          2
+        ],
+        "latency_us": 17.220835555555556
+      },
+      {
+        "kappa": 0.5,
+        "cores_used": 16,
+        "cores_total": 64,
+        "utilization": 0.25,
+        "partitioning": [
+          3,
+          5,
+          6,
+          2
+        ],
+        "latency_us": 19.825777777777777
+      },
+      {
+        "kappa": 1.0,
+        "cores_used": 16,
+        "cores_total": 64,
+        "utilization": 0.25,
+        "partitioning": [
+          3,
+          5,
+          6,
+          2
+        ],
+        "latency_us": 28.06442666666667
+      },
+      {
+        "kappa": 2.0,
+        "cores_used": 15,
+        "cores_total": 64,
+        "utilization": 0.234375,
+        "partitioning": [
+          3,
+          5,
+          5,
+          2
+        ],
+        "latency_us": 38.20930844444445
+      }
+    ],
+    "Small-MLP/8x8-mesh": [
+      {
+        "kappa": 0.0,
+        "cores_used": 8,
+        "cores_total": 64,
+        "utilization": 0.125,
+        "partitioning": [
+          5,
+          2,
+          1
+        ],
+        "latency_us": 1.8841599999999998
+      },
+      {
+        "kappa": 0.25,
+        "cores_used": 8,
+        "cores_total": 64,
+        "utilization": 0.125,
+        "partitioning": [
+          4,
+          3,
+          1
+        ],
+        "latency_us": 2.5244444444444443
+      },
+      {
+        "kappa": 0.5,
+        "cores_used": 6,
+        "cores_total": 64,
+        "utilization": 0.09375,
+        "partitioning": [
+          3,
+          2,
+          1
+        ],
+        "latency_us": 2.9297777777777783
+      },
+      {
+        "kappa": 1.0,
+        "cores_used": 5,
+        "cores_total": 64,
+        "utilization": 0.078125,
+        "partitioning": [
+          2,
+          2,
+          1
+        ],
+        "latency_us": 3.456
+      },
+      {
+        "kappa": 2.0,
+        "cores_used": 3,
+        "cores_total": 64,
+        "utilization": 0.046875,
+        "partitioning": [
+          1,
+          1,
+          1
+        ],
+        "latency_us": 3.84
+      }
+    ]
+  },
+  "beta_sweep": {
+    "Large-MLP/8x8-mesh": [
+      {
+        "beta": 0.0,
+        "cores_used": 64,
+        "cores_total": 64,
+        "utilization": 1.0,
+        "partitioning": [
+          7,
+          15,
+          21,
+          14,
+          7
+        ],
+        "latency_us": 4.993219047619047
+      },
+      {
+        "beta": 0.1,
+        "cores_used": 64,
+        "cores_total": 64,
+        "utilization": 1.0,
+        "partitioning": [
+          5,
+          11,
+          19,
+          17,
+          12
+        ],
+        "latency_us": 9.033180349166845
+      },
+      {
+        "beta": 0.25,
+        "cores_used": 24,
+        "cores_total": 64,
+        "utilization": 0.375,
+        "partitioning": [
+          3,
+          5,
+          9,
+          5,
+          2
+        ],
+        "latency_us": 20.86930962962963
+      },
+      {
+        "beta": 0.5,
+        "cores_used": 24,
+        "cores_total": 64,
+        "utilization": 0.375,
+        "partitioning": [
+          3,
+          5,
+          9,
+          5,
+          2
+        ],
+        "latency_us": 28.130797037037038
+      },
+      {
+        "beta": 1.0,
+        "cores_used": 24,
+        "cores_total": 64,
+        "utilization": 0.375,
+        "partitioning": [
+          3,
+          5,
+          9,
+          5,
+          2
+        ],
+        "latency_us": 42.65377185185185
+      }
+    ],
+    "Medium-MLP/8x8-mesh": [
+      {
+        "beta": 0.0,
+        "cores_used": 64,
+        "cores_total": 64,
+        "utilization": 1.0,
+        "partitioning": [
+          11,
+          21,
+          21,
+          11
+        ],
+        "latency_us": 2.305108225108225
+      },
+      {
+        "beta": 0.1,
+        "cores_used": 48,
+        "cores_total": 64,
+        "utilization": 0.75,
+        "partitioning": [
+          5,
+          11,
+          20,
+          12
+        ],
+        "latency_us": 5.899847228650138
+      },
+      {
+        "beta": 0.25,
+        "cores_used": 16,
+        "cores_total": 64,
+        "utilization": 0.25,
+        "partitioning": [
+          3,
+          5,
+          5,
+          3
+        ],
+        "latency_us": 13.919118222222224
+      },
+      {
+        "beta": 0.5,
+        "cores_used": 16,
+        "cores_total": 64,
+        "utilization": 0.25,
+        "partitioning": [
+          3,
+          5,
+          5,
+          3
+        ],
+        "latency_us": 18.553969777777777
+      },
+      {
+        "beta": 1.0,
+        "cores_used": 16,
+        "cores_total": 64,
+        "utilization": 0.25,
+        "partitioning": [
+          3,
+          5,
+          6,
+          2
+        ],
+        "latency_us": 28.06442666666667
+      }
+    ],
+    "Small-MLP/8x8-mesh": [
+      {
+        "beta": 0.0,
+        "cores_used": 64,
+        "cores_total": 64,
+        "utilization": 1.0,
+        "partitioning": [
+          26,
+          25,
+          13
+        ],
+        "latency_us": 0.10003692307692308
+      },
+      {
+        "beta": 0.1,
+        "cores_used": 8,
+        "cores_total": 64,
+        "utilization": 0.125,
+        "partitioning": [
+          3,
+          3,
+          2
+        ],
+        "latency_us": 1.1050666666666666
+      },
+      {
+        "beta": 0.25,
+        "cores_used": 8,
+        "cores_total": 64,
+        "utilization": 0.125,
+        "partitioning": [
+          3,
+          3,
+          2
+        ],
+        "latency_us": 1.5466666666666664
+      },
+      {
+        "beta": 0.5,
+        "cores_used": 8,
+        "cores_total": 64,
+        "utilization": 0.125,
+        "partitioning": [
+          3,
+          3,
+          2
+        ],
+        "latency_us": 2.282666666666667
+      },
+      {
+        "beta": 1.0,
+        "cores_used": 5,
+        "cores_total": 64,
+        "utilization": 0.078125,
+        "partitioning": [
+          2,
+          2,
+          1
+        ],
+        "latency_us": 3.456
+      }
+    ]
+  },
+  "inter_only": {
+    "Large-MLP/8x8-mesh": {
+      "cores_used": 64,
+      "cores_total": 64,
+      "utilization": 1.0,
+      "partitioning": [
+        9,
+        15,
+        19,
+        15,
+        6
+      ],
+      "latency_us": 8.75194402015435
+    },
+    "Medium-MLP/8x8-mesh": {
+      "cores_used": 64,
+      "cores_total": 64,
+      "utilization": 1.0,
+      "partitioning": [
+        14,
+        22,
+        19,
+        9
+      ],
+      "latency_us": 4.423304506632059
+    },
+    "Small-MLP/8x8-mesh": {
+      "cores_used": 8,
+      "cores_total": 64,
+      "utilization": 0.125,
+      "partitioning": [
+        5,
+        2,
+        1
+      ],
+      "latency_us": 1.8841599999999998
+    }
+  },
+  "report_mapping": {
+    "config": "Large-MLP/8x8-mesh",
+    "beta": 0.1,
+    "intra_comm_enabled": true,
+    "solver": "Greedy+KL",
+    "cores_used": 64,
+    "cores_total": 64,
+    "partitioning": [
+      5,
+      11,
+      19,
+      17,
+      12
+    ],
+    "latency_us": 9.033180349166845,
+    "figure": "mapping_detail_Large-MLP_8x8-mesh_beta0.1.png"
+  }
+}

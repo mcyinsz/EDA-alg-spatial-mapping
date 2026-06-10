@@ -40,9 +40,9 @@ python src/visualize.py --results results/experiment_results_intra_parallel.json
 
 Write-Host ""
 Write-Host "============================================" -ForegroundColor Cyan
-Write-Host "  Step 7/9: kappa sensitivity sweep" -ForegroundColor Cyan
+Write-Host "  Step 7/9: Communication sensitivity study" -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
-python scripts/sweep_kappa.py
+python scripts/sweep_sensitivity.py 2>&1 | Tee-Object -FilePath logs/sensitivity_study.log
 
 Write-Host ""
 Write-Host "============================================" -ForegroundColor Cyan
