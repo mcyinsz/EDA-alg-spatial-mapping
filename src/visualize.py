@@ -49,6 +49,8 @@ def _load_results() -> dict:
     # If reading inter_only results, write to results_inter_only/ subdirectory
     if path.stem.endswith("_inter_only"):
         _OUTPUT_DIR = RESULTS_DIR / "inter_only"
+    elif path.stem.endswith("_intra_parallel"):
+        _OUTPUT_DIR = RESULTS_DIR / "intra_parallel"
     else:
         _OUTPUT_DIR = RESULTS_DIR
     return data

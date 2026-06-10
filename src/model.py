@@ -3,8 +3,22 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 import numpy as np
+
+# Global evaluation counter for solver budget reporting
+_eval_counter: int = 0
+
+
+def reset_eval_counter() -> None:
+    """Reset the global compute_latency evaluation counter."""
+    global _eval_counter
+    _eval_counter = 0
+
+
+def get_eval_count() -> int:
+    """Return the current compute_latency evaluation count."""
+    return _eval_counter
 
 
 @dataclass
@@ -53,6 +67,7 @@ class Workload:
     sparsity: float = 0.0
     layer_specs: List[LayerSpec] = field(default_factory=list)
     tp_comm_factors: List[float] = field(default_factory=list)
+    kappa_scale: float = 1.0  # global multiplier for κ_i (sensitivity sweeps)
 
     @property
     def num_layers(self) -> int:
@@ -78,10 +93,12 @@ class Workload:
     def layer_tp_comm_factor(self, i: int) -> float:
         """κ_i: tensor-parallel communication factor for layer i."""
         if self.tp_comm_factors:
-            return self.tp_comm_factors[i]
-        if self.layer_specs:
-            return 0.5
-        return 1.0
+            base = self.tp_comm_factors[i]
+        elif self.layer_specs:
+            base = 0.5
+        else:
+            base = 1.0
+        return base * self.kappa_scale
 
 
 @dataclass
@@ -96,6 +113,7 @@ class Accelerator:
     comm_beta: float = 1.0  # comm cost coefficient (cycles per byte per hop)
     frequency_ghz: float = 1.0  # clock frequency in GHz
     intra_comm_enabled: bool = True  # include intra-layer TP communication
+    intra_serialized: bool = True  # if False, divide intra term by x_i (parallel injection)
 
     @property
     def total_cores(self) -> int:
@@ -170,6 +188,9 @@ def compute_latency(
     Set intra_comm_enabled=False to disable intra-layer comm (inter-only formulation).
     Defaults to acc.intra_comm_enabled.
     """
+    global _eval_counter
+    _eval_counter += 1
+
     if intra_comm_enabled is None:
         intra_comm_enabled = acc.intra_comm_enabled
     L = wl.num_layers
@@ -224,6 +245,8 @@ def compute_latency(
             avg_d = avg_intra_layer_distance(sol.placement[i])
             vol = kappa * act_bytes * (1.0 - 1.0 / c_i)
             t_intra = acc.comm_beta * vol * avg_d
+            if not acc.intra_serialized:
+                t_intra /= max(c_i, 1)
             intra_comm_times.append(t_intra)
 
     total_compute = sum(compute_times)

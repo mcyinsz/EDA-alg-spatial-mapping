@@ -75,8 +75,10 @@ def verify_file(path: Path):
 
     # Determine formulation from filename
     is_inter_only = "_inter_only" in path.stem
+    is_intra_parallel = "_intra_parallel" in path.stem
     for acc in ACCELERATORS.values():
         acc.intra_comm_enabled = not is_inter_only
+        acc.intra_serialized = not is_intra_parallel
 
     total, passed, failed = 0, 0, 0
 
@@ -162,7 +164,11 @@ def main():
     results_dir = Path(__file__).parent.parent / "results"
     all_ok = True
 
-    for name in ["experiment_results.json", "experiment_results_inter_only.json"]:
+    for name in [
+        "experiment_results.json",
+        "experiment_results_inter_only.json",
+        "experiment_results_intra_parallel.json",
+    ]:
         path = results_dir / name
         if path.exists():
             ok = verify_file(path)

@@ -2,7 +2,7 @@
 
 课程《集成电路工程算法》大作业。在 2D mesh spatial accelerator 上比较 ILP / SA / EA / Greedy+KL 四种算法求解 DNN partitioning + placement 联合优化问题的效果。
 
-核心发现：**成本模型中是否包含层内 tensor-parallel 通信对算法排名有决定性影响**。仅考虑层间通信时 SA 胜出 12/19 配置；加入层内通信后 Greedy+KL 以 17/19 的优势领先。
+核心发现：**成本模型与实验 setup 共同决定算法排名**。主实验（含层内通信、允许闲置核心）中 Greedy+KL 12/19、SA 6/19；仅层间通信时 SA 与 Greedy 各 8/19；κ 敏感性扫描与 intra 并行假设 ablation 进一步翻转排名。
 
 ## 仓库结构
 
@@ -10,146 +10,101 @@
 EDA-alg-spatial-mapping/
 ├── src/                    # 源码
 │   ├── model.py            # 成本模型（计算 + 层间通信 + 层内通信）
-│   ├── experiment.py       # 实验入口（支持 --inter-only 对照组）
+│   ├── experiment.py       # 实验入口（--inter-only / --intra-parallel）
 │   ├── visualize.py        # 可视化生成（支持 --results 指定输入）
 │   ├── baseline.py         # 基线启发式
 │   └── solvers/            # ILP / SA / EA / Greedy+KL
 ├── results/                # 主实验输出
-│   ├── experiment_results.json          # 主实验数据（含 18 张图）
-│   └── experiment_results_inter_only.json  # 对照组数据
-├── scripts/                # 辅助脚本
-│   ├── run_full.sh         # 一键全量复现（Bash / Git Bash / WSL）
-│   ├── run_full.ps1        # 一键全量复现（PowerShell）
-│   └── verify_results.py   # 结果自检
-├── logs/                   # 实验运行 LOG（提交要求）
-│   └── full_reproduction.log
-├── report_ieee/            # IEEE 双栏报告源文件（LaTeX）
-│   └── report.tex
-├── report.md               # 中文扩展版报告（非提交版）
-├── report.pdf              # 提交版 PDF（≤4 页 IEEE 双栏）
-├── gen_html.py             # Markdown → HTML 导出（可选）
-├── requirements.txt
-└── README.md
+│   ├── experiment_results.json
+│   ├── experiment_results_inter_only.json
+│   ├── experiment_results_intra_parallel.json
+│   └── sensitivity_kappa.json
+├── scripts/
+│   ├── run_full.sh         # 一键全量复现
+│   ├── run_full.ps1
+│   ├── sweep_kappa.py      # κ 敏感性扫描
+│   └── verify_results.py
+├── logs/full_reproduction.log
+├── report_ieee/report.tex
+├── report.md / report.pdf
+└── requirements.txt
 ```
 
 ## 环境要求
 
 - Python 3.10+
-- 测试平台：Windows 11 / Python 3.12
-- Linux / macOS 理论可运行（无平台特定代码）
-
-```bash
-pip install -r requirements.txt
-```
+- `pip install -r requirements.txt`
 
 ## Quick Start
 
 ```bash
-# 1. 跑主实验（含层内通信，约 10-15 分钟）
 python src/experiment.py
-
-# 2. 生成主实验图
 python src/visualize.py
-
-# 3. 查看报告
-# report.md 或 report.pdf
 ```
 
 ## Full Reproduction
 
-完整复现主实验 + inter-only 对照组 + 全部图片：
-
 ```bash
-# 主实验
-python src/experiment.py
-python src/visualize.py
-
-# 对照组（仅层间通信）
-python src/experiment.py --inter-only
-python src/visualize.py --results results/experiment_results_inter_only.json
-
-# 结果自检
-python scripts/verify_results.py
+bash scripts/run_full.sh
 ```
 
-或使用一键脚本：
+或分步：
 
 ```bash
-# Bash (Git Bash / WSL / Linux / macOS)
-bash scripts/run_full.sh
-
-# PowerShell (Windows)
-powershell -ExecutionPolicy Bypass -File scripts\run_full.ps1
+python src/experiment.py                              # 主实验
+python src/visualize.py
+python src/experiment.py --inter-only                 # 仅层间通信
+python src/visualize.py --results results/experiment_results_inter_only.json
+python src/experiment.py --intra-parallel             # intra 并行注入 ablation
+python src/visualize.py --results results/experiment_results_intra_parallel.json
+python scripts/sweep_kappa.py                         # κ 敏感性
+python scripts/verify_results.py
 ```
 
 ## Expected Outputs
 
 | 文件 | 说明 |
 |------|------|
-| `results/experiment_results.json` | 主实验数据（19 配置 × 4 solver × baselines） |
-| `results/*.png` | 报告引用的 18 张图 |
-| `results/experiment_results_inter_only.json` | 对照组数据（可重跑出图） |
-
-仓库已附带作者生成的 canonical outputs，同时也支持从源码重跑。
+| `results/experiment_results.json` | 主实验（19 配置 × 4 solver × baselines） |
+| `results/experiment_results_inter_only.json` | 仅层间通信对照 |
+| `results/experiment_results_intra_parallel.json` | intra 项除以 $x_i$ 的 ablation |
+| `results/sensitivity_kappa.json` + `.png` | κ 敏感性扫描 |
+| `results/*.png` | 报告引用的图表 |
 
 ## 运行时长
 
 | 步骤 | 预估时间 |
 |------|---------|
-| `experiment.py`（主实验） | 10-15 分钟 |
-| `experiment.py --inter-only`（对照组） | 5-10 分钟 |
-| `visualize.py` | 1-2 分钟 |
+| 主实验 + inter-only + intra-parallel | 30–40 分钟 |
+| κ 敏感性扫描 | 15–25 分钟 |
+| visualize.py（全部） | 3–5 分钟 |
 
-ILP 在 4×4 mesh 上约需 30-60 秒/配置。SA/EA 各跑 3 次独立运行。
+ILP 在 4×4 mesh 上约 60s/配置。SA/EA 各 5 次独立运行。
 
 ## 随机性说明
 
-- SA 和 EA 使用确定性种子 `seed = run * 42`（run=0,1,2），报告取 3 次运行中的最优值
-- ILP 和 Greedy+KL 是确定性算法
-- 给定相同 Python 版本和依赖版本，结果完全可复现
+- SA/EA：`seed = run * 42`（run=0..4），报告取最优值
+- ILP 和 Greedy+KL 确定性
+- 求解器允许 $\sum x_i < K$（闲置核心）
 
 ## Known Limitations
 
-- 绝对延迟值仅用于相对比较，基于分析成本模型和假设参数，不对应真实硬件性能
-- ILP 因层内通信变量的二次增长，默认仅在 4×4 mesh（≤16 cores）上运行
-- 层内通信模型假设简化的同步模式，未精确模拟 all-reduce / all-gather 的逐链路时序
-
-## Run Logs
-
-课程提交要求包含实验中程序运行的 LOG。`logs/full_reproduction.log` 记录了完整复现流程的终端输出，包括：
-
-- 主实验（含层内通信）：`python src/experiment.py`
-- 对照组（仅层间通信）：`python src/experiment.py --inter-only`
-- 可视化生成与结果自检
-
-重新生成 LOG：
-
-```bash
-mkdir -p logs
-bash scripts/run_full.sh 2>&1 | tee logs/full_reproduction.log
-```
+- 绝对延迟值仅用于相对比较
+- ILP 为 placement 子问题参考（固定 partitioning），仅在 ≤16 cores 运行
+- 层内通信默认序列化假设；可用 `--intra-parallel` 切换
+- Transformer workload 为线性链近似；执行模型为串行非 pipeline
 
 ## Report
 
 | 文件 | 说明 |
 |------|------|
-| `report.pdf` | **提交版**：英文 IEEE 双栏，≤4 页 |
-| `report_ieee/report.tex` | IEEE 报告 LaTeX 源文件 |
-| `report.md` | 中文扩展版（含完整图表与分析，非提交版） |
+| `report.pdf` | IEEE 双栏提交版 |
+| `report.md` | 中文扩展版 |
 
-重新编译提交版 PDF（需安装 [Tectonic](https://tectonic-typesetting.github.io/)）：
-
-```bash
-cd report_ieee
-tectonic report.tex
-cp report.pdf ../report.pdf
-```
-
-可选：从 `report.md` 导出 HTML 预览：
+重编译 PDF（需 Tectonic）：
 
 ```bash
-python gen_html.py
-# 在浏览器中打开 report.html
+cd report_ieee && tectonic report.tex && cp report.pdf ../report.pdf
 ```
 
 ## License

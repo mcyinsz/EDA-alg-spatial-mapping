@@ -1,4 +1,3 @@
-=== Main experiment 2026-06-10T16:20:13+08:00 ===
 
 ============================================================
   Small-MLP/4x4-mesh
@@ -14,17 +13,21 @@
   Run 0: 4.659857898715042 us
 
 [3/105] SA...
-  Run 0: 3.9751111111111115 us
-  Run 1: 3.7817991836734697 us
-  Run 2: 3.83232 us
+  Run 0: 3.2 us
+  Run 1: 3.2 us
+  Run 2: 3.2 us
+  Run 3: 3.2 us
+  Run 4: 3.2 us
 
 [4/105] EA...
   Run 0: 3.3943703703703703 us
   Run 1: 3.328 us
   Run 2: 3.6645925925925926 us
+  Run 3: 3.5481599999999998 us
+  Run 4: 3.5788800000000003 us
 
 [5/105] Greedy...
-  Run 0: 3.7512804232804235 us
+  Run 0: 3.584 us
 
 ============================================================
   Small-MLP/6x6-mesh
@@ -40,17 +43,21 @@
   Skipping (mesh too large: 36 > 16)
 
 [8/105] SA...
-  Run 0: 5.488381741025098 us
-  Run 1: 5.258232154791595 us
-  Run 2: 5.265185185185184 us
+  Run 0: 3.2 us
+  Run 1: 3.399111111111111 us
+  Run 2: 3.2 us
+  Run 3: 3.2 us
+  Run 4: 3.456 us
 
 [9/105] EA...
   Run 0: 4.979468641975309 us
   Run 1: 5.746140589569161 us
   Run 2: 6.095985307621671 us
+  Run 3: 5.07 us
+  Run 4: 5.301773463561232 us
 
 [10/105] Greedy...
-  Run 0: 4.972067327502429 us
+  Run 0: 3.456 us
 
 ============================================================
   Small-MLP/8x8-mesh
@@ -66,17 +73,21 @@
   Skipping (mesh too large: 64 > 16)
 
 [13/105] SA...
-  Run 0: 7.189230112697221 us
-  Run 1: 7.172582627041995 us
-  Run 2: 7.599275695982236 us
+  Run 0: 3.2 us
+  Run 1: 3.2 us
+  Run 2: 3.2 us
+  Run 3: 3.2 us
+  Run 4: 3.2 us
 
 [14/105] EA...
   Run 0: 8.171155193748781 us
   Run 1: 8.186311111111111 us
   Run 2: 8.507505999723735 us
+  Run 3: 7.901392302560224 us
+  Run 4: 7.634190150334578 us
 
 [15/105] Greedy...
-  Run 0: 6.681772631997855 us
+  Run 0: 3.456 us
 
 ============================================================
   Medium-MLP/4x4-mesh
@@ -92,17 +103,21 @@
   Run 0: 26.89888711111111 us
 
 [18/105] SA...
-  Run 0: 25.352192000000002 us
-  Run 1: 26.176512000000002 us
-  Run 2: 25.35348148148148 us
+  Run 0: 25.734257777777778 us
+  Run 1: 25.64096 us
+  Run 2: 25.95953777777778 us
+  Run 3: 25.365617777777782 us
+  Run 4: 24.981048888888886 us
 
 [19/105] EA...
   Run 0: 26.282109387755103 us
   Run 1: 27.765418666666665 us
   Run 2: 25.46270814814815 us
+  Run 3: 27.88920888888889 us
+  Run 4: 25.86168888888889 us
 
 [20/105] Greedy...
-  Run 0: 25.187669333333332 us
+  Run 0: 25.2397037037037 us
 
 ============================================================
   Medium-MLP/6x6-mesh
@@ -118,17 +133,21 @@
   Skipping (mesh too large: 36 > 16)
 
 [23/105] SA...
-  Run 0: 29.61109333333333 us
-  Run 1: 30.735418049886626 us
-  Run 2: 29.435559103714944 us
+  Run 0: 31.516444444444446 us
+  Run 1: 31.832746666666665 us
+  Run 2: 32.07623111111111 us
+  Run 3: 31.891456 us
+  Run 4: 32.967793777777786 us
 
 [24/105] EA...
   Run 0: 30.665470946502058 us
   Run 1: 33.37595221266846 us
   Run 2: 34.50317934238281 us
+  Run 3: 31.44832 us
+  Run 4: 30.194612374416575 us
 
 [25/105] Greedy...
-  Run 0: 28.15407714585337 us
+  Run 0: 26.050559999999997 us
 
 ============================================================
   Medium-MLP/8x8-mesh
@@ -144,17 +163,21 @@
   Skipping (mesh too large: 64 > 16)
 
 [28/105] SA...
-  Run 0: 39.35875362856423 us
-  Run 1: 39.403611331821615 us
-  Run 2: 41.29823159351314 us
+  Run 0: 36.06528 us
+  Run 1: 43.76576 us
+  Run 2: 36.779804444444444 us
+  Run 3: 39.62652444444445 us
+  Run 4: 38.00177777777778 us
 
 [29/105] EA...
   Run 0: 43.497184153522504 us
   Run 1: 41.76622561074494 us
   Run 2: 41.03021037037036 us
+  Run 3: 44.41370600160587 us
+  Run 4: 42.07880046136102 us
 
 [30/105] Greedy...
-  Run 0: 29.456712016355798 us
+  Run 0: 28.06442666666667 us
 
 ============================================================
   Large-MLP/4x4-mesh
@@ -175,17 +198,21 @@
   Skipping (mesh too large: 36 > 16)
 
 [33/105] SA...
-  Run 0: 44.96380697148463 us
-  Run 1: 47.09054577777778 us
-  Run 2: 46.72222018161412 us
+  Run 0: 44.71871209876544 us
+  Run 1: 48.19348543209877 us
+  Run 2: 48.80308148148148 us
+  Run 3: 48.054272000000005 us
+  Run 4: 46.94268839506173 us
 
 [34/105] EA...
   Run 0: 48.88489795918367 us
   Run 1: 49.28005989274016 us
   Run 2: 48.14555428571428 us
+  Run 3: 47.3423220577225 us
+  Run 4: 50.73139982234216 us
 
 [35/105] Greedy...
-  Run 0: 38.13646222222222 us
+  Run 0: 39.97771851851852 us
 
 ============================================================
   Large-MLP/8x8-mesh
@@ -201,17 +228,21 @@
   Skipping (mesh too large: 64 > 16)
 
 [38/105] SA...
-  Run 0: 58.97039175425199 us
-  Run 1: 57.77228817047409 us
-  Run 2: 57.43902429551694 us
+  Run 0: 55.605728395061725 us
+  Run 1: 52.736 us
+  Run 2: 58.26888691358024 us
+  Run 3: 57.249792 us
+  Run 4: 52.17823604938271 us
 
 [39/105] EA...
   Run 0: 66.54633613168724 us
   Run 1: 60.20028049382716 us
   Run 2: 64.99206111498756 us
+  Run 3: 59.43290996796104 us
+  Run 4: 66.25930257591494 us
 
 [40/105] Greedy...
-  Run 0: 43.08735253644315 us
+  Run 0: 42.65377185185185 us
 
 ============================================================
   Sparse-MLP/4x4-mesh
@@ -227,17 +258,21 @@
   Run 0: 22.25675377777778 us
 
 [43/105] SA...
-  Run 0: 20.735715555555558 us
-  Run 1: 20.97880177777778 us
-  Run 2: 21.23576888888889 us
+  Run 0: 21.845333333333333 us
+  Run 1: 22.12977777777778 us
+  Run 2: 21.95911111111111 us
+  Run 3: 20.612740740740737 us
+  Run 4: 21.56088888888889 us
 
 [44/105] EA...
   Run 0: 21.145251700680273 us
   Run 1: 21.56088888888889 us
   Run 2: 21.40471147392291 us
+  Run 3: 22.58488888888889 us
+  Run 4: 20.85015703703704 us
 
 [45/105] Greedy...
-  Run 0: 20.545536 us
+  Run 0: 20.992 us
 
 ============================================================
   Sparse-MLP/6x6-mesh
@@ -253,17 +288,21 @@
   Skipping (mesh too large: 36 > 16)
 
 [48/105] SA...
-  Run 0: 27.576265478949463 us
-  Run 1: 28.707810867556894 us
-  Run 2: 28.878333549004786 us
+  Run 0: 24.789333333333335 us
+  Run 1: 26.29688888888889 us
+  Run 2: 26.794666666666668 us
+  Run 3: 23.570962962962962 us
+  Run 4: 25.903407407407407 us
 
 [49/105] EA...
   Run 0: 30.477230192837464 us
   Run 1: 29.32261158797247 us
   Run 2: 29.6931279338843 us
+  Run 3: 30.130213796926178 us
+  Run 4: 29.81669442176871 us
 
 [50/105] Greedy...
-  Run 0: 25.577787157514116 us
+  Run 0: 22.300444444444445 us
 
 ============================================================
   Sparse-MLP/8x8-mesh
@@ -279,17 +318,21 @@
   Skipping (mesh too large: 64 > 16)
 
 [53/105] SA...
-  Run 0: 37.446121990356005 us
-  Run 1: 38.57502615204678 us
-  Run 2: 37.02635692893074 us
+  Run 0: 26.24474074074074 us
+  Run 1: 31.55437037037037 us
+  Run 2: 27.34459259259259 us
+  Run 3: 35.745185185185186 us
+  Run 4: 34.33244444444445 us
 
 [54/105] EA...
   Run 0: 42.17762374595982 us
   Run 1: 43.15076403578152 us
   Run 2: 39.83919758573388 us
+  Run 3: 41.56164188028153 us
+  Run 4: 41.53835787888031 us
 
 [55/105] Greedy...
-  Run 0: 28.304157903801688 us
+  Run 0: 24.576 us
 
 ============================================================
   Transformer-S/4x4-mesh
@@ -305,17 +348,21 @@
   Run 0: 21.376 us
 
 [58/105] SA...
-  Run 0: 21.418666666666667 us
+  Run 0: 23.552 us
   Run 1: 22.272 us
-  Run 2: 20.93511111111111 us
+  Run 2: 21.888 us
+  Run 3: 21.76 us
+  Run 4: 22.528 us
 
 [59/105] EA...
   Run 0: 23.296 us
   Run 1: 21.319111111111113 us
   Run 2: 24.064 us
+  Run 3: 21.376 us
+  Run 4: 24.064 us
 
 [60/105] Greedy...
-  Run 0: 19.84 us
+  Run 0: 22.528 us
 
 ============================================================
   Transformer-S/6x6-mesh
@@ -331,17 +378,21 @@
   Skipping (mesh too large: 36 > 16)
 
 [63/105] SA...
-  Run 0: 24.76681481481482 us
-  Run 1: 25.994666666666667 us
-  Run 2: 27.279075555555558 us
+  Run 0: 26.88 us
+  Run 1: 25.216 us
+  Run 2: 28.16 us
+  Run 3: 26.24 us
+  Run 4: 26.794666666666668 us
 
 [64/105] EA...
   Run 0: 27.360834370370373 us
   Run 1: 26.972444444444445 us
   Run 2: 28.052906666666665 us
+  Run 3: 28.386560000000003 us
+  Run 4: 27.417884444444447 us
 
 [65/105] Greedy...
-  Run 0: 19.692771555555556 us
+  Run 0: 23.552 us
 
 ============================================================
   Transformer-S/8x8-mesh
@@ -357,17 +408,21 @@
   Skipping (mesh too large: 64 > 16)
 
 [68/105] SA...
-  Run 0: 35.10176237037037 us
-  Run 1: 34.51085264399093 us
-  Run 2: 36.22058666666667 us
+  Run 0: 29.184 us
+  Run 1: 33.28 us
+  Run 2: 30.208 us
+  Run 3: 30.464 us
+  Run 4: 30.336 us
 
 [69/105] EA...
   Run 0: 35.909639909297056 us
   Run 1: 34.01217532804858 us
   Run 2: 33.53678971533517 us
+  Run 3: 34.13792 us
+  Run 4: 37.20831818494156 us
 
 [70/105] Greedy...
-  Run 0: 21.323924897959188 us
+  Run 0: 21.888 us
 
 ============================================================
   Transformer-L/4x4-mesh
@@ -388,17 +443,21 @@
   Skipping (mesh too large: 36 > 16)
 
 [73/105] SA...
-  Run 0: 62.994962962962965 us
-  Run 1: 62.58488888888889 us
-  Run 2: 64.45653333333334 us
+  Run 0: 62.558814814814816 us
+  Run 1: 66.86340740740741 us
+  Run 2: 73.10222222222222 us
+  Run 3: 71.55674074074075 us
+  Run 4: 64.4645925925926 us
 
 [74/105] EA...
   Run 0: 61.83998577777778 us
   Run 1: 66.73493333333333 us
   Run 2: 65.27582814814815 us
+  Run 3: 66.80547555555556 us
+  Run 4: 65.19248592592592 us
 
 [75/105] Greedy...
-  Run 0: 46.794752 us
+  Run 0: 57.01480296296296 us
 
 ============================================================
   Transformer-L/8x8-mesh
@@ -414,17 +473,21 @@
   Skipping (mesh too large: 64 > 16)
 
 [78/105] SA...
-  Run 0: 78.06657659950329 us
-  Run 1: 79.5451931670446 us
-  Run 2: 74.00475259259258 us
+  Run 0: 68.17185185185186 us
+  Run 1: 73.57629629629629 us
+  Run 2: 78.46874074074074 us
+  Run 3: 87.21066666666667 us
+  Run 4: 79.104 us
 
 [79/105] EA...
   Run 0: 74.58638582346518 us
   Run 1: 78.78856014109347 us
   Run 2: 81.09242436885866 us
+  Run 3: 76.74418567901235 us
+  Run 4: 77.41905947089946 us
 
 [80/105] Greedy...
-  Run 0: 46.78773551020408 us
+  Run 0: 54.37629629629629 us
 
 ============================================================
   ConvNet/4x4-mesh
@@ -440,17 +503,21 @@
   Run 0: 825.5757037037037 us
 
 [83/105] SA...
-  Run 0: 857.6312533333335 us
-  Run 1: 809.949792 us
-  Run 2: 883.807448888889 us
+  Run 0: 950.6933333333334 us
+  Run 1: 868.55488 us
+  Run 2: 959.1401955555555 us
+  Run 3: 872.4870400000001 us
+  Run 4: 829.8927359999999 us
 
 [84/105] EA...
   Run 0: 823.1484444444445 us
   Run 1: 873.6561644444444 us
   Run 2: 815.4921752380952 us
+  Run 3: 860.0923210884354 us
+  Run 4: 817.4894628571428 us
 
 [85/105] Greedy...
-  Run 0: 813.4394074074074 us
+  Run 0: 811.0814984126985 us
 
 ============================================================
   ConvNet/6x6-mesh
@@ -466,17 +533,21 @@
   Skipping (mesh too large: 36 > 16)
 
 [88/105] SA...
-  Run 0: 826.0235401783265 us
-  Run 1: 849.9606202469135 us
-  Run 2: 829.3866587654322 us
+  Run 0: 992.5635555555556 us
+  Run 1: 950.9846044444444 us
+  Run 2: 1073.6041066666667 us
+  Run 3: 1409.7866666666666 us
+  Run 4: 1231.0417777777777 us
 
 [89/105] EA...
   Run 0: 888.5144359963268 us
   Run 1: 928.2047880207705 us
   Run 2: 940.3393244444444 us
+  Run 3: 941.3570151216305 us
+  Run 4: 902.0023379689967 us
 
 [90/105] Greedy...
-  Run 0: 763.6819042681371 us
+  Run 0: 781.5816296296297 us
 
 ============================================================
   ConvNet/8x8-mesh
@@ -492,17 +563,21 @@
   Skipping (mesh too large: 64 > 16)
 
 [93/105] SA...
-  Run 0: 1009.9551898877197 us
-  Run 1: 1036.4177150666494 us
-  Run 2: 1039.0756798154555 us
+  Run 0: 1032.2492444444445 us
+  Run 1: 1296.604 us
+  Run 2: 1305.9273244444444 us
+  Run 3: 1395.223111111111 us
+  Run 4: 1341.52 us
 
 [94/105] EA...
   Run 0: 1122.644917611489 us
   Run 1: 1196.2389821673526 us
   Run 2: 1105.284732426304 us
+  Run 3: 1119.0579587451743 us
+  Run 4: 1069.575030168719 us
 
 [95/105] Greedy...
-  Run 0: 847.7724056994083 us
+  Run 0: 1165.5057777777777 us
 
 Results saved to /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/experiment_results.json
 
@@ -511,594 +586,52 @@ SUMMARY TABLE (Total Latency in microseconds)
 ================================================================================
 Config                      Best Baseline          ILP           SA           EA       Greedy
 ----------------------------------------------------------------------------------------
-Small-MLP/4x4-mesh                   3.84         4.66         3.78         3.33         3.75
-Small-MLP/6x6-mesh                   3.84          inf         5.26         4.98         4.97
-Small-MLP/8x8-mesh                   3.84          inf         7.17         8.17         6.68
-Medium-MLP/4x4-mesh                 27.07        26.90        25.35        25.46        25.19
-Medium-MLP/6x6-mesh                 29.29          inf        29.44        30.67        28.15
-Medium-MLP/8x8-mesh                 32.34          inf        39.36        41.03        29.46
-Large-MLP/6x6-mesh                  44.67          inf        44.96        48.15        38.14
-Large-MLP/8x8-mesh                  47.22          inf        57.44        60.20        43.09
-Sparse-MLP/4x4-mesh                 21.83        22.26        20.74        21.15        20.55
-Sparse-MLP/6x6-mesh                 26.23          inf        27.58        29.32        25.58
-Sparse-MLP/8x8-mesh                 24.58          inf        37.03        39.84        28.30
-Transformer-S/4x4-mesh              23.17        21.38        20.94        21.32        19.84
-Transformer-S/6x6-mesh              21.85          inf        24.77        26.97        19.69
-Transformer-S/8x8-mesh              24.58          inf        34.51        33.54        21.32
-Transformer-L/6x6-mesh              57.70          inf        62.58        61.84        46.79
-Transformer-L/8x8-mesh              68.70          inf        74.00        74.59        46.79
-ConvNet/4x4-mesh                   859.41       825.58       809.95       815.49       813.44
-ConvNet/6x6-mesh                   837.74          inf       826.02       888.51       763.68
-ConvNet/8x8-mesh                   937.00          inf      1009.96      1105.28       847.77
-=== Inter-only experiment 2026-06-10T16:25:34+08:00 ===
-============================================================
-  RUNNING IN INTER-ONLY MODE (no intra-layer comm)
-============================================================
-
-============================================================
-  Small-MLP/4x4-mesh
-============================================================
-[1/105] Baselines...
-  random: 3.84 us
-  packed_row: 3.84 us
-  packed_col: 3.84 us
-  spread_row: 5.376 us
-  equal_partition: 1.1031893333333336 us
-
-[2/105] ILP...
-  Run 0: 0.985687074829932 us
-
-[3/105] SA...
-  Run 0: 0.9102222222222222 us
-  Run 1: 0.9138251851851852 us
-  Run 2: 0.9102222222222222 us
-
-[4/105] EA...
-  Run 0: 0.9788178382464096 us
-  Run 1: 1.0824817777777778 us
-  Run 2: 0.9523832098765432 us
-
-[5/105] Greedy...
-  Run 0: 0.9457777777777777 us
-
-============================================================
-  Small-MLP/6x6-mesh
-============================================================
-[6/105] Baselines...
-  random: 11.008 us
-  packed_row: 3.84 us
-  packed_col: 3.84 us
-  spread_row: 5.376 us
-  equal_partition: 0.6968888888888889 us
-
-[7/105] ILP...
-  Run 0: 0.5987049692257856 us
-
-[8/105] SA...
-  Run 0: 0.5272546502057613 us
-  Run 1: 0.5211428571428571 us
-  Run 2: 0.5169483234714004 us
-
-[9/105] EA...
-  Run 0: 0.638984126984127 us
-  Run 1: 0.6542222222222221 us
-  Run 2: 0.6678518518518518 us
-
-[10/105] Greedy...
-  Run 0: 0.5280343555868806 us
-
-============================================================
-  Small-MLP/8x8-mesh
-============================================================
-[11/105] Baselines...
-  random: 9.984 us
-  packed_row: 3.84 us
-  packed_col: 3.84 us
-  spread_row: 12.544 us
-  equal_partition: 0.4832423466041276 us
-
-[12/105] ILP...
-  Skipping (mesh too large: 64 > 49)
-
-[13/105] SA...
-  Run 0: 0.3509892692944993 us
-  Run 1: 0.3531747298653411 us
-  Run 2: 0.3509196212207795 us
-
-[14/105] EA...
-  Run 0: 0.46227904988572893 us
-  Run 1: 0.46458299757001054 us
-  Run 2: 0.43503623806170233 us
-
-[15/105] Greedy...
-  Run 0: 0.354553503941259 us
-
-============================================================
-  Medium-MLP/4x4-mesh
-============================================================
-[16/105] Baselines...
-  random: 17.166335999999998 us
-  packed_row: 15.699968 us
-  packed_col: 15.699968 us
-  spread_row: 15.699968 us
-  equal_partition: 13.597202962962962 us
-
-[17/105] ILP...
-  Run 0: 13.635128888888888 us
-
-[18/105] SA...
-  Run 0: 13.428811851851851 us
-  Run 1: 13.421226666666666 us
-  Run 2: 13.369647407407406 us
-
-[19/105] EA...
-  Run 0: 13.469771851851851 us
-  Run 1: 13.754974814814814 us
-  Run 2: 13.70187851851852 us
-
-[20/105] Greedy...
-  Run 0: 13.576874666666667 us
-
-============================================================
-  Medium-MLP/6x6-mesh
-============================================================
-[21/105] Baselines...
-  random: 19.51744 us
-  packed_row: 16.977919999999997 us
-  packed_col: 16.977919999999997 us
-  spread_row: 17.645568 us
-  equal_partition: 7.147009208972845 us
-
-[22/105] ILP...
-  ERROR: ILP solution invalid: layer 0 needs 6 cores but got 0 (status=Not Solved)
-  Run 0: N/A us
-
-[23/105] SA...
-  Run 0: 7.067438246409674 us
-  Run 1: 7.060857865696455 us
-  Run 2: 7.009812188211389 us
-
-[24/105] EA...
-  Run 0: 7.317834128091508 us
-  Run 1: 7.345028934240363 us
-  Run 2: 7.349989665588249 us
-
-[25/105] Greedy...
-  Run 0: 7.054222222222223 us
-
-============================================================
-  Medium-MLP/8x8-mesh
-============================================================
-[26/105] Baselines...
-  random: 23.728128 us
-  packed_row: 18.354176 us
-  packed_col: 18.354176 us
-  spread_row: 19.767296 us
-  equal_partition: 4.740785734424489 us
-
-[27/105] ILP...
-  Skipping (mesh too large: 64 > 49)
-
-[28/105] SA...
-  Run 0: 4.487550291215719 us
-  Run 1: 4.498952478343264 us
-  Run 2: 4.518176389211392 us
-
-[29/105] EA...
-  Run 0: 4.845258231568055 us
-  Run 1: 4.815253335357282 us
-  Run 2: 4.877274778120471 us
-
-[30/105] Greedy...
-  Run 0: 4.531842386761868 us
-
-============================================================
-  Large-MLP/4x4-mesh
-============================================================
-  SKIPPED (workload doesn't fit)
-
-============================================================
-  Large-MLP/6x6-mesh
-============================================================
-[31/105] Baselines...
-  random: 25.406577777777777 us
-  packed_row: 21.969983209876542 us
-  packed_col: 21.969983209876542 us
-  spread_row: 21.969983209876542 us
-  equal_partition: 14.095383219954648 us
-
-[32/105] ILP...
-  ERROR: ILP solution invalid: layer 0 needs 4 cores but got 0 (status=Not Solved)
-  Run 0: N/A us
-
-[33/105] SA...
-  Run 0: 14.077758496113473 us
-  Run 1: 14.088689359061652 us
-  Run 2: 14.058605938169574 us
-
-[34/105] EA...
-  Run 0: 14.671883636363637 us
-  Run 1: 14.513798095238094 us
-  Run 2: 14.271178594104308 us
-
-[35/105] Greedy...
-  Run 0: 13.946666666666665 us
-
-============================================================
-  Large-MLP/8x8-mesh
-============================================================
-[36/105] Baselines...
-  random: 29.35694222222222 us
-  packed_row: 23.71760987654321 us
-  packed_col: 23.71760987654321 us
-  spread_row: 24.301921975308645 us
-  equal_partition: 9.144310516787398 us
-
-[37/105] ILP...
-  Skipping (mesh too large: 64 > 49)
-
-[38/105] SA...
-  Run 0: 9.034822732374247 us
-  Run 1: 8.976371271378023 us
-  Run 2: 9.01976613714738 us
-
-[39/105] EA...
-  Run 0: 9.73355004241451 us
-  Run 1: 9.566750467603216 us
-  Run 2: 9.619844535028125 us
-
-[40/105] Greedy...
-  Run 0: 8.771012789115645 us
-
-============================================================
-  Sparse-MLP/4x4-mesh
-============================================================
-[41/105] Baselines...
-  random: 19.418074074074074 us
-  packed_row: 18.052740740740738 us
-  packed_col: 18.052740740740738 us
-  spread_row: 18.811259259259256 us
-  equal_partition: 9.266062222222223 us
-
-[42/105] ILP...
-  Run 0: 8.992995555555556 us
-
-[43/105] SA...
-  Run 0: 8.718222222222222 us
-  Run 1: 8.70324148148148 us
-  Run 2: 8.75482074074074 us
-
-[44/105] EA...
-  Run 0: 9.196885333333332 us
-  Run 1: 9.149553777777777 us
-  Run 2: 9.156835555555556 us
-
-[45/105] Greedy...
-  Run 0: 8.934741333333333 us
-
-============================================================
-  Sparse-MLP/6x6-mesh
-============================================================
-[46/105] Baselines...
-  random: 27.761777777777777 us
-  packed_row: 19.569777777777777 us
-  packed_col: 19.569777777777777 us
-  spread_row: 22.90725925925926 us
-  equal_partition: 5.240832 us
-
-[47/105] ILP...
-  ERROR: ILP solution invalid: layer 0 needs 6 cores but got 0 (status=Not Solved)
-  Run 0: N/A us
-
-[48/105] SA...
-  Run 0: 4.8591960493827155 us
-  Run 1: 4.809368606701939 us
-  Run 2: 4.84221387755102 us
-
-[49/105] EA...
-  Run 0: 5.157949186586731 us
-  Run 1: 5.34784 us
-  Run 2: 5.295128352167313 us
-
-[50/105] Greedy...
-  Run 0: 4.951771428571428 us
-
-============================================================
-  Sparse-MLP/8x8-mesh
-============================================================
-[51/105] Baselines...
-  random: 29.127111111111113 us
-  packed_row: 19.114666666666665 us
-  packed_col: 19.114666666666665 us
-  spread_row: 19.114666666666665 us
-  equal_partition: 3.5978733392134243 us
-
-[52/105] ILP...
-  Skipping (mesh too large: 64 > 49)
-
-[53/105] SA...
-  Run 0: 3.2126186930624807 us
-  Run 1: 3.290016480859895 us
-  Run 2: 3.299074379250193 us
-
-[54/105] EA...
-  Run 0: 3.7351617559732686 us
-  Run 1: 3.6974598297076557 us
-  Run 2: 3.672137477828502 us
-
-[55/105] Greedy...
-  Run 0: 3.32657962439381 us
-
-============================================================
-  Transformer-S/4x4-mesh
-============================================================
-[56/105] Baselines...
-  random: 35.84 us
-  packed_row: 24.064 us
-  packed_col: 24.064 us
-  spread_row: 24.064 us
-  equal_partition: 22.144 us
-
-[57/105] ILP...
-  Run 0: 18.048 us
-
-[58/105] SA...
-  Run 0: 20.864 us
-  Run 1: 19.84 us
-  Run 2: 20.323555555555554 us
-
-[59/105] EA...
-  Run 0: 19.328 us
-  Run 1: 19.825777777777777 us
-  Run 2: 19.072 us
-
-[60/105] Greedy...
-  Run 0: 16.896 us
-
-============================================================
-  Transformer-S/6x6-mesh
-============================================================
-[61/105] Baselines...
-  random: 54.272 us
-  packed_row: 23.552 us
-  packed_col: 23.552 us
-  spread_row: 40.96 us
-  equal_partition: 13.653333333333334 us
-
-[62/105] ILP...
-  ERROR: ILP solution invalid: layer 0 needs 2 cores but got 0 (status=Not Solved)
-  Run 0: N/A us
-
-[63/105] SA...
-  Run 0: 11.976296296296296 us
-  Run 1: 11.448888888888888 us
-  Run 2: 11.842962962962963 us
-
-[64/105] EA...
-  Run 0: 12.483555555555554 us
-  Run 1: 13.17925925925926 us
-  Run 2: 13.368888888888888 us
-
-[65/105] Greedy...
-  Run 0: 9.319196444444444 us
-
-============================================================
-  Transformer-S/8x8-mesh
-============================================================
-[66/105] Baselines...
-  random: 65.536 us
-  packed_row: 24.576 us
-  packed_col: 24.576 us
-  spread_row: 51.2 us
-  equal_partition: 8.18976237037037 us
-
-[67/105] ILP...
-  Skipping (mesh too large: 64 > 49)
-
-[68/105] SA...
-  Run 0: 8.858619017384731 us
-  Run 1: 8.854905517762662 us
-  Run 2: 8.770487437641723 us
-
-[69/105] EA...
-  Run 0: 9.51677097505669 us
-  Run 1: 9.458365629629629 us
-  Run 2: 9.372561124716555 us
-
-[70/105] Greedy...
-  Run 0: 6.3531885714285705 us
-
-============================================================
-  Transformer-L/4x4-mesh
-============================================================
-  SKIPPED (workload doesn't fit)
-
-============================================================
-  Transformer-L/6x6-mesh
-============================================================
-[71/105] Baselines...
-  random: 80.70637037037037 us
-  packed_row: 51.882666666666665 us
-  packed_col: 51.882666666666665 us
-  spread_row: 51.882666666666665 us
-  equal_partition: 31.530666666666665 us
-
-[72/105] ILP...
-  ERROR: ILP solution invalid: layer 0 needs 2 cores but got 0 (status=Not Solved)
-  Run 0: N/A us
-
-[73/105] SA...
-  Run 0: 30.551324444444443 us
-  Run 1: 31.02492444444444 us
-  Run 2: 31.44059259259259 us
-
-[74/105] EA...
-  Run 0: 32.78933333333334 us
-  Run 1: 33.92094814814815 us
-  Run 2: 32.526222222222216 us
-
-[75/105] Greedy...
-  Run 0: 26.079459555555555 us
-
-============================================================
-  Transformer-L/8x8-mesh
-============================================================
-[76/105] Baselines...
-  random: 95.91466666666666 us
-  packed_row: 51.42755555555556 us
-  packed_col: 51.42755555555556 us
-  spread_row: 73.50044444444444 us
-  equal_partition: 19.7529380516143 us
-
-[77/105] ILP...
-  Skipping (mesh too large: 64 > 49)
-
-[78/105] SA...
-  Run 0: 22.063138387647122 us
-  Run 1: 21.346910814814816 us
-  Run 2: 22.008342639455783 us
-
-[79/105] EA...
-  Run 0: 23.203282721088435 us
-  Run 1: 23.299134417449515 us
-  Run 2: 22.620101784256555 us
-
-[80/105] Greedy...
-  Run 0: 16.876811287477956 us
-
-============================================================
-  ConvNet/4x4-mesh
-============================================================
-[81/105] Baselines...
-  random: 1610.0355555555554 us
-  packed_row: 1464.4 us
-  packed_col: 1464.4 us
-  spread_row: 1857.616 us
-  equal_partition: 561.1854933333334 us
-
-[82/105] ILP...
-  Run 0: 488.1866666666666 us
-
-[83/105] SA...
-  Run 0: 478.5906488888889 us
-  Run 1: 471.01759999999996 us
-  Run 2: 470.67763199999996 us
-
-[84/105] EA...
-  Run 0: 500.241306122449 us
-  Run 1: 482.4499911111111 us
-  Run 2: 487.91132444444446 us
-
-[85/105] Greedy...
-  Run 0: 479.53728 us
-
-============================================================
-  ConvNet/6x6-mesh
-============================================================
-[86/105] Baselines...
-  random: 3277.5626666666667 us
-  packed_row: 1508.0906666666665 us
-  packed_col: 1508.0906666666665 us
-  spread_row: 1508.0906666666665 us
-  equal_partition: 316.97443698216733 us
-
-[87/105] ILP...
-  ERROR: ILP solution invalid: layer 0 needs 7 cores but got 0 (status=Not Solved)
-  Run 0: N/A us
-
-[88/105] SA...
-  Run 0: 252.12575768573305 us
-  Run 1: 253.28413835322928 us
-  Run 2: 251.3080722375268 us
-
-[89/105] EA...
-  Run 0: 269.5449173333333 us
-  Run 1: 282.72217380700425 us
-  Run 2: 272.6736531864095 us
-
-[90/105] Greedy...
-  Run 0: 259.5705611824977 us
-
-============================================================
-  ConvNet/8x8-mesh
-============================================================
-[91/105] Baselines...
-  random: 2833.374222222222 us
-  packed_row: 1508.0906666666665 us
-  packed_col: 1508.0906666666665 us
-  spread_row: 2498.4124444444446 us
-  equal_partition: 213.63101453287197 us
-
-[92/105] ILP...
-  Skipping (mesh too large: 64 > 49)
-
-[93/105] SA...
-  Run 0: 167.36838433462643 us
-  Run 1: 212.22658279666192 us
-  Run 2: 207.8602186948854 us
-
-[94/105] EA...
-  Run 0: 220.7486708189158 us
-  Run 1: 214.02533569829316 us
-  Run 2: 202.78050809327846 us
-
-[95/105] Greedy...
-  Run 0: 172.76276072898295 us
-
-Results saved to /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/experiment_results_inter_only.json
-
-================================================================================
-SUMMARY TABLE (Total Latency in microseconds)
-================================================================================
-Config                      Best Baseline          ILP           SA           EA       Greedy
-----------------------------------------------------------------------------------------
-Small-MLP/4x4-mesh                   1.10         0.99         0.91         0.95         0.95
-Small-MLP/6x6-mesh                   0.70         0.60         0.52         0.64         0.53
-Small-MLP/8x8-mesh                   0.48          inf         0.35         0.44         0.35
-Medium-MLP/4x4-mesh                 13.60        13.64        13.37        13.47        13.58
-Medium-MLP/6x6-mesh                  7.15          inf         7.01         7.32         7.05
-Medium-MLP/8x8-mesh                  4.74          inf         4.49         4.82         4.53
-Large-MLP/6x6-mesh                  14.10          inf        14.06        14.27        13.95
-Large-MLP/8x8-mesh                   9.14          inf         8.98         9.57         8.77
-Sparse-MLP/4x4-mesh                  9.27         8.99         8.70         9.15         8.93
-Sparse-MLP/6x6-mesh                  5.24          inf         4.81         5.16         4.95
-Sparse-MLP/8x8-mesh                  3.60          inf         3.21         3.67         3.33
-Transformer-S/4x4-mesh              22.14        18.05        19.84        19.07        16.90
-Transformer-S/6x6-mesh              13.65          inf        11.45        12.48         9.32
-Transformer-S/8x8-mesh               8.19          inf         8.77         9.37         6.35
-Transformer-L/6x6-mesh              31.53          inf        30.55        32.53        26.08
-Transformer-L/8x8-mesh              19.75          inf        21.35        22.62        16.88
-ConvNet/4x4-mesh                   561.19       488.19       470.68       482.45       479.54
-ConvNet/6x6-mesh                   316.97          inf       251.31       269.54       259.57
-ConvNet/8x8-mesh                   213.63          inf       167.37       202.78       172.76
-=== Visualize main 2026-06-10T16:37:35+08:00 ===
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+Small-MLP/4x4-mesh                   3.84         4.66         3.20         3.33         3.58
+Small-MLP/6x6-mesh                   3.84          inf         3.20         4.98         3.46
+Small-MLP/8x8-mesh                   3.84          inf         3.20         7.63         3.46
+Medium-MLP/4x4-mesh                 27.07        26.90        24.98        25.46        25.24
+Medium-MLP/6x6-mesh                 29.29          inf        31.52        30.19        26.05
+Medium-MLP/8x8-mesh                 32.34          inf        36.07        41.03        28.06
+Large-MLP/6x6-mesh                  44.67          inf        44.72        47.34        39.98
+Large-MLP/8x8-mesh                  47.22          inf        52.18        59.43        42.65
+Sparse-MLP/4x4-mesh                 21.83        22.26        20.61        20.85        20.99
+Sparse-MLP/6x6-mesh                 26.23          inf        23.57        29.32        22.30
+Sparse-MLP/8x8-mesh                 24.58          inf        26.24        39.84        24.58
+Transformer-S/4x4-mesh              23.17        21.38        21.76        21.32        22.53
+Transformer-S/6x6-mesh              21.85          inf        25.22        26.97        23.55
+Transformer-S/8x8-mesh              24.58          inf        29.18        33.54        21.89
+Transformer-L/6x6-mesh              57.70          inf        62.56        61.84        57.01
+Transformer-L/8x8-mesh              68.70          inf        68.17        74.59        54.38
+ConvNet/4x4-mesh                   859.41       825.58       829.89       815.49       811.08
+ConvNet/6x6-mesh                   837.74          inf       950.98       888.51       781.58
+ConvNet/8x8-mesh                   937.00          inf      1032.25      1069.58      1165.51
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
 Loading results from /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/experiment_results.json
 Generating summary charts...
@@ -1173,34 +706,649 @@ Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/convergence_ConvNe
 Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/convergence_ConvNet_8x8-mesh.png
 
 All plots saved to /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/
-=== Visualize inter-only 2026-06-10T16:37:46+08:00 ===
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+============================================================
+  RUNNING IN INTER-ONLY MODE (no intra-layer comm)
+============================================================
+
+============================================================
+  Small-MLP/4x4-mesh
+============================================================
+[1/105] Baselines...
+  random: 3.84 us
+  packed_row: 3.84 us
+  packed_col: 3.84 us
+  spread_row: 5.376 us
+  equal_partition: 1.1031893333333336 us
+
+[2/105] ILP...
+  Run 0: 0.985687074829932 us
+
+[3/105] SA...
+  Run 0: 0.9102222222222222 us
+  Run 1: 0.9102222222222222 us
+  Run 2: 0.9061135802469136 us
+  Run 3: 0.9102222222222222 us
+  Run 4: 0.9061135802469136 us
+
+[4/105] EA...
+  Run 0: 0.9788178382464096 us
+  Run 1: 1.0824817777777778 us
+  Run 2: 0.9523832098765432 us
+  Run 3: 1.0872604444444445 us
+  Run 4: 1.0872604444444445 us
+
+[5/105] Greedy...
+  Run 0: 3.072 us
+
+============================================================
+  Small-MLP/6x6-mesh
+============================================================
+[6/105] Baselines...
+  random: 11.008 us
+  packed_row: 3.84 us
+  packed_col: 3.84 us
+  spread_row: 5.376 us
+  equal_partition: 0.6968888888888889 us
+
+[7/105] ILP...
+  Run 0: 0.5987049692257856 us
+
+[8/105] SA...
+  Run 0: 0.5159927287719496 us
+  Run 1: 0.5198873876420375 us
+  Run 2: 0.5226193905817175 us
+  Run 3: 0.5217494864982004 us
+  Run 4: 0.5256854993060122 us
+
+[9/105] EA...
+  Run 0: 0.638984126984127 us
+  Run 1: 0.6542222222222221 us
+  Run 2: 0.6678518518518518 us
+  Run 3: 0.6672592592592592 us
+  Run 4: 0.6542222222222221 us
+
+[10/105] Greedy...
+  Run 0: 2.1617777777777776 us
+
+============================================================
+  Small-MLP/8x8-mesh
+============================================================
+[11/105] Baselines...
+  random: 9.984 us
+  packed_row: 3.84 us
+  packed_col: 3.84 us
+  spread_row: 12.544 us
+  equal_partition: 0.4832423466041276 us
+
+[12/105] ILP...
+  Skipping (mesh too large: 64 > 49)
+
+[13/105] SA...
+  Run 0: 0.3557698321158529 us
+  Run 1: 0.36060754285714286 us
+  Run 2: 0.35273041551246537 us
+  Run 3: 0.34984852607709754 us
+  Run 4: 0.3570751831277694 us
+
+[14/105] EA...
+  Run 0: 0.46227904988572893 us
+  Run 1: 0.46458299757001054 us
+  Run 2: 0.43503623806170233 us
+  Run 3: 0.3921937930201667 us
+  Run 4: 0.4335482659352336 us
+
+[15/105] Greedy...
+  Run 0: 1.8841599999999998 us
+
+============================================================
+  Medium-MLP/4x4-mesh
+============================================================
+[16/105] Baselines...
+  random: 17.166335999999998 us
+  packed_row: 15.699968 us
+  packed_col: 15.699968 us
+  spread_row: 15.699968 us
+  equal_partition: 13.597202962962962 us
+
+[17/105] ILP...
+  Run 0: 13.635128888888888 us
+
+[18/105] SA...
+  Run 0: 13.369647407407406 us
+  Run 1: 13.529088 us
+  Run 2: 13.430328888888889 us
+  Run 3: 13.369647407407406 us
+  Run 4: 13.44549925925926 us
+
+[19/105] EA...
+  Run 0: 13.469771851851851 us
+  Run 1: 13.754974814814814 us
+  Run 2: 13.70187851851852 us
+  Run 3: 13.63968 us
+  Run 4: 13.46522074074074 us
+
+[20/105] Greedy...
+  Run 0: 13.369647407407406 us
+
+============================================================
+  Medium-MLP/6x6-mesh
+============================================================
+[21/105] Baselines...
+  random: 19.51744 us
+  packed_row: 16.977919999999997 us
+  packed_col: 16.977919999999997 us
+  spread_row: 17.645568 us
+  equal_partition: 7.147009208972845 us
+
+[22/105] ILP...
+  ERROR: ILP solution invalid: layer 0 needs 6 cores but got 0 (status=Not Solved)
+  Run 0: N/A us
+
+[23/105] SA...
+  Run 0: 7.01053590449954 us
+  Run 1: 7.030383734946372 us
+  Run 2: 7.021171423182213 us
+  Run 3: 6.990418700180938 us
+  Run 4: 6.973074934911243 us
+
+[24/105] EA...
+  Run 0: 7.317834128091508 us
+  Run 1: 7.345028934240363 us
+  Run 2: 7.349989665588249 us
+  Run 3: 7.278469893742621 us
+  Run 4: 7.213097709563164 us
+
+[25/105] Greedy...
+  Run 0: 6.943015610651974 us
+
+============================================================
+  Medium-MLP/8x8-mesh
+============================================================
+[26/105] Baselines...
+  random: 23.728128 us
+  packed_row: 18.354176 us
+  packed_col: 18.354176 us
+  spread_row: 19.767296 us
+  equal_partition: 4.740785734424489 us
+
+[27/105] ILP...
+  Skipping (mesh too large: 64 > 49)
+
+[28/105] SA...
+  Run 0: 4.5045354322445235 us
+  Run 1: 4.57020802058932 us
+  Run 2: 4.506387500672219 us
+  Run 3: 4.504377868266551 us
+  Run 4: 4.514380739859371 us
+
+[29/105] EA...
+  Run 0: 4.845258231568055 us
+  Run 1: 4.815253335357282 us
+  Run 2: 4.877274778120471 us
+  Run 3: 4.816668105660643 us
+  Run 4: 4.870810931118414 us
+
+[30/105] Greedy...
+  Run 0: 4.423304506632059 us
+
+============================================================
+  Large-MLP/4x4-mesh
+============================================================
+  SKIPPED (workload doesn't fit)
+
+============================================================
+  Large-MLP/6x6-mesh
+============================================================
+[31/105] Baselines...
+  random: 25.406577777777777 us
+  packed_row: 21.969983209876542 us
+  packed_col: 21.969983209876542 us
+  spread_row: 21.969983209876542 us
+  equal_partition: 14.095383219954648 us
+
+[32/105] ILP...
+  ERROR: ILP solution invalid: layer 0 needs 4 cores but got 0 (status=Not Solved)
+  Run 0: N/A us
+
+[33/105] SA...
+  Run 0: 14.110335863270928 us
+  Run 1: 14.3212044751785 us
+  Run 2: 14.030566611570247 us
+  Run 3: 14.140697283950615 us
+  Run 4: 14.268329903862371 us
+
+[34/105] EA...
+  Run 0: 14.671883636363637 us
+  Run 1: 14.513798095238094 us
+  Run 2: 14.271178594104308 us
+  Run 3: 14.635361322314049 us
+  Run 4: 14.43668462585034 us
+
+[35/105] Greedy...
+  Run 0: 13.865575659293409 us
+
+============================================================
+  Large-MLP/8x8-mesh
+============================================================
+[36/105] Baselines...
+  random: 29.35694222222222 us
+  packed_row: 23.71760987654321 us
+  packed_col: 23.71760987654321 us
+  spread_row: 24.301921975308645 us
+  equal_partition: 9.144310516787398 us
+
+[37/105] ILP...
+  Skipping (mesh too large: 64 > 49)
+
+[38/105] SA...
+  Run 0: 8.950053753077212 us
+  Run 1: 9.085073230261802 us
+  Run 2: 9.005398595616438 us
+  Run 3: 8.937204976432941 us
+  Run 4: 9.052187205635922 us
+
+[39/105] EA...
+  Run 0: 9.73355004241451 us
+  Run 1: 9.566750467603216 us
+  Run 2: 9.619844535028125 us
+  Run 3: 9.647489348963342 us
+  Run 4: 9.618458681075916 us
+
+[40/105] Greedy...
+  Run 0: 8.75194402015435 us
+
+============================================================
+  Sparse-MLP/4x4-mesh
+============================================================
+[41/105] Baselines...
+  random: 19.418074074074074 us
+  packed_row: 18.052740740740738 us
+  packed_col: 18.052740740740738 us
+  spread_row: 18.811259259259256 us
+  equal_partition: 9.266062222222223 us
+
+[42/105] ILP...
+  Run 0: 8.992995555555556 us
+
+[43/105] SA...
+  Run 0: 8.78592 us
+  Run 1: 8.718411851851851 us
+  Run 2: 8.718222222222222 us
+  Run 3: 8.715377777777778 us
+  Run 4: 8.73965037037037 us
+
+[44/105] EA...
+  Run 0: 9.196885333333332 us
+  Run 1: 9.149553777777777 us
+  Run 2: 9.156835555555556 us
+  Run 3: 9.13863111111111 us
+  Run 4: 9.20416711111111 us
+
+[45/105] Greedy...
+  Run 0: 8.704 us
+
+============================================================
+  Sparse-MLP/6x6-mesh
+============================================================
+[46/105] Baselines...
+  random: 27.761777777777777 us
+  packed_row: 19.569777777777777 us
+  packed_col: 19.569777777777777 us
+  spread_row: 22.90725925925926 us
+  equal_partition: 5.240832 us
+
+[47/105] ILP...
+  ERROR: ILP solution invalid: layer 0 needs 6 cores but got 0 (status=Not Solved)
+  Run 0: N/A us
+
+[48/105] SA...
+  Run 0: 4.823461149828329 us
+  Run 1: 4.913935802469135 us
+  Run 2: 4.871287593525356 us
+  Run 3: 4.843424540186445 us
+  Run 4: 4.866686232741617 us
+
+[49/105] EA...
+  Run 0: 5.157949186586731 us
+  Run 1: 5.34784 us
+  Run 2: 5.295128352167313 us
+  Run 3: 5.374719999999999 us
+  Run 4: 5.1972050059031885 us
+
+[50/105] Greedy...
+  Run 0: 4.759462084885674 us
+
+============================================================
+  Sparse-MLP/8x8-mesh
+============================================================
+[51/105] Baselines...
+  random: 29.127111111111113 us
+  packed_row: 19.114666666666665 us
+  packed_col: 19.114666666666665 us
+  spread_row: 19.114666666666665 us
+  equal_partition: 3.5978733392134243 us
+
+[52/105] ILP...
+  Skipping (mesh too large: 64 > 49)
+
+[53/105] SA...
+  Run 0: 3.266112536993088 us
+  Run 1: 12.364458666666668 us
+  Run 2: 4.784162829931973 us
+  Run 3: 3.350393161984232 us
+  Run 4: 3.2756621997253808 us
+
+[54/105] EA...
+  Run 0: 3.7351617559732686 us
+  Run 1: 3.6974598297076557 us
+  Run 2: 3.672137477828502 us
+  Run 3: 3.6687809555194626 us
+  Run 4: 3.7141996688871632 us
+
+[55/105] Greedy...
+  Run 0: 18.20444444444444 us
+
+============================================================
+  Transformer-S/4x4-mesh
+============================================================
+[56/105] Baselines...
+  random: 35.84 us
+  packed_row: 24.064 us
+  packed_col: 24.064 us
+  spread_row: 24.064 us
+  equal_partition: 22.144 us
+
+[57/105] ILP...
+  Run 0: 18.048 us
+
+[58/105] SA...
+  Run 0: 22.4 us
+  Run 1: 21.504 us
+  Run 2: 19.21422222222222 us
+  Run 3: 20.48 us
+  Run 4: 20.48 us
+
+[59/105] EA...
+  Run 0: 19.328 us
+  Run 1: 19.825777777777777 us
+  Run 2: 19.072 us
+  Run 3: 18.218666666666664 us
+  Run 4: 18.048 us
+
+[60/105] Greedy...
+  Run 0: 22.528 us
+
+============================================================
+  Transformer-S/6x6-mesh
+============================================================
+[61/105] Baselines...
+  random: 54.272 us
+  packed_row: 23.552 us
+  packed_col: 23.552 us
+  spread_row: 40.96 us
+  equal_partition: 13.653333333333334 us
+
+[62/105] ILP...
+  ERROR: ILP solution invalid: layer 0 needs 2 cores but got 0 (status=Not Solved)
+  Run 0: N/A us
+
+[63/105] SA...
+  Run 0: 25.344 us
+  Run 1: 24.064 us
+  Run 2: 23.296 us
+  Run 3: 22.912 us
+  Run 4: 19.086222222222222 us
+
+[64/105] EA...
+  Run 0: 12.483555555555554 us
+  Run 1: 13.17925925925926 us
+  Run 2: 13.368888888888888 us
+  Run 3: 12.629333333333333 us
+  Run 4: 13.664 us
+
+[65/105] Greedy...
+  Run 0: 23.552 us
+
+============================================================
+  Transformer-S/8x8-mesh
+============================================================
+[66/105] Baselines...
+  random: 65.536 us
+  packed_row: 24.576 us
+  packed_col: 24.576 us
+  spread_row: 51.2 us
+  equal_partition: 8.18976237037037 us
+
+[67/105] ILP...
+  Skipping (mesh too large: 64 > 49)
+
+[68/105] SA...
+  Run 0: 26.112 us
+  Run 1: 29.056 us
+  Run 2: 30.72 us
+  Run 3: 29.696 us
+  Run 4: 24.177777777777777 us
+
+[69/105] EA...
+  Run 0: 9.51677097505669 us
+  Run 1: 9.458365629629629 us
+  Run 2: 9.372561124716555 us
+  Run 3: 9.320711111111113 us
+  Run 4: 9.443068517006802 us
+
+[70/105] Greedy...
+  Run 0: 18.048 us
+
+============================================================
+  Transformer-L/4x4-mesh
+============================================================
+  SKIPPED (workload doesn't fit)
+
+============================================================
+  Transformer-L/6x6-mesh
+============================================================
+[71/105] Baselines...
+  random: 80.70637037037037 us
+  packed_row: 51.882666666666665 us
+  packed_col: 51.882666666666665 us
+  spread_row: 51.882666666666665 us
+  equal_partition: 31.530666666666665 us
+
+[72/105] ILP...
+  ERROR: ILP solution invalid: layer 0 needs 2 cores but got 0 (status=Not Solved)
+  Run 0: N/A us
+
+[73/105] SA...
+  Run 0: 46.44029629629629 us
+  Run 1: 49.99585185185185 us
+  Run 2: 50.28977777777778 us
+  Run 3: 49.39851851851852 us
+  Run 4: 47.02814814814815 us
+
+[74/105] EA...
+  Run 0: 32.78933333333334 us
+  Run 1: 33.92094814814815 us
+  Run 2: 32.526222222222216 us
+  Run 3: 33.81949629629629 us
+  Run 4: 31.444480000000002 us
+
+[75/105] Greedy...
+  Run 0: 28.480094814814816 us
+
+============================================================
+  Transformer-L/8x8-mesh
+============================================================
+[76/105] Baselines...
+  random: 95.91466666666666 us
+  packed_row: 51.42755555555556 us
+  packed_col: 51.42755555555556 us
+  spread_row: 73.50044444444444 us
+  equal_partition: 19.7529380516143 us
+
+[77/105] ILP...
+  Skipping (mesh too large: 64 > 49)
+
+[78/105] SA...
+  Run 0: 46.96177777777778 us
+  Run 1: 54.12977777777778 us
+  Run 2: 57.344 us
+  Run 3: 55.26755555555555 us
+  Run 4: 48.45037037037037 us
+
+[79/105] EA...
+  Run 0: 23.203282721088435 us
+  Run 1: 23.299134417449515 us
+  Run 2: 22.620101784256555 us
+  Run 3: 23.214403918367346 us
+  Run 4: 22.993426188964477 us
+
+[80/105] Greedy...
+  Run 0: 18.042718234315952 us
+
+============================================================
+  ConvNet/4x4-mesh
+============================================================
+[81/105] Baselines...
+  random: 1610.0355555555554 us
+  packed_row: 1464.4 us
+  packed_col: 1464.4 us
+  spread_row: 1857.616 us
+  equal_partition: 561.1854933333334 us
+
+[82/105] ILP...
+  Run 0: 488.1866666666666 us
+
+[83/105] SA...
+  Run 0: 469.104768 us
+  Run 1: 469.104768 us
+  Run 2: 470.153344 us
+  Run 3: 477.8465422222222 us
+  Run 4: 472.774784 us
+
+[84/105] EA...
+  Run 0: 500.241306122449 us
+  Run 1: 482.4499911111111 us
+  Run 2: 487.91132444444446 us
+  Run 3: 490.0958577777778 us
+  Run 4: 491.4065777777778 us
+
+[85/105] Greedy...
+  Run 0: 470.153344 us
+
+============================================================
+  ConvNet/6x6-mesh
+============================================================
+[86/105] Baselines...
+  random: 3277.5626666666667 us
+  packed_row: 1508.0906666666665 us
+  packed_col: 1508.0906666666665 us
+  spread_row: 1508.0906666666665 us
+  equal_partition: 316.97443698216733 us
+
+[87/105] ILP...
+  ERROR: ILP solution invalid: layer 0 needs 7 cores but got 0 (status=Not Solved)
+  Run 0: N/A us
+
+[88/105] SA...
+  Run 0: 252.3121781985536 us
+  Run 1: 251.77955008547008 us
+  Run 2: 252.16352652202497 us
+  Run 3: 252.32611429322813 us
+  Run 4: 253.80919911620484 us
+
+[89/105] EA...
+  Run 0: 269.5449173333333 us
+  Run 1: 282.72217380700425 us
+  Run 2: 272.6736531864095 us
+  Run 3: 263.0044591368228 us
+  Run 4: 319.45653432098766 us
+
+[90/105] Greedy...
+  Run 0: 341.5056326530612 us
+
+============================================================
+  ConvNet/8x8-mesh
+============================================================
+[91/105] Baselines...
+  random: 2833.374222222222 us
+  packed_row: 1508.0906666666665 us
+  packed_col: 1508.0906666666665 us
+  spread_row: 2498.4124444444446 us
+  equal_partition: 213.63101453287197 us
+
+[92/105] ILP...
+  Skipping (mesh too large: 64 > 49)
+
+[93/105] SA...
+  Run 0: 202.2831204053638 us
+  Run 1: 194.23435599227346 us
+  Run 2: 202.4958371597633 us
+  Run 3: 182.22628840809287 us
+  Run 4: 176.0048781694496 us
+
+[94/105] EA...
+  Run 0: 220.7486708189158 us
+  Run 1: 214.02533569829316 us
+  Run 2: 202.78050809327846 us
+  Run 3: 196.52271623392713 us
+  Run 4: 207.74966602588748 us
+
+[95/105] Greedy...
+  Run 0: 1005.3066666666667 us
+
+Results saved to /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/experiment_results_inter_only.json
+
+================================================================================
+SUMMARY TABLE (Total Latency in microseconds)
+================================================================================
+Config                      Best Baseline          ILP           SA           EA       Greedy
+----------------------------------------------------------------------------------------
+Small-MLP/4x4-mesh                   1.10         0.99         0.91         0.95         3.07
+Small-MLP/6x6-mesh                   0.70         0.60         0.52         0.64         2.16
+Small-MLP/8x8-mesh                   0.48          inf         0.35         0.39         1.88
+Medium-MLP/4x4-mesh                 13.60        13.64        13.37        13.47        13.37
+Medium-MLP/6x6-mesh                  7.15          inf         6.97         7.21         6.94
+Medium-MLP/8x8-mesh                  4.74          inf         4.50         4.82         4.42
+Large-MLP/6x6-mesh                  14.10          inf        14.03        14.27        13.87
+Large-MLP/8x8-mesh                   9.14          inf         8.94         9.57         8.75
+Sparse-MLP/4x4-mesh                  9.27         8.99         8.72         9.14         8.70
+Sparse-MLP/6x6-mesh                  5.24          inf         4.82         5.16         4.76
+Sparse-MLP/8x8-mesh                  3.60          inf         3.27         3.67        18.20
+Transformer-S/4x4-mesh              22.14        18.05        19.21        18.05        22.53
+Transformer-S/6x6-mesh              13.65          inf        19.09        12.48        23.55
+Transformer-S/8x8-mesh               8.19          inf        24.18         9.32        18.05
+Transformer-L/6x6-mesh              31.53          inf        46.44        31.44        28.48
+Transformer-L/8x8-mesh              19.75          inf        46.96        22.62        18.04
+ConvNet/4x4-mesh                   561.19       488.19       469.10       482.45       470.15
+ConvNet/6x6-mesh                   316.97          inf       251.78       263.00       341.51
+ConvNet/8x8-mesh                   213.63          inf       176.00       196.52      1005.31
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:200: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
-/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:433: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
   plt.tight_layout()
 Loading results from results/experiment_results_inter_only.json
 Generating summary charts...
@@ -1275,21 +1423,854 @@ Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/inter_only/converg
 Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/inter_only/convergence_ConvNet_8x8-mesh.png
 
 All plots saved to /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/inter_only/
-=== Verify 2026-06-10T16:37:57+08:00 ===
+============================================================
+  RUNNING IN INTRA-PARALLEL MODE (intra term / x_i)
+============================================================
+
+============================================================
+  Small-MLP/4x4-mesh
+============================================================
+[1/105] Baselines...
+  random: 3.84 us
+  packed_row: 3.84 us
+  packed_col: 3.84 us
+  spread_row: 5.376 us
+  equal_partition: 1.6239122962962964 us
+
+[2/105] ILP...
+  Run 0: 1.7277581254724115 us
+
+[3/105] SA...
+  Run 0: 1.390592 us
+  Run 1: 1.3962359396433472 us
+  Run 2: 1.3962359396433472 us
+  Run 3: 1.40080109739369 us
+  Run 4: 1.3962359396433472 us
+
+[4/105] EA...
+  Run 0: 1.6724574814814814 us
+  Run 1: 1.6483365925925928 us
+  Run 2: 1.6726091851851854 us
+  Run 3: 1.5466411661807578 us
+  Run 4: 1.626962962962963 us
+
+[5/105] Greedy...
+  Run 0: 3.328 us
+
+============================================================
+  Small-MLP/6x6-mesh
+============================================================
+[6/105] Baselines...
+  random: 11.008 us
+  packed_row: 3.84 us
+  packed_col: 3.84 us
+  spread_row: 5.376 us
+  equal_partition: 1.061925925925926 us
+
+[7/105] ILP...
+  Skipping (mesh too large: 36 > 16)
+
+[8/105] SA...
+  Run 0: 1.4185054814814815 us
+  Run 1: 0.9081375214122467 us
+  Run 2: 0.9311753650584915 us
+  Run 3: 0.9252029214927131 us
+  Run 4: 0.9256388788777113 us
+
+[9/105] EA...
+  Run 0: 1.108072260730288 us
+  Run 1: 1.125037037037037 us
+  Run 2: 1.1588148148148147 us
+  Run 3: 1.1188148148148147 us
+  Run 4: 1.1511111111111112 us
+
+[10/105] Greedy...
+  Run 0: 2.778074074074074 us
+
+============================================================
+  Small-MLP/8x8-mesh
+============================================================
+[11/105] Baselines...
+  random: 9.984 us
+  packed_row: 3.84 us
+  packed_col: 3.84 us
+  spread_row: 12.544 us
+  equal_partition: 0.770691839971651 us
+
+[12/105] ILP...
+  Skipping (mesh too large: 64 > 16)
+
+[13/105] SA...
+  Run 0: 1.386496 us
+  Run 1: 1.1042329949114593 us
+  Run 2: 1.4791556486117434 us
+  Run 3: 1.8494719999999998 us
+  Run 4: 0.9604080596955294 us
+
+[14/105] EA...
+  Run 0: 0.8323397562189938 us
+  Run 1: 0.852243841364435 us
+  Run 2: 0.8225146187810466 us
+  Run 3: 0.8435573137344092 us
+  Run 4: 0.8534601662400616 us
+
+[15/105] Greedy...
+  Run 0: 2.5292799999999995 us
+
+============================================================
+  Medium-MLP/4x4-mesh
+============================================================
+[16/105] Baselines...
+  random: 21.002239999999997 us
+  packed_row: 18.434048000000004 us
+  packed_col: 18.434048000000004 us
+  spread_row: 18.434048000000004 us
+  equal_partition: 16.442785185185183 us
+
+[17/105] ILP...
+  Run 0: 17.23475437037037 us
+
+[18/105] SA...
+  Run 0: 16.906013107871722 us
+  Run 1: 16.7917037037037 us
+  Run 2: 16.650922666666666 us
+  Run 3: 16.407286518518518 us
+  Run 4: 16.53441422222222 us
+
+[19/105] EA...
+  Run 0: 16.688848592592592 us
+  Run 1: 16.80050251851852 us
+  Run 2: 16.864218074074074 us
+  Run 3: 17.474142814814815 us
+  Run 4: 16.778960592592593 us
+
+[20/105] Greedy...
+  Run 0: 16.393026370370368 us
+
+============================================================
+  Medium-MLP/6x6-mesh
+============================================================
+[21/105] Baselines...
+  random: 27.860992000000003 us
+  packed_row: 20.236288 us
+  packed_col: 20.236288 us
+  spread_row: 22.130688000000003 us
+  equal_partition: 9.484080808353394 us
+
+[22/105] ILP...
+  Skipping (mesh too large: 36 > 16)
+
+[23/105] SA...
+  Run 0: 10.083348839893683 us
+  Run 1: 9.734090170594135 us
+  Run 2: 9.90572747107438 us
+  Run 3: 9.821457276751971 us
+  Run 4: 12.74663556851312 us
+
+[24/105] EA...
+  Run 0: 10.32856268868187 us
+  Run 1: 10.426389846184174 us
+  Run 2: 9.989821132059173 us
+  Run 3: 10.163016018557256 us
+  Run 4: 10.257368145595365 us
+
+[25/105] Greedy...
+  Run 0: 15.115554691717957 us
+
+============================================================
+  Medium-MLP/8x8-mesh
+============================================================
+[26/105] Baselines...
+  random: 33.269760000000005 us
+  packed_row: 21.612544000000003 us
+  packed_col: 21.612544000000003 us
+  spread_row: 26.181632 us
+  equal_partition: 6.562114213085778 us
+
+[27/105] ILP...
+  Skipping (mesh too large: 64 > 16)
+
+[28/105] SA...
+  Run 0: 8.997015703703704 us
+  Run 1: 16.59485129218107 us
+  Run 2: 6.698942504651904 us
+  Run 3: 20.787277399848826 us
+  Run 4: 20.61274074074074 us
+
+[29/105] EA...
+  Run 0: 7.4313836998644245 us
+  Run 1: 7.348248966548819 us
+  Run 2: 7.370494869897999 us
+  Run 3: 7.311163060129858 us
+  Run 4: 7.510588122214771 us
+
+[30/105] Greedy...
+  Run 0: 16.816886518518515 us
+
+============================================================
+  Large-MLP/4x4-mesh
+============================================================
+  SKIPPED (workload doesn't fit)
+
+============================================================
+  Large-MLP/6x6-mesh
+============================================================
+[31/105] Baselines...
+  random: 36.20987048559671 us
+  packed_row: 26.610450611796985 us
+  packed_col: 26.610450611796985 us
+  spread_row: 26.610450611796985 us
+  equal_partition: 17.96525569160998 us
+
+[32/105] ILP...
+  Skipping (mesh too large: 36 > 16)
+
+[33/105] SA...
+  Run 0: 24.07979263648834 us
+  Run 1: 21.537945832199544 us
+  Run 2: 26.299092806584362 us
+  Run 3: 26.454016 us
+  Run 4: 18.447849514428025 us
+
+[34/105] EA...
+  Run 0: 19.0771997909513 us
+  Run 1: 19.949071479969763 us
+  Run 2: 19.100194042112083 us
+  Run 3: 19.64220578551988 us
+  Run 4: 19.18349800216222 us
+
+[35/105] Greedy...
+  Run 0: 19.983506076857548 us
+
+============================================================
+  Large-MLP/8x8-mesh
+============================================================
+[36/105] Baselines...
+  random: 40.34753000823044 us
+  packed_row: 27.800167242798356 us
+  packed_col: 27.800167242798356 us
+  spread_row: 30.729119078189303 us
+  equal_partition: 12.157643122358321 us
+
+[37/105] ILP...
+  Skipping (mesh too large: 64 > 16)
+
+[38/105] SA...
+  Run 0: 30.107648 us
+  Run 1: 27.615304092430623 us
+  Run 2: 29.14025161516035 us
+  Run 3: 28.795280046647232 us
+  Run 4: 29.333641657064472 us
+
+[39/105] EA...
+  Run 0: 14.069371597993976 us
+  Run 1: 13.81563008623717 us
+  Run 2: 13.995409174217661 us
+  Run 3: 14.133433433539812 us
+  Run 4: 13.82729666758699 us
+
+[40/105] Greedy...
+  Run 0: 23.43022406584362 us
+
+============================================================
+  Sparse-MLP/4x4-mesh
+============================================================
+[41/105] Baselines...
+  random: 23.058962962962962 us
+  packed_row: 19.873185185185182 us
+  packed_col: 19.873185185185182 us
+  spread_row: 21.541925925925923 us
+  equal_partition: 12.142364444444445 us
+
+[42/105] ILP...
+  Run 0: 12.59262103703704 us
+
+[43/105] SA...
+  Run 0: 12.143407407407407 us
+  Run 1: 11.808839650145773 us
+  Run 2: 11.828906666666668 us
+  Run 3: 12.122946370370371 us
+  Run 4: 11.984592592592593 us
+
+[44/105] EA...
+  Run 0: 12.15328711111111 us
+  Run 1: 12.557425777777778 us
+  Run 2: 12.642379851851853 us
+  Run 3: 13.093850074074075 us
+  Run 4: 12.663011555555554 us
+
+[45/105] Greedy...
+  Run 0: 11.652096 us
+
+============================================================
+  Sparse-MLP/6x6-mesh
+============================================================
+[46/105] Baselines...
+  random: 32.6162962962963 us
+  packed_row: 22.60385185185185 us
+  packed_col: 22.60385185185185 us
+  spread_row: 28.36859259259259 us
+  equal_partition: 7.5173760000000005 us
+
+[47/105] ILP...
+  Skipping (mesh too large: 36 > 16)
+
+[48/105] SA...
+  Run 0: 11.309271323615162 us
+  Run 1: 11.677606064139942 us
+  Run 2: 8.62230213985586 us
+  Run 3: 17.28 us
+  Run 4: 13.737377185185185 us
+
+[49/105] EA...
+  Run 0: 8.210976 us
+  Run 1: 8.367056951764713 us
+  Run 2: 8.57283537093704 us
+  Run 3: 7.998881185185185 us
+  Run 4: 8.279168 us
+
+[50/105] Greedy...
+  Run 0: 14.592 us
+
+============================================================
+  Sparse-MLP/8x8-mesh
+============================================================
+[51/105] Baselines...
+  random: 38.53274074074074 us
+  packed_row: 20.93511111111111 us
+  packed_col: 20.93511111111111 us
+  spread_row: 20.93511111111111 us
+  equal_partition: 5.410080022434809 us
+
+[52/105] ILP...
+  Skipping (mesh too large: 64 > 16)
+
+[53/105] SA...
+  Run 0: 15.540940501457728 us
+  Run 1: 11.867174810495628 us
+  Run 2: 14.468977363135732 us
+  Run 3: 16.042113810603606 us
+  Run 4: 15.836349629629629 us
+
+[54/105] EA...
+  Run 0: 6.121211618680405 us
+  Run 1: 6.243857656688824 us
+  Run 2: 6.265546462974711 us
+  Run 3: 6.2757088597067305 us
+  Run 4: 6.231474584948474 us
+
+[55/105] Greedy...
+  Run 0: 20.631703703703703 us
+
+============================================================
+  Transformer-S/4x4-mesh
+============================================================
+[56/105] Baselines...
+  random: 35.84 us
+  packed_row: 24.064 us
+  packed_col: 24.064 us
+  spread_row: 24.064 us
+  equal_partition: 22.656 us
+
+[57/105] ILP...
+  Run 0: 20.096 us
+
+[58/105] SA...
+  Run 0: 21.504 us
+  Run 1: 22.272 us
+  Run 2: 22.272 us
+  Run 3: 21.504 us
+  Run 4: 21.248 us
+
+[59/105] EA...
+  Run 0: 20.736 us
+  Run 1: 19.98222222222222 us
+  Run 2: 20.992 us
+  Run 3: 20.081777777777777 us
+  Run 4: 20.736 us
+
+[60/105] Greedy...
+  Run 0: 22.528 us
+
+============================================================
+  Transformer-S/6x6-mesh
+============================================================
+[61/105] Baselines...
+  random: 54.272 us
+  packed_row: 23.552 us
+  packed_col: 23.552 us
+  spread_row: 40.96 us
+  equal_partition: 16.384 us
+
+[62/105] ILP...
+  Skipping (mesh too large: 36 > 16)
+
+[63/105] SA...
+  Run 0: 24.064 us
+  Run 1: 24.32 us
+  Run 2: 27.136 us
+  Run 3: 23.424 us
+  Run 4: 25.296592592592592 us
+
+[64/105] EA...
+  Run 0: 18.122345319080015 us
+  Run 1: 18.594962962962963 us
+  Run 2: 18.776746666666664 us
+  Run 3: 19.605323851851853 us
+  Run 4: 18.692626962962965 us
+
+[65/105] Greedy...
+  Run 0: 23.552 us
+
+============================================================
+  Transformer-S/8x8-mesh
+============================================================
+[66/105] Baselines...
+  random: 65.536 us
+  packed_row: 24.576 us
+  packed_col: 24.576 us
+  spread_row: 51.2 us
+  equal_partition: 12.61996562962963 us
+
+[67/105] ILP...
+  Skipping (mesh too large: 64 > 16)
+
+[68/105] SA...
+  Run 0: 28.672 us
+  Run 1: 30.976 us
+  Run 2: 30.976 us
+  Run 3: 31.104 us
+  Run 4: 28.78577777777778 us
+
+[69/105] EA...
+  Run 0: 15.100362854663324 us
+  Run 1: 16.391210721952273 us
+  Run 2: 15.018595804340784 us
+  Run 3: 15.931713167908434 us
+  Run 4: 14.142431190921009 us
+
+[70/105] Greedy...
+  Run 0: 20.944592592592596 us
+
+============================================================
+  Transformer-L/4x4-mesh
+============================================================
+  SKIPPED (workload doesn't fit)
+
+============================================================
+  Transformer-L/6x6-mesh
+============================================================
+[71/105] Baselines...
+  random: 89.65688888888889 us
+  packed_row: 57.95081481481481 us
+  packed_col: 57.95081481481481 us
+  spread_row: 57.95081481481481 us
+  equal_partition: 38.88829629629629 us
+
+[72/105] ILP...
+  Skipping (mesh too large: 36 > 16)
+
+[73/105] SA...
+  Run 0: 52.67911111111111 us
+  Run 1: 59.861333333333334 us
+  Run 2: 50.23762962962963 us
+  Run 3: 53.394962962962964 us
+  Run 4: 57.10696296296296 us
+
+[74/105] EA...
+  Run 0: 46.185879703703705 us
+  Run 1: 45.9372562962963 us
+  Run 2: 43.450074074074074 us
+  Run 3: 46.44351051851852 us
+  Run 4: 42.751232 us
+
+[75/105] Greedy...
+  Run 0: 37.92433303703703 us
+
+============================================================
+  Transformer-L/8x8-mesh
+============================================================
+[76/105] Baselines...
+  random: 108.05096296296296 us
+  packed_row: 59.012740740740746 us
+  packed_col: 59.012740740740746 us
+  spread_row: 82.60266666666665 us
+  equal_partition: 28.21045834359141 us
+
+[77/105] ILP...
+  Skipping (mesh too large: 64 > 16)
+
+[78/105] SA...
+  Run 0: 58.08 us
+  Run 1: 71.4334814814815 us
+  Run 2: 64.13274074074074 us
+  Run 3: 65.29422222222222 us
+  Run 4: 64.88177777777777 us
+
+[79/105] EA...
+  Run 0: 35.55496782809631 us
+  Run 1: 35.72687200777454 us
+  Run 2: 36.3034380770975 us
+  Run 3: 34.971870814814814 us
+  Run 4: 34.61282137479754 us
+
+[80/105] Greedy...
+  Run 0: 36.681274250054216 us
+
+============================================================
+  ConvNet/4x4-mesh
+============================================================
+[81/105] Baselines...
+  random: 1624.599111111111 us
+  packed_row: 1483.818074074074 us
+  packed_col: 1483.818074074074 us
+  spread_row: 1872.1795555555555 us
+  equal_partition: 633.1231051851852 us
+
+[82/105] ILP...
+  Run 0: 574.9611851851852 us
+
+[83/105] SA...
+  Run 0: 566.0458619259259 us
+  Run 1: 558.7261582222222 us
+  Run 2: 553.1014399999999 us
+  Run 3: 551.4179839999999 us
+  Run 4: 552.4665600000001 us
+
+[84/105] EA...
+  Run 0: 582.0715377777777 us
+  Run 1: 572.8945256296296 us
+  Run 2: 557.2532669629629 us
+  Run 3: 586.3802263703703 us
+  Run 4: 572.4635354074074 us
+
+[85/105] Greedy...
+  Run 0: 551.4179839999999 us
+
+============================================================
+  ConvNet/6x6-mesh
+============================================================
+[86/105] Baselines...
+  random: 3311.544296296296 us
+  packed_row: 1517.7997037037037 us
+  packed_col: 1517.7997037037037 us
+  spread_row: 1517.7997037037037 us
+  equal_partition: 374.0155345603566 us
+
+[87/105] ILP...
+  Skipping (mesh too large: 36 > 16)
+
+[88/105] SA...
+  Run 0: 309.75390224433994 us
+  Run 1: 669.9134814814815 us
+  Run 2: 307.40483542273614 us
+  Run 3: 457.97184000000004 us
+  Run 4: 346.527872 us
+
+[89/105] EA...
+  Run 0: 347.9049282633745 us
+  Run 1: 321.62328440169256 us
+  Run 2: 335.1945057739934 us
+  Run 3: 326.0930397061494 us
+  Run 4: 378.58917113854596 us
+
+[90/105] Greedy...
+  Run 0: 350.0654627197596 us
+
+============================================================
+  ConvNet/8x8-mesh
+============================================================
+[91/105] Baselines...
+  random: 2881.919407407407 us
+  packed_row: 1517.7997037037037 us
+  packed_col: 1517.7997037037037 us
+  spread_row: 2542.103111111111 us
+  equal_partition: 258.44184484338604 us
+
+[92/105] ILP...
+  Skipping (mesh too large: 64 > 16)
+
+[93/105] SA...
+  Run 0: 328.0001190493823 us
+  Run 1: 677.1697696093295 us
+  Run 2: 322.31656465481257 us
+  Run 3: 885.0116977777778 us
+  Run 4: 303.8637050523441 us
+
+[94/105] EA...
+  Run 0: 232.4934867762157 us
+  Run 1: 282.75516175950423 us
+  Run 2: 276.1383261318368 us
+  Run 3: 256.2542139557679 us
+  Run 4: 243.24456875720162 us
+
+[95/105] Greedy...
+  Run 0: 1096.935703703704 us
+
+Results saved to /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/experiment_results_intra_parallel.json
+
+================================================================================
+SUMMARY TABLE (Total Latency in microseconds)
+================================================================================
+Config                      Best Baseline          ILP           SA           EA       Greedy
+----------------------------------------------------------------------------------------
+Small-MLP/4x4-mesh                   1.62         1.73         1.39         1.55         3.33
+Small-MLP/6x6-mesh                   1.06          inf         0.91         1.11         2.78
+Small-MLP/8x8-mesh                   0.77          inf         0.96         0.82         2.53
+Medium-MLP/4x4-mesh                 16.44        17.23        16.41        16.69        16.39
+Medium-MLP/6x6-mesh                  9.48          inf         9.73         9.99        15.12
+Medium-MLP/8x8-mesh                  6.56          inf         6.70         7.31        16.82
+Large-MLP/6x6-mesh                  17.97          inf        18.45        19.08        19.98
+Large-MLP/8x8-mesh                  12.16          inf        27.62        13.82        23.43
+Sparse-MLP/4x4-mesh                 12.14        12.59        11.81        12.15        11.65
+Sparse-MLP/6x6-mesh                  7.52          inf         8.62         8.00        14.59
+Sparse-MLP/8x8-mesh                  5.41          inf        11.87         6.12        20.63
+Transformer-S/4x4-mesh              22.66        20.10        21.25        19.98        22.53
+Transformer-S/6x6-mesh              16.38          inf        23.42        18.12        23.55
+Transformer-S/8x8-mesh              12.62          inf        28.67        14.14        20.94
+Transformer-L/6x6-mesh              38.89          inf        50.24        42.75        37.92
+Transformer-L/8x8-mesh              28.21          inf        58.08        34.61        36.68
+ConvNet/4x4-mesh                   633.12       574.96       551.42       557.25       551.42
+ConvNet/6x6-mesh                   374.02          inf       307.40       321.62       350.07
+ConvNet/8x8-mesh                   258.44          inf       303.86       232.49      1096.94
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:202: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=[0, 0, 1, 0.95] if title else None)
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+/home/cpgklu/workspace/EDA-alg-spatial-mapping/src/visualize.py:435: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+Loading results from results/experiment_results_intra_parallel.json
+Generating summary charts...
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/latency_comparison.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/compute_comm_breakdown.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/algorithm_wins_by_type.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/normalized_heatmap.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/speedup_over_baseline.png
+Generating workload overview figures...
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/overview_Small-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/overview_Medium-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/overview_Sparse-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/overview_Large-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/overview_Transformer-S_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/overview_Transformer-L_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/overview_ConvNet_4x4-mesh.png
+Generating mapping detail figures...
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/mapping_detail_Small-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/link_load_Small-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/utilization_Small-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/partitioning_Small-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/solver_compare_Small-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/mapping_detail_Medium-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/link_load_Medium-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/utilization_Medium-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/partitioning_Medium-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/solver_compare_Medium-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/mapping_detail_Sparse-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/link_load_Sparse-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/utilization_Sparse-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/partitioning_Sparse-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/solver_compare_Sparse-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/mapping_detail_Large-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/link_load_Large-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/utilization_Large-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/partitioning_Large-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/solver_compare_Large-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/mapping_detail_Transformer-S_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/link_load_Transformer-S_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/utilization_Transformer-S_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/partitioning_Transformer-S_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/solver_compare_Transformer-S_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/mapping_detail_Transformer-L_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/link_load_Transformer-L_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/utilization_Transformer-L_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/partitioning_Transformer-L_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/solver_compare_Transformer-L_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/mapping_detail_ConvNet_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/link_load_ConvNet_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/utilization_ConvNet_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/partitioning_ConvNet_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/solver_compare_ConvNet_4x4-mesh.png
+Generating convergence plots...
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Small-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Small-MLP_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Small-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Medium-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Medium-MLP_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Medium-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Large-MLP_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Large-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Sparse-MLP_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Sparse-MLP_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Sparse-MLP_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Transformer-S_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Transformer-S_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Transformer-S_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Transformer-L_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_Transformer-L_8x8-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_ConvNet_4x4-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_ConvNet_6x6-mesh.png
+Saved: /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/convergence_ConvNet_8x8-mesh.png
+
+All plots saved to /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/intra_parallel/
+
+============================================================
+  κ multiplier = 0.0
+============================================================
+  Small-MLP/4x4-mesh: best=SA (0.91 us)
+  Small-MLP/6x6-mesh: best=SA (0.52 us)
+  Small-MLP/8x8-mesh: best=SA (0.35 us)
+  Medium-MLP/4x4-mesh: best=SA (13.37 us)
+  Medium-MLP/6x6-mesh: best=Greedy (6.94 us)
+  Medium-MLP/8x8-mesh: best=Greedy (4.42 us)
+  Large-MLP/6x6-mesh: best=Greedy (13.87 us)
+  Large-MLP/8x8-mesh: best=Greedy (8.75 us)
+  Sparse-MLP/4x4-mesh: best=Greedy (8.70 us)
+  Sparse-MLP/6x6-mesh: best=Greedy (4.76 us)
+  Sparse-MLP/8x8-mesh: best=SA (3.27 us)
+  Transformer-S/4x4-mesh: best=EA (18.05 us)
+  Transformer-S/6x6-mesh: best=EA (12.48 us)
+  Transformer-S/8x8-mesh: best=EA (9.32 us)
+  Transformer-L/6x6-mesh: best=Greedy (28.48 us)
+  Transformer-L/8x8-mesh: best=Greedy (18.04 us)
+  ConvNet/4x4-mesh: best=SA (469.10 us)
+  ConvNet/6x6-mesh: best=SA (251.78 us)
+  ConvNet/8x8-mesh: best=SA (176.00 us)
+
+============================================================
+  κ multiplier = 0.25
+============================================================
+  Small-MLP/4x4-mesh: best=EA (1.70 us)
+  Small-MLP/6x6-mesh: best=SA (1.80 us)
+  Small-MLP/8x8-mesh: best=SA (2.04 us)
+  Medium-MLP/4x4-mesh: best=SA (16.81 us)
+  Medium-MLP/6x6-mesh: best=EA (14.03 us)
+  Medium-MLP/8x8-mesh: best=EA (14.55 us)
+  Large-MLP/6x6-mesh: best=Greedy (20.85 us)
+  Large-MLP/8x8-mesh: best=EA (22.92 us)
+  Sparse-MLP/4x4-mesh: best=Greedy (12.00 us)
+  Sparse-MLP/6x6-mesh: best=EA (11.84 us)
+  Sparse-MLP/8x8-mesh: best=EA (13.43 us)
+  Transformer-S/4x4-mesh: best=EA (19.15 us)
+  Transformer-S/6x6-mesh: best=EA (16.26 us)
+  Transformer-S/8x8-mesh: best=EA (16.84 us)
+  Transformer-L/6x6-mesh: best=Greedy (39.56 us)
+  Transformer-L/8x8-mesh: best=EA (39.44 us)
+  ConvNet/4x4-mesh: best=SA (567.59 us)
+  ConvNet/6x6-mesh: best=Greedy (400.45 us)
+  ConvNet/8x8-mesh: best=EA (433.33 us)
+
+============================================================
+  κ multiplier = 0.5
+============================================================
+  Small-MLP/4x4-mesh: best=SA (2.42 us)
+  Small-MLP/6x6-mesh: best=SA (2.47 us)
+  Small-MLP/8x8-mesh: best=SA (2.55 us)
+  Medium-MLP/4x4-mesh: best=SA (19.73 us)
+  Medium-MLP/6x6-mesh: best=Greedy (18.29 us)
+  Medium-MLP/8x8-mesh: best=Greedy (19.83 us)
+  Large-MLP/6x6-mesh: best=Greedy (28.31 us)
+  Large-MLP/8x8-mesh: best=Greedy (33.22 us)
+  Sparse-MLP/4x4-mesh: best=Greedy (14.69 us)
+  Sparse-MLP/6x6-mesh: best=EA (17.71 us)
+  Sparse-MLP/8x8-mesh: best=EA (21.37 us)
+  Transformer-S/4x4-mesh: best=EA (19.58 us)
+  Transformer-S/6x6-mesh: best=EA (20.30 us)
+  Transformer-S/8x8-mesh: best=Greedy (20.99 us)
+  Transformer-L/6x6-mesh: best=Greedy (47.50 us)
+  Transformer-L/8x8-mesh: best=EA (51.07 us)
+  ConvNet/4x4-mesh: best=Greedy (649.64 us)
+  ConvNet/6x6-mesh: best=Greedy (576.71 us)
+  ConvNet/8x8-mesh: best=EA (638.72 us)
+
+============================================================
+  κ multiplier = 1.0
+============================================================
+  Small-MLP/4x4-mesh: best=SA (3.20 us)
+  Small-MLP/6x6-mesh: best=SA (3.20 us)
+  Small-MLP/8x8-mesh: best=SA (3.20 us)
+  Medium-MLP/4x4-mesh: best=SA (24.98 us)
+  Medium-MLP/6x6-mesh: best=Greedy (26.05 us)
+  Medium-MLP/8x8-mesh: best=Greedy (28.06 us)
+  Large-MLP/6x6-mesh: best=Greedy (39.98 us)
+  Large-MLP/8x8-mesh: best=Greedy (42.65 us)
+  Sparse-MLP/4x4-mesh: best=SA (20.61 us)
+  Sparse-MLP/6x6-mesh: best=Greedy (22.30 us)
+  Sparse-MLP/8x8-mesh: best=Greedy (24.58 us)
+  Transformer-S/4x4-mesh: best=EA (21.32 us)
+  Transformer-S/6x6-mesh: best=Greedy (23.55 us)
+  Transformer-S/8x8-mesh: best=Greedy (21.89 us)
+  Transformer-L/6x6-mesh: best=Greedy (57.01 us)
+  Transformer-L/8x8-mesh: best=Greedy (54.38 us)
+  ConvNet/4x4-mesh: best=Greedy (811.08 us)
+  ConvNet/6x6-mesh: best=Greedy (781.58 us)
+  ConvNet/8x8-mesh: best=SA (1032.25 us)
+
+============================================================
+  κ multiplier = 2.0
+============================================================
+  Small-MLP/4x4-mesh: best=SA (3.84 us)
+  Small-MLP/6x6-mesh: best=SA (3.84 us)
+  Small-MLP/8x8-mesh: best=SA (3.84 us)
+  Medium-MLP/4x4-mesh: best=Greedy (35.15 us)
+  Medium-MLP/6x6-mesh: best=Greedy (36.20 us)
+  Medium-MLP/8x8-mesh: best=Greedy (38.21 us)
+  Large-MLP/6x6-mesh: best=Greedy (57.40 us)
+  Large-MLP/8x8-mesh: best=Greedy (62.01 us)
+  Sparse-MLP/4x4-mesh: best=SA (27.52 us)
+  Sparse-MLP/6x6-mesh: best=SA (28.98 us)
+  Sparse-MLP/8x8-mesh: best=Greedy (30.04 us)
+  Transformer-S/4x4-mesh: best=EA (22.14 us)
+  Transformer-S/6x6-mesh: best=Greedy (23.55 us)
+  Transformer-S/8x8-mesh: best=Greedy (22.91 us)
+  Transformer-L/6x6-mesh: best=Greedy (67.08 us)
+  Transformer-L/8x8-mesh: best=Greedy (69.80 us)
+  ConvNet/4x4-mesh: best=EA (1095.93 us)
+  ConvNet/6x6-mesh: best=SA (1211.97 us)
+  ConvNet/8x8-mesh: best=Greedy (1292.94 us)
+
+Saved /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/sensitivity_kappa.json
+Saved /home/cpgklu/workspace/EDA-alg-spatial-mapping/results/sensitivity_kappa.png
 
 ============================================================
   Verifying: experiment_results.json
 ============================================================
 
-  Results: 233/233 PASSED -- ALL OK
+  Results: 309/309 PASSED -- ALL OK
 
 ============================================================
   Verifying: experiment_results_inter_only.json
 ============================================================
 
-  Results: 234/234 PASSED -- ALL OK
+  Results: 310/310 PASSED -- ALL OK
+
+============================================================
+  Verifying: experiment_results_intra_parallel.json
+============================================================
+
+  Results: 309/309 PASSED -- ALL OK
 
 ============================================================
   OVERALL: ALL VERIFICATIONS PASSED
 ============================================================
-=== Done 2026-06-10T16:37:57+08:00 ===

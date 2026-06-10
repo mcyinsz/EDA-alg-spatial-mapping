@@ -19,95 +19,140 @@ Code: \url{https://github.com/mcyinsz/EDA-alg-spatial-mapping}}}
 \maketitle
 
 \begin{abstract}
-Spatial accelerators (e.g., Cerebras WSE, Groq TSP) interconnect thousands of cores in a 2D mesh. Deploying deep neural networks requires joint \emph{partitioning} (cores per layer) and \emph{placement} (physical mesh positions), a combinatorial optimization problem. We formulate latency minimization with an analytical cost model covering compute, inter-layer, and intra-layer tensor-parallel communication. Four solvers---integer linear programming (ILP), simulated annealing (SA), nested evolution strategy (EA), and Greedy+Kernighan-Lin (Greedy+KL)---are compared on 19 feasible configurations (7 DNN workloads $\times$ 3 mesh sizes). Our key finding: \textbf{problem modeling decisively affects algorithm ranking}. With inter-layer communication only, SA wins 12/19; adding intra-layer communication shifts Greedy+KL to 17/19 wins due to its compact contiguous placement.
+Spatial accelerators (e.g., Cerebras WSE, Groq TSP) interconnect thousands of compute-memory cores in a 2D mesh. Deploying a DNN requires solving a coupled \emph{partitioning} (cores per layer) and \emph{placement} (physical mesh positions) problem whose search space grows combinatorially. We formulate inference-latency minimization with an analytical cost model covering compute parallelism, inter-layer communication, and intra-layer tensor-parallel synchronization. Four solvers---integer linear programming (ILP, used as a placement reference), simulated annealing (SA), a nested evolution strategy (EA), and Greedy+Kernighan-Lin (Greedy+KL)---are compared on 19 feasible configurations (7 workloads $\times$ 3 mesh sizes). After correcting the experimental setup so that solvers may leave cores idle and use cost-aware partitioning, Greedy+KL wins 12/19, SA 6/19, and EA 1/19 under the main model. An inter-only ablation yields SA 8/19 and Greedy+KL 8/19; a $\kappa$ sweep and an intra-parallel ablation further reshuffle the ranking (EA reaching 9/19). The central finding is that \textbf{modeling assumptions and experimental setup jointly and decisively determine algorithm rankings}, a caution for analytical mapping studies.
 \end{abstract}
 
-\section{Introduction}
-Spatial architectures place compute and memory on a 2D mesh connected by a network-on-chip (NoC). Inference latency depends not only on the model but on how layers are mapped onto cores. Two coupled sub-problems arise: (i)~\textbf{partitioning}---how many cores each layer uses, trading parallelism for communication; and (ii)~\textbf{placement}---where those cores sit on the mesh, affecting Manhattan routing distance. The search space grows combinatorially: for a 10-layer network on a 152-core chip, partitioning alone exceeds $10^{13}$ choices~\cite{wever2026}.
+\begin{IEEEkeywords}
+spatial accelerator, neural network mapping, combinatorial optimization, simulated annealing, evolutionary algorithm
+\end{IEEEkeywords}
 
-Prior mapping tools (Timeloop~\cite{parashar2019}, GAMMA~\cite{kao2020}, DiGAMMA~\cite{kao2022}) target hierarchical memory accelerators rather than mesh NoC distance. Wever et al.~\cite{wever2026} use evolutionary search with hardware-in-the-loop on Loihi~2 but require $\sim$5\,s per evaluation. We contribute: (1)~a unified analytical cost model with intra-layer tensor-parallel communication; (2)~four solvers under a common framework; (3)~systematic comparison revealing that modeling choices dominate algorithm rankings.
+\section{Introduction}
+Spatial architectures place compute and memory together on hundreds to millions of cores connected by a 2D mesh network-on-chip (NoC). Representative platforms include the Cerebras WSE-3 ($\sim$900k cores)~\cite{lie2024}, the Groq TSP~\cite{abts2020}, and Intel Loihi~2. On such hardware, inference latency depends not only on \emph{what} model runs but on \emph{how} it is mapped: a poor mapping causes either load imbalance (compute bottleneck) or NoC congestion (communication bottleneck)~\cite{yik2025,timcheck2026}.
+
+The mapping problem couples two sub-problems. \textbf{Partitioning} decides how many cores each layer receives, trading parallelism for communication volume. \textbf{Placement} decides where those cores sit, affecting Manhattan routing distance. The two are tightly coupled: changing the partition alters the optimal placement and vice versa. For a 10-layer network on a 152-core chip, partitioning alone exceeds $10^{13}$ choices and placement exceeds $10^{267}$~\cite{wever2026}.
+
+Prior mapping tools such as Timeloop~\cite{parashar2019}, GAMMA~\cite{kao2020}, and DiGAMMA~\cite{kao2022} target hierarchical-memory accelerators and model tiling and dataflow ordering rather than NoC routing distance and physical placement. Wever et al.~\cite{wever2026} introduce evolutionary mapping with hardware-in-the-loop on Loihi~2, but require $\sim$5\,s per evaluation on a single 152-core chip. We instead study a general analytical formulation and contribute: (1)~a unified three-term cost model for heterogeneous (linear and convolutional) layers; (2)~four solvers in a common framework with a corrected, fair setup (idle cores allowed, aligned budgets, ILP repositioned as a placement reference); and (3)~systematic ablations ($\kappa$ sweep, intra-parallel assumption, inter-only) showing that modeling choices dominate the observed algorithm ranking.
 
 \section{Problem Formulation}
-\subsection{Model}
-A DNN has $L$ layers; layer $i$ has FLOPs $F_i$, weight size $W_i$, and activation size $A_i$. The accelerator is an $H{\times}W$ mesh with $K{=}HW$ homogeneous cores (memory $M$, throughput $P$, link cost $\beta$ per byte-hop).
-
-\subsection{Decision Variables}
-\textbf{Partitioning} $\mathbf{x}{=}(x_1,\ldots,x_L)$, $x_i{\in}\mathbb{Z}_+$, cores assigned to layer $i$. \textbf{Placement} $S_i{\subset}\{(r,c)\}$, $|S_i|{=}x_i$, physical core positions.
+\subsection{Model and Variables}
+A workload has $L$ layers; layer $i$ is described by FLOPs $F_i$, weight bytes $W_i$, and output-activation bytes $A_i$. For a linear layer with input/output dims $n_{i-1},n_i$ and sparsity $s_i$: $F_i=2n_{i-1}n_i(1{-}s_i)$, $W_i=4n_{i-1}n_i(1{-}s_i)$, $A_i=4n_i$; convolutional layers use the analogous $C_{\text{in}},C_{\text{out}},k,H_{\text{out}},W_{\text{out}}$ expressions. The accelerator is an $H{\times}W$ mesh of $K{=}HW$ homogeneous cores with per-core memory $M$, throughput $P$ (FLOP/cycle), and link cost $\beta$ (cycles per byte-hop). The decision variables are the partition $\mathbf{x}=(x_1,\dots,x_L)\in\mathbb{Z}_+^L$ and the placement sets $S_i\subset\{(r,c)\}$ with $|S_i|=x_i$.
 
 \subsection{Objective}
-Minimize total inference latency:
+We minimize single-inference latency (in cycles):
 \begin{equation}
 \min_{\mathbf{x},\{S_i\}} T = \sum_{i=1}^{L} T_{\text{comp},i} + \sum_{i=1}^{L-1} T_{\text{inter},i} + \sum_{i=1}^{L} T_{\text{intra},i}
 \label{eq:obj}
 \end{equation}
-where $T_{\text{comp},i} = F_i/(x_i P)$,
-$T_{\text{inter},i} = \beta (A_i/x_i)\,\bar{d}_{\text{inter}}(S_i,S_{i+1})$,
-and $T_{\text{intra},i} = \beta \kappa_i A_i (1{-}1/x_i)\,\bar{d}_{\text{intra}}(S_i)$ for $x_i{>}1$ (else 0).
-Average distances $\bar{d}_{\text{inter}}$ and $\bar{d}_{\text{intra}}$ are pairwise Manhattan means over assigned cores; $\kappa_i{=}1.0$ for linear layers, $0.5$ for convolutions.
+with the three terms
+\begin{align}
+T_{\text{comp},i} &= \frac{F_i}{x_i P}, \qquad
+T_{\text{inter},i} = \beta\,\frac{A_i}{x_i}\,\bar{d}_{\text{inter}}(S_i,S_{i+1}), \\
+T_{\text{intra},i} &= \beta\,\kappa_i\,A_i\Big(1-\tfrac{1}{x_i}\Big)\,\bar{d}_{\text{intra}}(S_i)\quad(x_i{>}1),
+\label{eq:intra}
+\end{align}
+where $\bar{d}_{\text{inter}}$ and $\bar{d}_{\text{intra}}$ are the average pairwise Manhattan distances between and within layer core sets, and $\kappa_i$ is the tensor-parallel factor ($\kappa_i{=}1.0$ for linear, $0.5$ for convolution). Equation~\eqref{eq:intra} models a simplified 1-D tensor-parallel synchronization: each of $x_i$ cores holds an $A_i/x_i$ shard and exchanges data with the others, giving volume of order $A_i(1{-}1/x_i)$.
 
-\subsection{Constraints}
-(C1)~$S_i \cap S_j = \emptyset$ for $i{\neq}j$; (C2)~$(W_i{+}A_i)/x_i \leq M$; (C3)~$x_i \geq 1$. The problem is non-convex, tightly coupled, and combinatorially explosive.
+\subsection{Constraints and Properties}
+(C1)~$S_i\cap S_j=\emptyset$ for $i{\neq}j$; (C2)~$(W_i{+}A_i)/x_i\le M$; (C3)~$x_i\ge1$; and $\sum_i x_i \le K$, where \emph{idle cores are explicitly allowed} ($\sum_i x_i$ may be strictly less than $K$). From (C2), $x_i^{\min}=\lceil(W_i{+}A_i)/M\rceil$. The objective is non-convex (piecewise-constant distance terms), tightly coupled ($\mathbf{x}$ appears in both numerator and denominator), and combinatorially explosive.
 
 \section{Algorithms}
-\subsection{ILP}
-Binary variables $z_{i,k}$ assign core $k$ to layer $i$. Inter- and intra-layer distance terms are linearized via auxiliary variables ($O(K^2L)$ total). Due to scale, ILP fixes partitioning greedily and optimizes placement only, with a 60\,s time limit on meshes $\leq$16 cores (PuLP+CBC).
+\textbf{ILP (placement reference).} Binary $z_{i,k}$ assign core $k$ to layer $i$; quadratic distance terms are linearized with auxiliary variables $u_{i,k,l}$ (inter) and $w_{i,k,l}$ (intra), totaling $O(K^2L)$. Because this scale is prohibitive, the ILP fixes a greedy partition and \emph{optimizes placement only}. We therefore treat it as a reference for the placement sub-problem rather than a joint optimizer; it runs with a 60\,s limit on $\le16$-core meshes (PuLP+CBC).
 
-\subsection{Simulated Annealing (SA)}
-State $(\mathbf{x},\{S_i\})$. Neighborhood: partition perturbation, placement swap, or joint move. Metropolis acceptance with $T_0{=}100$, $\gamma{=}0.995$, 3000 iterations, 3 runs (best reported).
+\textbf{Simulated Annealing (SA).} State $(\mathbf{x},\{S_i\})$. The partition neighborhood now offers three moves---\emph{transfer} a core between layers, \emph{discard} a core (it becomes idle), and \emph{enable} an idle core---and the placement neighborhood swaps $\lfloor\sqrt{K_{\text{used}}}\rfloor$ core pairs. The initial state uses the minimum per-layer cores (no forced filling). Metropolis acceptance with $T_0{=}100$, $\gamma{=}0.995$, 3000 iterations, 5 runs.
 
-\subsection{Nested Evolution Strategy (EA)}
-Following~\cite{wever2026}: outer ES optimizes partitioning genotype; inner ES optimizes placement permutation with a reordering operator preserving spatial locality. $(1{+}\lambda)$ selection with $\lambda{=}4$, 40 generations, 3 runs.
+\textbf{Nested Evolution Strategy (EA).} Following~\cite{wever2026}: an outer ES evolves a partition genotype $(x_i^{\text{extra}},C_{\text{unused}})$ and an inner ES evolves a placement permutation, with a reordering operator that preserves spatial locality when the partition changes. $(1{+}\lambda)$ selection, $\lambda{=}4$, 40 generations, 5 runs.
 
-\subsection{Greedy + Kernighan-Lin (Greedy+KL)}
-Three phases: (1)~greedy partition by marginal compute benefit; (2)~column-major contiguous placement + KL pair-swap refinement; (3)~single-core partition refinement. Deterministic, one run.
+\textbf{Greedy+KL.} (1)~cost-aware greedy partitioning that adds a core only when total latency (including communication) decreases; (2)~column-major contiguous placement followed by Kernighan-Lin pair swaps; (3)~partition refinement that may move \emph{or remove} a core. Deterministic, one run.
 
-\section{Experimental Results}
-\subsection{Setup}
-Seven workloads (Small/Medium/Large/Sparse-MLP, Transformer-S/L, ConvNet) on 4$\times$4, 6$\times$6, 8$\times$8 meshes ($M{=}512$\,KB, $P{=}64$ FLOP/cycle, $\beta{=}1.0$). Large-MLP and Transformer-L are infeasible on 4$\times$4 (19 configs total). Five baseline heuristics included. Latencies in $\mu$s at 1\,GHz (relative comparison only). Full reproduction: see repository link in author block.
+\section{Experimental Setup}
+Tables~\ref{tab:work} and~\ref{tab:solver} list the seven workloads and solver parameters. All meshes use $M{=}512$\,KB, $P{=}64$\,FLOP/cycle, $\beta{=}1.0$ at 1\,GHz; latencies are in $\mu$s and only meaningful relatively. Large-MLP and Transformer-L exceed the 16 cores of the 4$\times$4 mesh, leaving 19 feasible configurations. Five baselines (random, packed row/col-major, spread, equal-partition) are included. We run three ablations: \texttt{--inter-only} (drop $T_{\text{intra}}$), \texttt{--intra-parallel} (divide $T_{\text{intra}}$ by $x_i$, matching the inter-layer parallel-injection assumption), and a global $\kappa$ sweep (\texttt{scripts/sweep\_kappa.py}). All solver outputs are re-verified by recomputing latency from the stored placements (928/928 checks pass).
 
-\subsection{Main Results}
-Table~\ref{tab:main} reports best latency ($\mu$s) per solver; bold = best per config. Greedy+KL wins 17/19; SA wins ConvNet/4$\times$4 only; EA wins Small-MLP/4$\times$4; ILP wins none.
+\begin{table}[t]
+\centering
+\caption{DNN workloads.}
+\label{tab:work}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrr}
+\toprule
+Name & Structure & $L$ & FLOPs \\
+\midrule
+Small-MLP & MLP [128,256,128,64] & 3 & 147K \\
+Medium-MLP & MLP [256,512,1024,512,256] & 4 & 2.62M \\
+Large-MLP & MLP [256,512,1024,1024,512,256] & 5 & 4.72M \\
+Sparse-MLP & Medium-MLP, 50\% sparse & 4 & 1.31M \\
+Transformer-S & 2$\times$Encoder, $d{=}128$ & 12 & 786K \\
+Transformer-L & 2$\times$Encoder, $d{=}256$ & 12 & 3.15M \\
+ConvNet & 3$\times$Conv2D + FC & 4 & 85.3M \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Solver configuration and mean compute budget (main experiment).}
+\label{tab:solver}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrr}
+\toprule
+Solver & Key parameters & Runs & Evals/run \\
+\midrule
+ILP & 60\,s, gap 0.05, $\le$16 cores & 1 & 1 \\
+SA & $T_0{=}100$, $\gamma{=}0.995$, 3000 it & 5 & $\sim$3002 \\
+EA & $\lambda{=}4$, 40 generations & 5 & $\sim$322 \\
+Greedy+KL & KL passes 8, refine 15 & 1 & $\sim$331 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Results and Analysis}
+\subsection{Main Ranking}
+Table~\ref{tab:main} reports the best latency per solver. Under the main model Greedy+KL wins 12/19, SA 6/19, EA 1/19. The wins split by family as Greedy+KL leading on the larger MLPs, Transformers, and ConvNet/6$\times$6, while SA takes all three Small-MLP meshes (a flat 3.20\,$\mu$s) and the compute-bound ConvNet/8$\times$8. The Small-MLP result is the clearest effect of the setup fix: by keeping cores idle, SA avoids the spurious intra-layer cost that previously made optimizers \emph{lose} to a trivial packed baseline.
 
 \begin{table*}[t]
 \centering
-\caption{Best inference latency ($\mu$s) per configuration. ``---'': ILP not run ($>$16 cores).}
+\caption{Best inference latency ($\mu$s), main model. Bold = best joint optimizer (SA/EA/Greedy+KL) per config; ILP is a placement reference.}
 \label{tab:main}
-\scriptsize
-\setlength{\tabcolsep}{2.5pt}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{lrrrrr}
 \toprule
 Configuration & Baseline & ILP & SA & EA & Greedy+KL \\
 \midrule
-Small-MLP/4$\times$4   & 3.84 & 4.66 & 3.78 & \textbf{3.33} & 3.75 \\
-Small-MLP/6$\times$6   & 3.84 & ---  & 5.26 & 4.98 & \textbf{4.97} \\
-Small-MLP/8$\times$8   & 3.84 & ---  & 7.17 & 8.17 & \textbf{6.68} \\
-Medium-MLP/4$\times$4  & 27.1 & 26.9 & 25.4 & 25.5 & \textbf{25.2} \\
-Medium-MLP/6$\times$6  & 29.3 & ---  & 29.4 & 30.7 & \textbf{28.2} \\
-Medium-MLP/8$\times$8  & 32.3 & ---  & 39.4 & 41.0 & \textbf{29.5} \\
-Large-MLP/6$\times$6   & 44.7 & ---  & 45.0 & 48.2 & \textbf{38.1} \\
-Large-MLP/8$\times$8   & 47.2 & ---  & 57.4 & 60.2 & \textbf{43.1} \\
-Sparse-MLP/4$\times$4  & 21.8 & 22.3 & 20.7 & 21.2 & \textbf{20.6} \\
-Sparse-MLP/6$\times$6  & 26.2 & ---  & 27.6 & 29.3 & \textbf{25.6} \\
-Sparse-MLP/8$\times$8  & 24.6 & ---  & 37.0 & 39.8 & \textbf{28.3} \\
-Transformer-S/4$\times$4 & 23.2 & 21.4 & 20.9 & 21.3 & \textbf{19.8} \\
-Transformer-S/6$\times$6 & 21.9 & ---  & 24.8 & 27.0 & \textbf{19.7} \\
-Transformer-S/8$\times$8 & 24.6 & ---  & 34.5 & 33.5 & \textbf{21.3} \\
-Transformer-L/6$\times$6 & 57.7 & ---  & 62.6 & 61.8 & \textbf{46.8} \\
-Transformer-L/8$\times$8 & 68.7 & ---  & 74.0 & 74.6 & \textbf{46.8} \\
-ConvNet/4$\times$4      & 859  & 826  & \textbf{810} & 816 & 813 \\
-ConvNet/6$\times$6      & 838  & ---  & 826  & 889 & \textbf{764} \\
-ConvNet/8$\times$8      & 937  & ---  & 1010 & 1105 & \textbf{848} \\
+Small-MLP/4$\times$4   & 3.84 & 4.66 & \textbf{3.20} & 3.33 & 3.58 \\
+Small-MLP/6$\times$6   & 3.84 & ---  & \textbf{3.20} & 4.98 & 3.46 \\
+Small-MLP/8$\times$8   & 3.84 & ---  & \textbf{3.20} & 7.63 & 3.46 \\
+Medium-MLP/4$\times$4  & 27.1 & 26.9 & \textbf{25.0} & 25.5 & 25.2 \\
+Medium-MLP/6$\times$6  & 29.3 & ---  & 31.5 & 30.2 & \textbf{26.1} \\
+Medium-MLP/8$\times$8  & 32.3 & ---  & 36.1 & 41.0 & \textbf{28.1} \\
+Large-MLP/6$\times$6   & 44.7 & ---  & 44.7 & 47.3 & \textbf{40.0} \\
+Large-MLP/8$\times$8   & 47.2 & ---  & 52.2 & 59.4 & \textbf{42.7} \\
+Sparse-MLP/4$\times$4  & 21.8 & 22.3 & \textbf{20.6} & 20.9 & 21.0 \\
+Sparse-MLP/6$\times$6  & 26.2 & ---  & 23.6 & 29.3 & \textbf{22.3} \\
+Sparse-MLP/8$\times$8  & 24.6 & ---  & 26.2 & 39.8 & \textbf{24.6} \\
+Transformer-S/4$\times$4 & 23.2 & 21.4 & 21.8 & \textbf{21.3} & 22.5 \\
+Transformer-S/6$\times$6 & 21.9 & ---  & 25.2 & 27.0 & \textbf{23.6} \\
+Transformer-S/8$\times$8 & 24.6 & ---  & 29.2 & 33.5 & \textbf{21.9} \\
+Transformer-L/6$\times$6 & 57.7 & ---  & 62.6 & 61.8 & \textbf{57.0} \\
+Transformer-L/8$\times$8 & 68.7 & ---  & 68.2 & 74.6 & \textbf{54.4} \\
+ConvNet/4$\times$4      & 859  & 826  & 830  & 816 & \textbf{811} \\
+ConvNet/6$\times$6      & 838  & ---  & 951  & 889 & \textbf{782} \\
+ConvNet/8$\times$8      & 937  & ---  & \textbf{1032} & 1070 & 1166 \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
-\subsection{Analysis}
-Fig.~\ref{fig:heatmap} shows normalized latency (best$=$1.0). Greedy+KL dominates on large meshes where intra-layer distance penalties are severe (e.g., Transformer-L/8$\times$8: 46.8 vs.\ SA 74.0\,$\mu$s, $-$37\%). Fig.~\ref{fig:breakdown} decomposes latency: Greedy+KL keeps intra-layer share $<$15\% via compact clusters; SA/EA reach 20--40\% due to fragmented placement. Fig.~\ref{fig:mapping} illustrates Greedy+KL's symmetric partitioning on Large-MLP/8$\times$8. Fig.~\ref{fig:wins} confirms dominance across MLP, Transformer, and ConvNet families.
+\subsection{Why Greedy+KL Leads on Large Workloads}
+Greedy+KL's contiguous, column-major placement keeps intra-layer average distance near 1--2 hops, whereas SA's random swaps and EA's mutations fragment a layer's cores (3--5 hops). On the 8$\times$8 mesh, where distances reach 14 hops, this gap widens: on Transformer-L/8$\times$8 Greedy+KL (54.4\,$\mu$s) beats SA (68.2) by 20\% and EA (74.6) by 27\%. The compute-/inter-/intra-layer breakdown (Fig.~\ref{fig:breakdown}) confirms Greedy+KL keeps the intra-layer share lowest. Its cost-aware partitioning also avoids over-provisioning on tiny workloads, fixing the previous degradation where forced core-filling inflated communication.
+
+\subsection{Where the Heuristics Differ}
+SA's idle-core moves dominate Small-MLP (3.20 vs.\ Greedy 3.46\,$\mu$s) and remain competitive on the compute-bound ConvNet/8$\times$8. EA is limited by its small evaluation budget ($\sim$322 evals/run, an order of magnitude below SA), winning only Transformer-S/4$\times$4 in the main model. Run-to-run variation is modest for the deterministic regimes but appreciable for ConvNet/6$\times$6 (SA mean $1132\pm189\,\mu$s) where the random-swap neighborhood struggles, reinforcing that the best-of-5 numbers favor the stochastic solvers.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\linewidth]{../results/normalized_heatmap.png}
-\caption{Normalized latency heatmap (best solver $=$ 1.0 per config).}
+\caption{Normalized latency (best joint optimizer per config $=$ 1.0).}
 \label{fig:heatmap}
 \end{figure}
 
@@ -118,34 +163,83 @@ Fig.~\ref{fig:heatmap} shows normalized latency (best$=$1.0). Greedy+KL dominate
 \label{fig:breakdown}
 \end{figure}
 
+\subsection{Ablation 1: Inter-only Model}
+Removing the intra-layer term (Table~\ref{tab:inter}) re-balances the ranking to SA~8, Greedy+KL~8, EA~3. Without a compactness incentive, Greedy+KL's contiguous bias loses value and its KL swaps can even fragment a layer badly (e.g., ConvNet/8$\times$8 1005\,$\mu$s, Sparse-MLP/8$\times$8 18.2\,$\mu$s), while EA's locality-preserving reordering wins all three Transformer-S meshes. This single term thus flips the headline conclusion.
+
+\begin{table}[t]
+\centering
+\caption{Inter-only ablation: best latency ($\mu$s) and winner. SA 8 / Greedy+KL 8 / EA 3.}
+\label{tab:inter}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrl}
+\toprule
+Config & SA & EA & Greedy & Best \\
+\midrule
+Small-MLP/8$\times$8     & 0.35 & 0.39 & 1.88 & SA \\
+Medium-MLP/8$\times$8    & 4.50 & 4.82 & 4.42 & Greedy \\
+Large-MLP/8$\times$8     & 8.94 & 9.57 & 8.75 & Greedy \\
+Sparse-MLP/8$\times$8    & 3.27 & 3.67 & 18.2 & SA \\
+Transformer-S/6$\times$6 & 19.1 & 12.5 & 23.6 & EA \\
+Transformer-S/8$\times$8 & 24.2 & 9.32 & 18.1 & EA \\
+Transformer-L/8$\times$8 & 47.0 & 22.6 & 18.0 & Greedy \\
+ConvNet/6$\times$6       & 252  & 263  & 342  & SA \\
+ConvNet/8$\times$8       & 176  & 197  & 1005 & SA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Ablation 2: Intra-Parallel Assumption}
+Making the intra term parallel (dividing by $x_i$, consistent with the inter term) shifts the ranking again to EA~9, SA~7, Greedy+KL~3. The weaker intra penalty removes Greedy+KL's structural advantage and rewards EA's broader partition search, especially on Transformers (EA wins all three Transformer-S meshes). The fact that three internally consistent models (main, inter-only, intra-parallel) each crown a different winner is the paper's core message.
+
+\subsection{Ablation 3: $\kappa$ Sensitivity}
+Sweeping a global $\kappa$ multiplier (Table~\ref{tab:kappa}, Fig.~\ref{fig:kappa}) traces the transition: at $\kappa{=}0$ SA and Greedy+KL tie (8 each); at $\kappa{=}0.25$ EA peaks (11); for $\kappa{\ge}0.5$ Greedy+KL leads (9, 12, 11). The ranking is therefore a continuous function of one modeling coefficient, not an intrinsic property of the algorithms.
+
+\begin{table}[t]
+\centering
+\caption{Solver wins vs.\ global $\kappa$ multiplier (19 configs).}
+\label{tab:kappa}
+\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+& $\kappa{=}0$ & $0.25$ & $0.5$ & $1.0$ & $2.0$ \\
+\midrule
+SA        & 8 & 4 & 4 & 6 & 6 \\
+EA        & 3 & 11 & 6 & 1 & 2 \\
+Greedy+KL & 8 & 4 & 9 & 12 & 11 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.92\linewidth]{../results/sensitivity_kappa.png}
+\caption{Solver wins as a function of the $\kappa$ multiplier.}
+\label{fig:kappa}
+\end{figure}
+
+\subsection{Representative Mappings}
+Fig.~\ref{fig:mapping} shows Greedy+KL on Large-MLP/8$\times$8: a near-symmetric partition with compact per-layer clusters that minimize both inter- and intra-layer distance. Such structure is exactly what the main model rewards and what random-neighborhood solvers fail to maintain at scale.
+
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\linewidth]{../results/mapping_detail_Large-MLP_8x8-mesh.png}
-\caption{Greedy+KL mapping for Large-MLP/8$\times$8 (43.1\,$\mu$s).}
+\caption{Greedy+KL mapping for Large-MLP/8$\times$8 (42.7\,$\mu$s): mesh placement, partition, communication overlay, and per-layer latency.}
 \label{fig:mapping}
 \end{figure}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=\linewidth]{../results/algorithm_wins_by_type.png}
-\caption{Number of configurations where each solver achieves best latency.}
-\label{fig:wins}
-\end{figure}
-
-With \emph{inter-layer communication only} (ablation), SA wins 12/19---demonstrating that intra-layer modeling reverses rankings. SA retains a marginal edge on ConvNet/4$\times$4 where mesh is small and intra-layer penalty is limited.
-
 \section{Conclusion}
-We formulated DNN mapping on spatial accelerators as joint partitioning-placement optimization with a three-term latency model. Greedy+KL's contiguous placement aligns with intra-layer communication costs, yielding 17/19 wins. SA's random-swap neighborhoods degrade on large meshes; ILP is limited by fixed partitioning and quadratic variable growth. Future work: block-move neighborhoods for SA/EA, surrogate models, and validation on real hardware.
+We formulated DNN mapping on spatial accelerators as joint partitioning-placement optimization with a three-term latency model and compared four solvers under a corrected, fair setup. The headline result is methodological: the algorithm ranking is not robust to the cost model. Greedy+KL (12/19) suits the compactness-rewarding main model; SA (6/19) gains from idle-core search on small workloads; and the inter-only, intra-parallel, and $\kappa$-swept variants each produce a different winner. \textbf{Limitations.} The execution model is serial (no pipelining); the inter and intra terms use inconsistent parallelism assumptions by default; the Transformer workloads are linear-chain approximations without an attention DAG; and $\kappa,\beta$ are assumed. \textbf{Future work}: block-move neighborhoods to give SA/EA a compactness bias, surrogate-accelerated fitness, pipelined (max-over-stage) objectives, and validation against real hardware mappings.
 
 \begin{thebibliography}{00}
 \bibitem{yik2025} J.~Yik \textit{et al.}, ``Modeling and optimizing performance bottlenecks for neuromorphic accelerators,'' arXiv:2511.21549, 2025.
 \bibitem{timcheck2026} J.~Timcheck \textit{et al.}, ``A compute and communication runtime model for Loihi~2,'' arXiv:2601.10035, 2026.
 \bibitem{wever2026} M.~Wever \textit{et al.}, ``Evolutionary mapping of neural networks to spatial accelerators,'' arXiv:2602.04717, 2026.
-\bibitem{parashar2019} A.~Parashar \textit{et al.}, ``Timeloop: A systematic approach to DNN accelerator evaluation,'' in \textit{ISPASS}, 2019, pp.~304--315.
-\bibitem{kao2020} S.~Kao and T.~Krishna, ``GAMMA: Automating the HW mapping of DNN models on accelerators via genetic algorithm,'' in \textit{ICCAD}, 2020, pp.~1--9.
-\bibitem{kao2022} S.~Kao \textit{et al.}, ``DiGAMMA: Domain-aware genetic algorithm for HW-mapping co-optimization,'' in \textit{DATE}, 2022, pp.~232--237.
+\bibitem{parashar2019} A.~Parashar \textit{et al.}, ``Timeloop,'' in \textit{ISPASS}, 2019, pp.~304--315.
+\bibitem{kao2020} S.~Kao and T.~Krishna, ``GAMMA,'' in \textit{ICCAD}, 2020, pp.~1--9.
+\bibitem{kao2022} S.~Kao \textit{et al.}, ``DiGAMMA,'' in \textit{DATE}, 2022, pp.~232--237.
 \bibitem{lie2024} S.~Lie, ``Inside the Cerebras wafer-scale cluster,'' \textit{IEEE Micro}, 2024.
-\bibitem{abts2020} D.~Abts \textit{et al.}, ``Think fast: A tensor streaming processor for accelerating deep learning workloads,'' in \textit{ISCA}, 2020.
+\bibitem{abts2020} D.~Abts \textit{et al.}, ``Think fast: A TSP,'' in \textit{ISCA}, 2020.
 \end{thebibliography}
 
 \balance

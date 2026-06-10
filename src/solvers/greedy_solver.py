@@ -19,30 +19,52 @@ from model import (
 
 
 def _greedy_partitioning(wl: Workload, acc: Accelerator) -> List[int]:
-    """Greedy partitioning: allocate cores proportional to compute demand."""
+    """Greedy partitioning: add cores only when total latency improves."""
     L = wl.num_layers
     min_cores = [acc.min_cores_for_layer(wl, i) for i in range(L)]
     total = acc.total_cores
-    flops = [wl.layer_flops(i) for i in range(L)]
-    total_flops = sum(flops)
 
     partitioning = list(min_cores)
-    remaining = total - sum(partitioning)
+    positions = [(r, c) for c in range(acc.cols) for r in range(acc.rows)]
+    placement = _assign_from_positions(partitioning, positions)
+    sol = MappingSolution(partitioning=partitioning, placement=placement)
+    current_cost = compute_latency(sol, wl, acc)["total_time"]
 
-    # Greedily assign remaining cores to the layer with highest per-core compute time
-    for _ in range(remaining):
+    while sum(partitioning) < total:
         best_layer = -1
-        best_reduction = -1.0
+        best_cost = current_cost
         for i in range(L):
-            current_time = flops[i] / (partitioning[i] * acc.core_flops_per_cycle)
-            new_time = flops[i] / ((partitioning[i] + 1) * acc.core_flops_per_cycle)
-            reduction = current_time - new_time
-            if reduction > best_reduction:
-                best_reduction = reduction
+            trial_part = list(partitioning)
+            trial_part[i] += 1
+            if sum(trial_part) > total:
+                continue
+            trial_place = _assign_from_positions(trial_part, positions)
+            trial_sol = MappingSolution(partitioning=trial_part, placement=trial_place)
+            trial_cost = compute_latency(trial_sol, wl, acc)["total_time"]
+            if trial_cost < best_cost:
+                best_cost = trial_cost
                 best_layer = i
-        if best_layer >= 0:
-            partitioning[best_layer] += 1
+        if best_layer < 0:
+            break
+        partitioning[best_layer] += 1
+        placement = _assign_from_positions(partitioning, positions)
+        sol = MappingSolution(partitioning=partitioning, placement=placement)
+        current_cost = best_cost
+
     return partitioning
+
+
+def _assign_from_positions(
+    partitioning: List[int],
+    positions: List[Tuple[int, int]],
+) -> List[List[Tuple[int, int]]]:
+    """Assign mesh positions sequentially to layers."""
+    placement = []
+    idx = 0
+    for c in partitioning:
+        placement.append(positions[idx : idx + c])
+        idx += c
+    return placement
 
 
 def _contiguous_placement(
@@ -50,14 +72,8 @@ def _contiguous_placement(
     acc: Accelerator,
 ) -> List[List[Tuple[int, int]]]:
     """Place layers as contiguous blocks on the mesh, column-major."""
-    H, W = acc.rows, acc.cols
-    positions = [(r, c) for c in range(W) for r in range(H)]
-    idx = 0
-    placement = []
-    for c in partitioning:
-        placement.append(positions[idx : idx + c])
-        idx += c
-    return placement
+    positions = [(r, c) for c in range(acc.cols) for r in range(acc.rows)]
+    return _assign_from_positions(partitioning, positions)
 
 
 def _kl_refinement(
@@ -120,15 +136,35 @@ def _partition_refinement(
     acc: Accelerator,
     max_iters: int = 20,
 ) -> MappingSolution:
-    """Refine partitioning by moving cores between layers greedily."""
+    """Refine partitioning by moving or removing cores greedily."""
     L = wl.num_layers
     min_cores = [acc.min_cores_for_layer(wl, i) for i in range(L)]
     current = deepcopy(sol)
+    budget = max(max_iters, acc.total_cores)
 
-    for _ in range(max_iters):
+    for _ in range(budget):
         improved = False
         current_cost = compute_latency(current, wl, acc)["total_time"]
 
+        # Try removing a core from a layer (release to idle pool)
+        for src in range(L):
+            if current.partitioning[src] <= min_cores[src]:
+                continue
+            trial = deepcopy(current)
+            trial.partitioning[src] -= 1
+            if trial.placement[src]:
+                trial.placement[src].pop()
+            trial_cost = compute_latency(trial, wl, acc)["total_time"]
+            if trial_cost < current_cost:
+                current = trial
+                current_cost = trial_cost
+                improved = True
+                break
+
+        if improved:
+            continue
+
+        # Try moving a core from src to dst
         for src in range(L):
             if current.partitioning[src] <= min_cores[src]:
                 continue
@@ -138,12 +174,9 @@ def _partition_refinement(
                 trial = deepcopy(current)
                 trial.partitioning[src] -= 1
                 trial.partitioning[dst] += 1
-
-                # Move one core position from src to dst
                 if trial.placement[src]:
                     core = trial.placement[src].pop()
                     trial.placement[dst].append(core)
-
                 trial_cost = compute_latency(trial, wl, acc)["total_time"]
                 if trial_cost < current_cost:
                     current = trial

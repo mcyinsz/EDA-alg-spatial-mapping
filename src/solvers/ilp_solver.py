@@ -147,6 +147,8 @@ def solve_ilp(
             acc.comm_beta * kappa * layer_act[i]
             * (1.0 - 1.0 / x_i) * 2.0 / (x_i * (x_i - 1))
         )
+        if not acc.intra_serialized:
+            intra_weight /= max(x_i, 1)
         intra_comm_exprs.append(
             intra_weight * pulp.lpSum(
                 dist[k, l] * w[i, k, l]

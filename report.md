@@ -2,7 +2,7 @@
 
 ## 摘要
 
-空间架构加速器（如 Cerebras WSE、Groq TSP）以大规模 2D mesh 形态的分布式计算核心为特征，在深度神经网络推理中展现出巨大的性能潜力。然而，如何将计算图高效地映射到具有固定拓扑的硬件上——即如何决定每层网络分到多少个核心（partitioning）以及这些核心在 mesh 上的物理位置（placement）——是一个搜索空间组合爆炸的优化问题。本文将该问题形式化为一个以推理延迟最小化为目标的组合优化问题，建立了包含计算并行度、层间通信和层内 tensor-parallel 通信的分析成本模型，并提出了四种求解方法：整数线性规划（ILP）、模拟退火（SA）、嵌套演化策略（EA）以及贪心+Kernighan-Lin 局部搜索（Greedy+KL）。在 7 种 DNN workload（MLP、Transformer、ConvNet）× 3 种 mesh 规模的 19 个可行配置上进行的实验表明：**问题建模对算法排名具有决定性影响**——加入层内通信后，Greedy+KL 以 17/19 的绝对优势领先，其连续放置策略通常产生更紧凑的层内聚类；SA 仅在 ConvNet/4×4 上保持优势（小 mesh 上层内惩罚有限时联合搜索仍有价值）；ILP 因固定 partitioning 策略和可扩展性限制未取得最优。完整实验可通过 `python src/experiment.py`（含层内通信）和 `python src/experiment.py --inter-only`（仅层间通信对照）端到端复现。
+空间架构加速器（如 Cerebras WSE、Groq TSP）以大规模 2D mesh 形态的分布式计算核心为特征，在深度神经网络推理中展现出巨大的性能潜力。然而，如何将计算图高效地映射到具有固定拓扑的硬件上——即如何决定每层网络分到多少个核心（partitioning）以及这些核心在 mesh 上的物理位置（placement）——是一个搜索空间组合爆炸的优化问题。本文将该问题形式化为一个以推理延迟最小化为目标的组合优化问题，建立了包含计算并行度、层间通信和层内 tensor-parallel 通信的分析成本模型，并提出了四种求解方法：整数线性规划（ILP）、模拟退火（SA）、嵌套演化策略（EA）以及贪心+Kernighan-Lin 局部搜索（Greedy+KL）。在 7 种 DNN workload（MLP、Transformer、ConvNet）× 3 种 mesh 规模的 19 个可行配置上进行的实验表明：**问题建模对算法排名具有决定性影响**——修正实验 setup（允许闲置核心、对齐评估预算）后，主实验中 Greedy+KL 取得 12/19 最优、SA 6/19、EA 1/19；仅层间通信时 SA 与 Greedy+KL 各 8/19；κ 敏感性扫描显示排名随通信系数在 SA/EA/Greedy 之间翻转；层内并行注入假设 ablation 进一步改变排名（EA 9/19）。ILP 定位为 placement 子问题参考，不参与联合优化排名。完整实验可通过 `python src/experiment.py`、`--inter-only`、`--intra-parallel` 及 `scripts/sweep_kappa.py` 端到端复现。
 
 **关键词**：空间架构加速器；神经网络映射；组合优化；整数线性规划；模拟退火；演化算法
 
@@ -114,16 +114,18 @@ $$x_i \geq 1, \quad \forall\; i \tag{C3}$$
 
 $$\sum_{k} \sum_{l} z_{i,k} \cdot z_{i+1,l} \cdot d_{k,l}$$
 
-通过引入辅助变量 $u_{i,k,l} \in \{0,1\}$ 和 big-M 线性化约束进行线性化。类似地，层内通信项 $\bar{d}_{\text{intra}}(S_i)$ 展开为 $\sum_{k<l} z_{i,k} \cdot z_{i,l} \cdot d_{k,l}$，引入辅助变量 $w_{i,k,l}$ 进行线性化。辅助变量总数为 $O(K^2 L)$（层间和层内各一半）。为控制变量规模，实际实现中采用固定 partitioning + 优化 placement 的策略。Partitioning 采用贪心策略：初始每层分配最小核心数，然后迭代地将核心分配给边际计算延迟下降量最大的层，直至所有核心分配完毕。给定固定 partitioning 后，仅优化 placement。由于层内通信的加入使 ILP 变量规模翻倍，求解时间限制设为 60 秒，且仅在核心数 $\leq 16$ 的 mesh 上运行。使用 PuLP + CBC 求解器。
+通过引入辅助变量 $u_{i,k,l} \in \{0,1\}$ 和 big-M 线性化约束进行线性化。类似地，层内通信项 $\bar{d}_{\text{intra}}(S_i)$ 展开为 $\sum_{k<l} z_{i,k} \cdot z_{i,l} \cdot d_{k,l}$，引入辅助变量 $w_{i,k,l}$ 进行线性化。辅助变量总数为 $O(K^2 L)$（层间和层内各一半）。**本工作中 ILP 定位为 placement 子问题的参考求解器**：给定固定 partitioning（贪心按计算需求分配），仅优化 placement。它不与其他联合优化算法直接比较排名，而用于评估"给定 partitioning 后 placement 优化的上界"。求解时间限制 60 秒，仅在核心数 $\leq 16$ 的 mesh 上运行。使用 PuLP + CBC 求解器。
 
 ### 3.2 模拟退火（SA）
 
 **状态表示**：$(\mathbf{x}, \{S_i\})$，即当前 partitioning 和 placement。
 
 **邻域操作**（三选一）：
-- *Partitioning perturbation*：从一层移走 1 个核心到另一层；
+- *Partitioning perturbation*：在层间转移核心、丢弃核心（变为闲置）或启用闲置核心分配给某层；
 - *Placement perturbation*：随机交换两层间 $\lfloor\sqrt{K_{\text{used}}}\rfloor$ 对核心的位置；
 - *Joint perturbation*：同时扰动 partitioning 和 placement。
+
+初始解从各层最小核心数出发（允许闲置核心），不再强制用满 mesh。
 
 **温度调度**：$T(t) = T_0 \cdot \gamma^t$，其中 $T_0 = 100$，$\gamma = 0.995$。
 
@@ -145,9 +147,9 @@ $$\sum_{k} \sum_{l} z_{i,k} \cdot z_{i+1,l} \cdot d_{k,l}$$
 
 分三个阶段：
 
-1. **贪心 partitioning**：迭代地将核心分配给当前边际收益（计算延迟减少量）最大的层；
+1. **贪心 partitioning**：从最小核心数出发，仅当增加核心的总延迟（含通信）下降时才分配额外核心；
 2. **连续放置 + KL refinement**：按列优先顺序排列各层核心，然后以 Kernighan-Lin 风格迭代尝试交换不同层的核心位置，保留使目标下降的交换；
-3. **Partition refinement**：贪心地在层间移动单个核心，保留使目标下降的移动。
+3. **Partition refinement**：贪心地在层间移动或移除单个核心（释放为闲置），保留使目标下降的移动。
 
 ---
 
@@ -181,9 +183,9 @@ $$\sum_{k} \sum_{l} z_{i,k} \cdot z_{i+1,l} \cdot d_{k,l}$$
 
 | 求解器 | 关键参数 | 独立运行次数 |
 |--------|---------|------------|
-| ILP | time limit = 60s, MIP gap = 0.05, max 16 cores | 1 |
-| SA | $T_0=100$, $\gamma=0.995$, 3000 iterations | 3 |
-| EA | $\lambda_{\text{part}}=\lambda_{\text{place}}=4$, 40 generations | 3 |
+| ILP（placement 参考） | time limit = 60s, MIP gap = 0.05, max 16 cores | 1 |
+| SA | $T_0=100$, $\gamma=0.995$, 3000 iterations | 5 |
+| EA | $\lambda_{\text{part}}=\lambda_{\text{place}}=4$, 40 generations | 5 |
 | Greedy+KL | KL passes = 8, partition refine iters = 15 | 1 |
 
 **层内通信参数**：线性层（MLP、Transformer）$\kappa_i = 1.0$，卷积层 $\kappa_i = 0.5$，全连接层 $\kappa_i = 1.0$。通信系数 $\beta_{\text{inter}} = \beta_{\text{intra}} = 1.0$。
@@ -194,12 +196,25 @@ $$\sum_{k} \sum_{l} z_{i,k} \cdot z_{i+1,l} \cdot d_{k,l}$$
 
 **基线方法**：Random（随机放置）、Packed Row-Major（按行依次填入）、Packed Column-Major（按列依次填入）、Spread Row-Major（间隔分配）、Equal Partitioning（核心均分，按行填入），共 5 种基线启发式。
 
-**复现说明**：本文的核心发现是"是否考虑层内通信对算法排名有决定性影响"，以下命令可端到端复现两组实验：
+**复现说明**：以下命令可端到端复现全部实验：
 
-- 含层内通信（当前主实验）：`python src/experiment.py` → 生成 `results/experiment_results.json`
-- 仅层间通信（对照组）：`python src/experiment.py --inter-only` → 生成 `results/experiment_results_inter_only.json`（ILP 的 `max_cores` 阈值会自动恢复为 49）
+- 含层内通信（主实验）：`python src/experiment.py` → `results/experiment_results.json`
+- 仅层间通信（对照组）：`python src/experiment.py --inter-only` → `results/experiment_results_inter_only.json`
+- 层内并行注入假设 ablation：`python src/experiment.py --intra-parallel` → `results/experiment_results_intra_parallel.json`
+- κ 敏感性扫描：`python scripts/sweep_kappa.py` → `results/sensitivity_kappa.json` + `.png`
 
-画图入口同样支持指定结果文件：`python src/visualize.py`（默认读取主实验，输出到 `results/`）或 `python src/visualize.py --results results/experiment_results_inter_only.json`（读取对照组，自动输出到 `results/inter_only/` 子目录，不会覆盖主实验图）。当前的 `results/experiment_results_inter_only.json` 即为 `--inter-only` 模式下生成的对照组结果。
+画图：`python src/visualize.py`（主实验）或 `python src/visualize.py --results <json>`（对照/ablation 自动输出到子目录）。一键复现：`bash scripts/run_full.sh`。
+
+**表 3b：求解器平均计算预算（主实验）**
+
+| 求解器 | 平均 wall-clock (s) | 平均 `compute_latency` 调用次数 |
+|--------|--------------------:|--------------------------------:|
+| ILP | 59.6 | 1 |
+| SA | 0.13 | 3002 |
+| EA | 0.02 | 322 |
+| Greedy+KL | 0.01 | 331 |
+
+SA 的评估次数约为 EA 的 9 倍；Greedy+KL 单次 KL 交换代价较高但 wall-clock 仍最低。
 
 ### 4.2 主要实验结果
 
@@ -209,77 +224,73 @@ $$\sum_{k} \sum_{l} z_{i,k} \cdot z_{i+1,l} \cdot d_{k,l}$$
 
 | 配置 | 最佳基线 | ILP | SA | EA | Greedy+KL |
 |------|---------|-----|-----|-----|-----------|
-| Small-MLP/4×4 | 3.84 | 4.66 | 3.78 | **3.33** | 3.75 |
-| Small-MLP/6×6 | 3.84 | — | 5.26 | 4.98 | **4.97** |
-| Small-MLP/8×8 | 3.84 | — | 7.17 | 8.17 | **6.68** |
-| Medium-MLP/4×4 | 27.07 | 29.86 | 25.35 | 25.46 | **25.19** |
-| Medium-MLP/6×6 | 29.29 | — | 29.44 | 30.67 | **28.15** |
-| Medium-MLP/8×8 | 32.34 | — | 39.36 | 41.03 | **29.46** |
-| Large-MLP/6×6 | 44.67 | — | 44.96 | 48.15 | **38.14** |
-| Large-MLP/8×8 | 47.22 | — | 57.44 | 60.20 | **43.09** |
-| Sparse-MLP/4×4 | 21.83 | 25.22 | 20.74 | 21.15 | **20.55** |
-| Sparse-MLP/6×6 | 26.23 | — | 27.58 | 29.32 | **25.58** |
-| Sparse-MLP/8×8 | 24.58 | — | 37.03 | 39.84 | **28.30** |
-| Transformer-S/4×4 | 23.17 | 25.60 | 20.94 | 21.32 | **19.84** |
-| Transformer-S/6×6 | 21.85 | — | 24.77 | 26.97 | **19.69** |
-| Transformer-S/8×8 | 24.58 | — | 34.51 | 33.54 | **21.32** |
-| Transformer-L/6×6 | 57.70 | — | 62.58 | 61.84 | **46.79** |
-| Transformer-L/8×8 | 68.70 | — | 74.00 | 74.59 | **46.79** |
-| ConvNet/4×4 | 859.4 | 900.8 | **809.9** | 815.5 | 813.4 |
-| ConvNet/6×6 | 837.7 | — | 826.0 | 888.5 | **763.7** |
-| ConvNet/8×8 | 937.0 | — | 1010.0 | 1105.3 | **847.8** |
+| Small-MLP/4×4 | 3.84 | 4.66 | **3.20** | 3.33 | 3.58 |
+| Small-MLP/6×6 | 3.84 | — | **3.20** | 4.98 | 3.46 |
+| Small-MLP/8×8 | 3.84 | — | **3.20** | 7.63 | 3.46 |
+| Medium-MLP/4×4 | 27.07 | 26.90 | **24.98** | 25.46 | 25.24 |
+| Medium-MLP/6×6 | 29.29 | — | 31.52 | 30.19 | **26.05** |
+| Medium-MLP/8×8 | 32.34 | — | 36.07 | 41.03 | **28.06** |
+| Large-MLP/6×6 | 44.67 | — | 44.72 | 47.34 | **39.98** |
+| Large-MLP/8×8 | 47.22 | — | 52.18 | 59.43 | **42.65** |
+| Sparse-MLP/4×4 | 21.83 | 22.26 | **20.61** | 20.85 | 20.99 |
+| Sparse-MLP/6×6 | 26.23 | — | 23.57 | 29.32 | **22.30** |
+| Sparse-MLP/8×8 | 24.58 | — | 26.24 | 39.84 | **24.58** |
+| Transformer-S/4×4 | 23.17 | 21.38 | 21.76 | **21.32** | 22.53 |
+| Transformer-S/6×6 | 21.85 | — | 25.22 | 26.97 | **23.55** |
+| Transformer-S/8×8 | 24.58 | — | 29.18 | 33.54 | **21.89** |
+| Transformer-L/6×6 | 57.70 | — | 62.56 | 61.84 | **57.01** |
+| Transformer-L/8×8 | 68.70 | — | 68.17 | 74.59 | **54.38** |
+| ConvNet/4×4 | 859.4 | 825.6 | 829.9 | 815.5 | **811.1** |
+| ConvNet/6×6 | 837.7 | — | 951.0 | 888.5 | **781.6** |
+| ConvNet/8×8 | 937.0 | — | **1032.2** | 1069.6 | 1165.5 |
 
-注："—"表示 ILP 因层内通信项使变量规模翻倍而未在相应 mesh 上运行（仅限核心数 ≤ 16 的 4×4 mesh）。SA 和 EA 报告 3 次独立运行中的最优值。代码层面校验了以下约束：partitioning 与 placement 一致、每层核心数不低于内存约束所需最小值、核心总数不超过 mesh 容量、不同层不共享同一物理核心（C1）。
+注："—"表示 ILP 未在相应 mesh 上运行（仅限核心数 ≤ 16 的 4×4 mesh）。SA 和 EA 报告 5 次独立运行中的最优值（均值见分析）。ILP 列为 placement 子问题参考。求解器允许 $\sum x_i < K$（闲置核心）。
 
 ### 4.3 结果分析
 
 #### 4.3.1 层内通信对算法排名的根本性影响
 
-图 1 展示了各求解器在所有实验配置上的延迟对比。在 19 个可行配置中，各算法取得最优的次数为：**Greedy+KL 17 次、SA 1 次、EA 1 次、ILP 0 次**。
+图 1 展示了各求解器在所有实验配置上的延迟对比。在修正 setup（允许闲置核心、成本感知 partitioning）后的 19 个可行配置中，各算法取得最优的次数为：**Greedy+KL 12 次、SA 6 次、EA 1 次**。
 
-这一结果与仅考虑层间通信时的算法排名截然不同（此前 SA 12 次最优、Greedy+KL 7 次），揭示了**问题建模对求解策略选择的决定性影响**。加入层内 tensor-parallel 通信后，成本模型对 placement 的紧凑性提出了显式约束——同一层的核心分散越远，层内同步通信代价越高。Greedy+KL 的连续放置（contiguous placement）策略天然产生紧凑的核心聚类，其层内平均距离远低于 SA 和 EA 的随机 swap 邻域所产生的碎片化布局，因此在新模型下获得了压倒性优势。
+与仅考虑层间通信时（SA 8 次、Greedy+KL 8 次、EA 2 次、ILP 1 次）相比，加入层内通信后 Greedy+KL 在大 workload / 大 mesh 上优势更明显，但 SA 在 Small-MLP 全部 3 个 mesh 上以 3.20 μs 全胜（通过保留闲置核心避免不必要层内通信）。这进一步揭示**问题建模与实验 setup 共同决定算法排名**。
 
 ![各求解器在不同配置上的延迟对比](results/latency_comparison.png)
 
 *图 1：各求解器在所有实验配置上的最优推理延迟对比（注意 ConvNet 配置的延迟量级远大于 MLP/Transformer）*
 
-#### 4.3.2 Greedy+KL 的压倒性优势
+#### 4.3.2 Greedy+KL 在大 workload 上的优势
 
-Greedy+KL 在 19 个配置中的 17 个上取得最优，覆盖了全部三类网络结构。其优势的根源在于算法设计与成本模型的契合：
+Greedy+KL 在 19 个配置中的 12 个上取得最优，主要集中在 Medium/Large MLP、Transformer 和 ConvNet 6×6。其优势根源：
 
-1. **连续放置通常产生更紧凑的层内聚类**：Greedy+KL 初始按列优先顺序连续排列各层核心，层内核心间平均距离通常较低（相邻核心间距 1–2 hops）。相比之下，SA 和 EA 的随机 swap 邻域更容易产生核心分散的碎片化布局，层内平均距离可达 3–5 hops。需要注意的是，KL refinement 逐对交换不同层的核心时并不显式维护连通性，个别配置下也会出现层内碎片化（如 ConvNet/8×8 中有一层被分为两个连通分量），但整体趋势上 Greedy+KL 的层内距离显著低于 SA 和 EA。
-2. **KL refinement 在大多数配置上保持较紧凑的布局**：KL 逐对交换不同层的核心，在多数情况下能维持初始连续放置的紧凑性，同时微调层间距离。SA 的随机 swap 则更容易破坏已有的紧凑聚类。
-3. **优势随 mesh 规模增大而扩大**：在 8×8 mesh 上，Greedy+KL 的优势最为显著。例如 Transformer-L/8×8 上 Greedy+KL（46.79 μs）比 SA（74.00 μs）低 36.8%，比 EA（74.59 μs）低 37.3%。大 mesh 上核心分散的代价更大（距离可达 14 hops），Greedy+KL 的紧凑放置优势被进一步放大。
+1. **连续放置产生紧凑层内聚类**，层内平均距离通常 1–2 hops；
+2. **成本感知 partitioning** 避免 Small-MLP 在大 mesh 上过度分配核心；
+3. **大 mesh 优势**：Transformer-L/8×8 上 Greedy+KL（54.38 μs）比 SA（68.17 μs）低 20.2%。
 
-在 MLP workload 的 11 个配置上，Greedy+KL 在 10 个上取得最优，仅 Small-MLP/4×4 上 EA 以微弱优势（3.33 vs 3.75 μs，差距 11%）胜出。在 Transformer 的 5 个配置和 ConvNet 的 6×6/8×8 上，Greedy+KL 均全面领先。
+但在 Small-MLP 上 SA 更优（3.20 vs 3.46 μs），因 SA 能更激进地保留闲置核心；ConvNet/8×8 上 SA（1032 μs）也优于 Greedy+KL（1165 μs）。
 
-#### 4.3.3 SA 和 EA 在大 mesh 上的性能退化
+#### 4.3.3 SA 在小 workload 与 EA 的预算限制
 
-SA 和 EA 在加入层内通信后性能显著下降，尤其是在大 mesh 上。以 Medium-MLP 为例：
+修正 setup 后 SA 在 Small-MLP 三个 mesh 上均以 3.20 μs 全胜基线（3.84 μs），得益于允许闲置核心的邻域操作。以 Medium-MLP 为例：
 
 | 配置 | SA | Greedy+KL | SA 劣势 |
 |------|-----|-----------|---------|
-| 4×4 | 25.35 | 25.19 | 0.6% |
-| 6×6 | 29.44 | 28.15 | 4.6% |
-| 8×8 | 39.36 | 29.46 | 33.6% |
+| 4×4 | 24.98 | 25.24 | — |
+| 6×6 | 31.52 | 26.05 | 17.3% |
+| 8×8 | 36.07 | 28.06 | 22.1% |
 
-在 4×4 mesh 上 SA 与 Greedy+KL 接近（核心距离上限仅 6 hops，碎片化代价有限），但在 8×8 mesh 上 SA 延迟比 Greedy+KL 高出 33.6%。这表明 SA 的随机 swap 邻域在核心充裕时难以维持紧凑的层内聚类。
+EA 评估预算仅约 322 次/运行（SA 约 3002 次），在 Transformer-S/4×4 上以 21.32 μs 取得 1 次最优，但大 mesh 上普遍落后。
 
-EA 的情况类似，其 mutation-based 放置操作（swap、invert、scramble）同样不保证紧凑性，在 8×8 mesh 上表现最差。
+#### 4.3.4 ConvNet：Greedy+KL 在中小 mesh 领先
 
-#### 4.3.4 ConvNet/4×4：SA 的联合搜索仍有价值
+ConvNet/4×4 上 Greedy+KL（811.1 μs）最优，SA（829.9 μs）次之。6×6 上 Greedy+KL（781.6 μs）大幅领先 SA（951.0 μs）。8×8 上 SA（1032 μs）反而优于 Greedy+KL（1165 μs），说明紧凑放置并非所有配置上的全局最优。
 
-在 ConvNet/4×4 上，SA（809.9 μs）以微弱优势胜过 Greedy+KL（813.4 μs）。ConvNet 的三个卷积层计算量极大（总计 85.3M FLOPs）但权重较小，通信高度敏感。在 4×4 mesh（仅 16 核心、最大距离 6 hops）上，层内通信的惩罚有限，SA 的联合 partitioning+placement 搜索空间较小（容易找到优质解），其联合优化能力仍能发挥边际优势。
+#### 4.3.5 ILP 作为 placement 参考
 
-然而在 6×6 和 8×8 mesh 上，SA 分别以 826.0 和 1010.0 μs 大幅落后于 Greedy+KL 的 763.7 和 847.8 μs，验证了层内通信代价随 mesh 规模增长的趋势。
-
-#### 4.3.5 ILP 的可扩展性限制
-
-ILP 仅在 5 个 4×4 mesh 配置上运行（层内通信的 w 变量使 ILP 规模翻倍，超过 4×4 mesh 的求解能力）。在产出了可行解的配置上，ILP 表现均不如 SA 或 Greedy+KL。例如 Small-MLP/4×4 上 ILP 为 4.66 μs，而 EA 为 3.33 μs。ILP 的固定 partitioning 策略无法像 Greedy+KL 那样通过 partition refinement 适应层内通信代价。
+ILP 仅在 5 个 4×4 mesh 配置上运行，定位为**给定 partitioning 后的 placement 子问题参考**。其固定 partitioning 无法联合优化核心数量，因此不与 SA/EA/Greedy 直接比较获胜次数。Medium-MLP/4×4 上 ILP placement 参考为 26.90 μs，联合优化器 SA 为 24.98 μs。
 
 #### 4.3.6 EA 收敛与求解效率
 
-EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，仅在 Small-MLP/4×4 上取得最优。图 2 展示了 Transformer-S/6×6 配置下的收敛曲线。
+EA 在有限的 evaluation budget（约 322 次/运行）下，仅在 Transformer-S/4×4 上取得最优。图 2 展示了 Transformer-S/6×6 配置下的收敛曲线。
 
 ![收敛曲线：SA vs EA](results/convergence_Transformer-S_6x6-mesh.png)
 
@@ -305,17 +316,17 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 > **可视化说明**：本节中的 mesh 放置图、NoC 链路负载热力图和利用率热力图均使用各求解器实际输出的 placement 数据绘制，时延数据由成本模型基于实际 placement 计算，与求解器报告的统计结果一致。延迟分解图现在展示三项：计算（蓝）、层间通信（橙）、层内通信（红）。
 
-**Small-MLP/4×4**（图 3a，最优求解器 EA）：3 层 MLP 在 16 核心上，EA 找到了延迟 3.33 μs 的解。在该小规模配置上，四种求解器的差距较小（3.33–4.66 μs），因为 4×4 mesh 的最大距离仅 6 hops，层内通信惩罚有限。
+**Small-MLP/4×4**（图 3a，最优求解器 SA）：SA 以 3.20 μs 最优，通过保留闲置核心避免不必要层内通信。
 
 ![映射细节：Small-MLP/4×4](results/mapping_detail_Small-MLP_4x4-mesh.png)
 
-*图 3a：Small-MLP/4×4 的四联映射图（最优求解器 EA）。左上：mesh 放置；右上：partitioning 分配；左下：通信量叠加层；右下：逐层延迟分解（计算/层间通信/层内通信）。*
+*图 3a：Small-MLP/4×4 的四联映射图（最优求解器 SA，3.20 μs）。*
 
-**Medium-MLP/4×4**（图 3b，最优求解器 Greedy+KL）：4 层 MLP 划分 [3, 5, 5, 3]。首尾层各 3 核心、中间两层各 5 核心，呈对称分配。Greedy+KL 的连续放置使各层核心形成紧凑聚类，层内平均距离接近 1 hop。
+**Medium-MLP/4×4**（图 3b，最优求解器 SA）：SA 以 24.98 μs 略优于 Greedy+KL（25.24 μs）。
 
 ![映射细节：Medium-MLP/4×4](results/mapping_detail_Medium-MLP_4x4-mesh.png)
 
-*图 3b：Medium-MLP/4×4 的四联映射图（最优求解器 Greedy+KL，25.19 μs）*
+*图 3b：Medium-MLP/4×4 的四联映射图（最优求解器 SA，24.98 μs）*
 
 **Sparse-MLP/4×4**（图 3c，最优求解器 Greedy+KL）：50% 稀疏度的 4 层 MLP。Greedy+KL 的紧凑放置使层内通信代价最低。
 
@@ -323,11 +334,11 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 *图 3c：Sparse-MLP/4×4 的四联映射图（最优求解器 Greedy+KL，20.55 μs）*
 
-**Large-MLP/8×8**（图 3d，最优求解器 Greedy+KL）：5 层 MLP 在 64 核心上划分 [7, 15, 21, 14, 7]，呈近似对称结构。Greedy+KL 的延迟（43.09 μs）远低于 SA（57.44 μs）和 EA（60.20 μs），差距达 25–28%。在 8×8 mesh 上，层内核心分散的代价极大（最大距离 14 hops），Greedy+KL 的连续放置优势被充分放大。
+**Large-MLP/8×8**（图 3d，最优求解器 Greedy+KL）：Greedy+KL（42.65 μs）优于 SA（52.18 μs）和 EA（59.43 μs）。
 
 ![映射细节：Large-MLP/8×8](results/mapping_detail_Large-MLP_8x8-mesh.png)
 
-*图 3d：Large-MLP/8×8 的四联映射图（最优求解器 Greedy+KL，43.09 μs）*
+*图 3d：Large-MLP/8×8 的四联映射图（最优求解器 Greedy+KL，42.65 μs）*
 
 ![Partitioning 对比：Large-MLP/8×8](results/partitioning_Large-MLP_8x8-mesh.png)
 
@@ -345,11 +356,11 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 *图 3g：Transformer-L/6×6 的四联映射图（最优求解器 Greedy+KL，46.79 μs）*
 
-**ConvNet/4×4**（图 3h，最优求解器 SA）：4 层 ConvNet 划分 [4, 5, 5, 2]。Conv1 获 4 核心，Conv2/Conv3 各 5 核心，FC 层仅 2 核心。SA（809.9 μs）以微弱优势胜过 Greedy+KL（813.4 μs），在 4×4 mesh 上层内通信惩罚有限，SA 的联合搜索仍能发挥边际优势。
+**ConvNet/4×4**（图 3h，最优求解器 Greedy+KL）：Greedy+KL（811.1 μs）略优于 EA（815.5 μs）和 SA（829.9 μs）。
 
 ![映射细节：ConvNet/4×4](results/mapping_detail_ConvNet_4x4-mesh.png)
 
-*图 3h：ConvNet/4×4 的四联映射图（最优求解器 SA，809.9 μs）*
+*图 3h：ConvNet/4×4 的四联映射图（最优求解器 Greedy+KL，811.1 μs）*
 
 ![NoC 链路负载：ConvNet/4×4](results/link_load_ConvNet_4x4-mesh.png)
 
@@ -367,6 +378,26 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 *图 3k：Medium-MLP/4×4 的 per-core 计算利用率热力图*
 
+#### 4.3.9 κ 敏感性分析
+
+对 κ 全局乘子扫描 [0, 0.25, 0.5, 1.0, 2.0]，统计各求解器获胜次数：
+
+| κ 乘子 | SA | EA | Greedy+KL |
+|--------|----|----|-----------|
+| 0.0 | 8 | 3 | 8 |
+| 0.25 | 4 | 11 | 4 |
+| 0.5 | 4 | 6 | 9 |
+| 1.0 | 6 | 1 | 12 |
+| 2.0 | 6 | 2 | 11 |
+
+![κ 敏感性](results/sensitivity_kappa.png)
+
+*图 7：各求解器获胜次数随 κ 乘子变化。κ 较小时 SA 与 Greedy 并列；κ=0.25 时 EA 占优；κ≥0.5 时 Greedy+KL 领先。*
+
+#### 4.3.10 层内并行注入假设 ablation
+
+主模型假设层内通信为序列化（式 5）；ablation 将 intra 项除以 $x_i$（与 inter 项一致的并行注入假设，`--intra-parallel`）。此假设下获胜次数为 **EA 9、SA 7、Greedy+KL 3**，排名再次翻转，强化"建模假设决定算法排名"的结论。
+
 ---
 
 ## 5 结论与展望
@@ -375,9 +406,9 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 ### 5.1 核心发现
 
-**问题建模决定算法排名**。本文最重要的发现是：成本模型的选择对求解算法的相对性能具有决定性影响。在仅考虑层间通信的模型下，SA 以 12/19 的优势领先；加入层内 tensor-parallel 通信后，Greedy+KL 以 17/19 的绝对优势胜出。这一转变的根源在于层内通信对 placement 紧凑性的显式约束——同一层的核心越分散，tensor-parallel 同步代价越高。
+**问题建模与实验 setup 共同决定算法排名**。在仅考虑层间通信时 SA 与 Greedy+KL 各 8/19；主模型（含层内通信、允许闲置核心）下 Greedy+KL 12/19、SA 6/19；κ 扫描与 intra 并行假设 ablation 进一步翻转排名。层内通信对 placement 紧凑性提出约束，但小 workload 上保留闲置核心的能力同样关键。
 
-图 4 展示了不同网络结构下各算法的获胜次数。Greedy+KL 在 MLP（10/11）、Transformer（5/5）和 ConvNet（2/3）上均占优。
+图 4 展示了不同网络结构下各算法的获胜次数（主实验）。
 
 ![各算法按网络类型的获胜次数](results/algorithm_wins_by_type.png)
 
@@ -385,13 +416,13 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 ### 5.2 各算法评价
 
-**Greedy+KL**（17/19 最优）：连续放置策略通常产生比 SA/EA 更紧凑的层内聚类，KL refinement 在多数情况下维持紧凑布局的同时优化层间放置。其优势随 mesh 规模增大而扩大（8×8 mesh 上优势最为显著），个别配置下也会出现层内碎片化。
+**Greedy+KL**（12/19 最优）：在大 workload / 大 mesh 上连续放置优势明显；成本感知 partitioning 修复了此前"强制用满核心"导致的退化。
 
-**SA**（1/19 最优）：联合邻域操作在层内通信惩罚有限的小 mesh 上仍有价值（ConvNet/4×4），但随机 swap 邻域在大 mesh 上无法维持紧凑的层内聚类，导致性能退化严重（如 Transformer-L/8×8 上比 Greedy+KL 慢 58%）。
+**SA**（6/19 最优）：允许闲置核心的邻域操作使 Small-MLP 全面优于基线；大 mesh 上仍受碎片化 placement 影响。
 
-**EA**（1/19 最优）：仅在 Small-MLP/4×4 上以微弱优势胜出。有限的 evaluation budget（320 次）和缺乏紧凑性导向的 mutation operator 限制了其在大多数配置上的表现。
+**EA**（1/19 最优）：评估预算有限（~322 次），在特定 κ 和并行假设下可取得更多最优。
 
-**ILP**（0/19 最优）：固定 partitioning 策略无法适应层内通信的 trade-off，且层内通信的辅助变量使 ILP 规模翻倍，可扩展性进一步受限。
+**ILP**（placement 参考）：固定 partitioning，仅评估 placement 质量，不参与联合优化排名。
 
 ### 5.3 定量分析
 
@@ -401,11 +432,7 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 *图 5：各求解器归一化延迟热力图（各配置中最佳算法 = 1.0，值越小越好）*
 
-图 6 展示了最佳求解器相对于最佳基线的加速比。由于基线方法（packed_row 等）使用最少的必要核心数并在小 mesh 上即可运行，而优化器在更大 mesh 上会分配更多核心从而引入层内通信开销，加速比呈现以下特征：
-
-- **Transformer**（1.11x–1.47x）：加速比最显著，Greedy+KL 在 Transformer-L/8×8 上达到 1.47x（68.70 → 46.79 μs）。Transformer 层数多、权重分布不均，优化器的按需分配和紧凑放置相比基线的一刀切策略优势明显。
-- **MLP**（0.58x–1.17x）：在 4×4 mesh 上加速比为 1.06x–1.17x，但在 6×6/8×8 mesh 上出现了低于 1.0x 的情况（如 Small-MLP/8×8 为 0.58x）。这是因为 Small-MLP 的计算量极小（147K FLOPs），在更大 mesh 上分配更多核心反而增加了不必要的层内通信开销，而基线的 packed_row 在 4×4 mesh 上仅需 3.84 μs。
-- **ConvNet**（1.06x–1.11x）：加速比适中，大特征图使基线的紧凑放置已经较为合理，优化器主要在 partitioning 分配上获得边际收益。
+图 6 展示了最佳求解器相对于最佳基线的加速比。修正 setup 后，Small-MLP 在大 mesh 上不再出现严重退化（SA 3.20 μs vs 基线 3.84 μs，约 1.20×）。Transformer-L/8×8 上 Greedy+KL 达到 1.26×（68.70 → 54.38 μs）。ConvNet 6×6 上 Greedy+KL 达 1.07×。
 
 ![加速比对比](results/speedup_over_baseline.png)
 
@@ -413,7 +440,7 @@ EA 在有限的 evaluation budget（40 代 × 8 后代 = 320 次评估）下，�
 
 ### 5.4 局限性与未来工作
 
-**局限性**：本实验采用抽象分析模型和假设硬件参数，层内通信模型假设简化的同步模式（与输出激活规模同阶），未精确模拟 all-reduce / all-gather 的逐链路时序。所有绝对延迟值仅具相对比较意义。
+**局限性**：（1）串行执行模型（逐层求和），未建模 pipeline dataflow；（2）层间与层内通信的并行化假设不一致（inter 除以 $x_i$，intra 默认序列化）；（3）Transformer workload 为线性链近似，未建模 attention DAG；（4）κ 和 β 为假设参数；（5）绝对延迟值仅具相对比较意义。
 
 **未来工作方向**：
 - 为 SA 和 EA 引入块移动（block move）邻域操作，使搜索偏向紧凑聚类，弥补其在层内通信上的劣势；

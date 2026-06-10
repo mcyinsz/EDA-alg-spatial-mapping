@@ -42,26 +42,53 @@ def _neighbor_partitioning(
     min_cores: List[int],
     rng: np.random.RandomState,
 ) -> List[int]:
-    """Perturb partitioning: move 1 core from one layer to another.
+    """Perturb partitioning: move, discard, or enable an idle core.
 
-    Enforces: each layer >= min_cores[i], total <= total_cores.
+    Operations (chosen uniformly when feasible):
+    - transfer: move 1 core from layer src to layer dst
+    - discard: remove 1 core from layer src (core becomes idle)
+    - enable_idle: assign 1 idle core to layer dst (total < K)
     """
     L = len(partitioning)
     new_part = list(partitioning)
-    # Pick a source layer that can spare a core (above minimum)
+    used = sum(new_part)
+
+    ops = []
+    if any(new_part[i] > min_cores[i] for i in range(L)):
+        ops.append("transfer")
+        ops.append("discard")
+    if used < total_cores:
+        ops.append("enable_idle")
+
+    if not ops:
+        return new_part
+
+    op = rng.choice(ops)
+
+    if op == "discard":
+        candidates = [i for i in range(L) if new_part[i] > min_cores[i]]
+        src = rng.choice(candidates)
+        new_part[src] -= 1
+        return new_part
+
+    if op == "enable_idle":
+        dst = rng.randint(0, L)
+        new_part[dst] += 1
+        return new_part
+
+    # transfer: move 1 core from src to dst
     candidates = [i for i in range(L) if new_part[i] > min_cores[i]]
     if not candidates:
         return new_part
     src = rng.choice(candidates)
     new_part[src] -= 1
-    # Pick a destination (any other layer)
     dst = rng.randint(0, L)
     while dst == src:
         dst = rng.randint(0, L)
     new_part[dst] += 1
-    # Safety check: total must not exceed available cores
     if sum(new_part) > total_cores:
-        new_part[dst] -= 1  # revert
+        new_part[dst] -= 1
+        new_part[src] += 1
         return list(partitioning)
     return new_part
 
@@ -114,15 +141,9 @@ def solve_sa(
     L = wl.num_layers
     min_cores = [acc.min_cores_for_layer(wl, i) for i in range(L)]
 
-    # Initial solution: min cores + distribute remaining round-robin
+    # Initial solution: minimum required cores per layer (idle cores allowed)
     total = acc.total_cores
     partitioning = list(min_cores)
-    remaining = total - sum(partitioning)
-    i = 0
-    while remaining > 0:
-        partitioning[i % L] += 1
-        remaining -= 1
-        i += 1
 
     placement = _random_placement(partitioning, acc, rng)
     sol = MappingSolution(partitioning=partitioning, placement=placement)

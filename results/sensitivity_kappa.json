@@ -1,0 +1,807 @@
+{
+  "0.0": {
+    "wins": {
+      "SA": 8,
+      "EA": 3,
+      "Greedy": 8
+    },
+    "configs": {
+      "Small-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 0.9061135802469136,
+          "EA": 0.9523832098765432,
+          "Greedy": 3.072
+        }
+      },
+      "Small-MLP/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 0.5159927287719496,
+          "EA": 0.638984126984127,
+          "Greedy": 2.1617777777777776
+        }
+      },
+      "Small-MLP/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 0.34984852607709754,
+          "EA": 0.3921937930201667,
+          "Greedy": 1.8841599999999998
+        }
+      },
+      "Medium-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 13.369647407407406,
+          "EA": 13.46522074074074,
+          "Greedy": 13.369647407407406
+        }
+      },
+      "Medium-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 6.973074934911243,
+          "EA": 7.213097709563164,
+          "Greedy": 6.943015610651974
+        }
+      },
+      "Medium-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 4.504377868266551,
+          "EA": 4.815253335357282,
+          "Greedy": 4.423304506632059
+        }
+      },
+      "Large-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 14.030566611570247,
+          "EA": 14.271178594104308,
+          "Greedy": 13.865575659293409
+        }
+      },
+      "Large-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 8.937204976432941,
+          "EA": 9.566750467603216,
+          "Greedy": 8.75194402015435
+        }
+      },
+      "Sparse-MLP/4x4-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 8.715377777777778,
+          "EA": 9.13863111111111,
+          "Greedy": 8.704
+        }
+      },
+      "Sparse-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 4.823461149828329,
+          "EA": 5.157949186586731,
+          "Greedy": 4.759462084885674
+        }
+      },
+      "Sparse-MLP/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 3.266112536993088,
+          "EA": 3.6687809555194626,
+          "Greedy": 18.20444444444444
+        }
+      },
+      "Transformer-S/4x4-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 19.21422222222222,
+          "EA": 18.048,
+          "Greedy": 22.528
+        }
+      },
+      "Transformer-S/6x6-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 19.086222222222222,
+          "EA": 12.483555555555554,
+          "Greedy": 23.552
+        }
+      },
+      "Transformer-S/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 24.177777777777777,
+          "EA": 9.320711111111113,
+          "Greedy": 18.048
+        }
+      },
+      "Transformer-L/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 46.44029629629629,
+          "EA": 31.444480000000002,
+          "Greedy": 28.480094814814816
+        }
+      },
+      "Transformer-L/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 46.96177777777778,
+          "EA": 22.620101784256555,
+          "Greedy": 18.042718234315952
+        }
+      },
+      "ConvNet/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 469.104768,
+          "EA": 482.4499911111111,
+          "Greedy": 470.153344
+        }
+      },
+      "ConvNet/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 251.77955008547008,
+          "EA": 263.0044591368228,
+          "Greedy": 341.5056326530612
+        }
+      },
+      "ConvNet/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 176.0048781694496,
+          "EA": 196.52271623392713,
+          "Greedy": 1005.3066666666667
+        }
+      }
+    }
+  },
+  "0.25": {
+    "wins": {
+      "SA": 4,
+      "EA": 11,
+      "Greedy": 4
+    },
+    "configs": {
+      "Small-MLP/4x4-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 1.7161516034985425,
+          "EA": 1.703111111111111,
+          "Greedy": 3.2
+        }
+      },
+      "Small-MLP/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 1.804,
+          "EA": 1.8481484230055658,
+          "Greedy": 2.6382222222222227
+        }
+      },
+      "Small-MLP/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 2.0432592592592593,
+          "EA": 2.400116225968648,
+          "Greedy": 2.5244444444444443
+        }
+      },
+      "Medium-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 16.812032,
+          "EA": 17.297066666666666,
+          "Greedy": 16.812032
+        }
+      },
+      "Medium-MLP/6x6-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 15.440507936507935,
+          "EA": 14.032330028490028,
+          "Greedy": 15.733744520030234
+        }
+      },
+      "Medium-MLP/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 19.337166077097507,
+          "EA": 14.545364649389166,
+          "Greedy": 17.220835555555556
+        }
+      },
+      "Large-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 23.884184671201815,
+          "EA": 23.45752828868173,
+          "Greedy": 20.853991769547324
+        }
+      },
+      "Large-MLP/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 29.04855586164677,
+          "EA": 22.924036092335665,
+          "Greedy": 26.04556641975309
+        }
+      },
+      "Sparse-MLP/4x4-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 12.098939259259259,
+          "EA": 12.429653333333334,
+          "Greedy": 11.999232
+        }
+      },
+      "Sparse-MLP/6x6-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 13.063111111111112,
+          "EA": 11.8432932345679,
+          "Greedy": 14.139733333333334
+        }
+      },
+      "Sparse-MLP/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 14.70520888888889,
+          "EA": 13.429404281195795,
+          "Greedy": 20.024888888888892
+        }
+      },
+      "Transformer-S/4x4-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 20.8,
+          "EA": 19.150222222222222,
+          "Greedy": 22.528
+        }
+      },
+      "Transformer-S/6x6-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 22.492444444444445,
+          "EA": 16.257185185185186,
+          "Greedy": 23.552
+        }
+      },
+      "Transformer-S/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 27.648,
+          "EA": 16.844416483749058,
+          "Greedy": 20.544
+        }
+      },
+      "Transformer-L/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 48.91496296296296,
+          "EA": 40.904296296296295,
+          "Greedy": 39.55697777777778
+        }
+      },
+      "Transformer-L/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 55.698962962962966,
+          "EA": 39.44430701133786,
+          "Greedy": 41.02736592592593
+        }
+      },
+      "ConvNet/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 567.5921777777778,
+          "EA": 569.6128711111112,
+          "Greedy": 567.5921777777778
+        }
+      },
+      "ConvNet/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 490.77411494639017,
+          "EA": 425.1956803155819,
+          "Greedy": 400.45020184138815
+        }
+      },
+      "ConvNet/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 665.245123420797,
+          "EA": 433.32500503645105,
+          "Greedy": 1061.7404444444444
+        }
+      }
+    }
+  },
+  "0.5": {
+    "wins": {
+      "SA": 4,
+      "EA": 6,
+      "Greedy": 9
+    },
+    "configs": {
+      "Small-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 2.4154557823129252,
+          "EA": 2.429155555555556,
+          "Greedy": 3.328
+        }
+      },
+      "Small-MLP/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 2.4746666666666663,
+          "EA": 3.0385483234714004,
+          "Greedy": 2.9297777777777783
+        }
+      },
+      "Small-MLP/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 2.550518518518518,
+          "EA": 4.211899390581717,
+          "Greedy": 2.9297777777777783
+        }
+      },
+      "Medium-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 19.733617777777777,
+          "EA": 19.775715555555557,
+          "Greedy": 19.771164444444445
+        }
+      },
+      "Medium-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 21.63598222222222,
+          "EA": 20.416423519155455,
+          "Greedy": 18.288
+        }
+      },
+      "Medium-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 25.372444444444444,
+          "EA": 23.699108072725153,
+          "Greedy": 19.825777777777777
+        }
+      },
+      "Large-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 31.83324821768707,
+          "EA": 31.232632722136998,
+          "Greedy": 28.313876543209876
+        }
+      },
+      "Large-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 37.80721777777778,
+          "EA": 34.197330487120055,
+          "Greedy": 33.22070913580247
+        }
+      },
+      "Sparse-MLP/4x4-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 15.056213333333334,
+          "EA": 15.284224000000002,
+          "Greedy": 14.690986666666666
+        }
+      },
+      "Sparse-MLP/6x6-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 19.171555555555553,
+          "EA": 17.71132678256488,
+          "Greedy": 18.432
+        }
+      },
+      "Sparse-MLP/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 21.845333333333336,
+          "EA": 21.37494645973017,
+          "Greedy": 21.845333333333333
+        }
+      },
+      "Transformer-S/4x4-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 21.248,
+          "EA": 19.584,
+          "Greedy": 22.528
+        }
+      },
+      "Transformer-S/6x6-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 23.296,
+          "EA": 20.299472592592593,
+          "Greedy": 23.552
+        }
+      },
+      "Transformer-S/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 28.672,
+          "EA": 22.151891882086165,
+          "Greedy": 20.992
+        }
+      },
+      "Transformer-L/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 54.992592592592594,
+          "EA": 47.563851851851844,
+          "Greedy": 47.50222222222223
+        }
+      },
+      "Transformer-L/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 59.486814814814814,
+          "EA": 51.06622171428571,
+          "Greedy": 52.92942222222222
+        }
+      },
+      "ConvNet/4x4-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 659.421312,
+          "EA": 653.7538133333333,
+          "Greedy": 649.6396088888889
+        }
+      },
+      "ConvNet/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 804.2413333333334,
+          "EA": 598.8253968253969,
+          "Greedy": 576.7094638016529
+        }
+      },
+      "ConvNet/8x8-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 862.4245333333332,
+          "EA": 638.7172200624102,
+          "Greedy": 1101.7902222222222
+        }
+      }
+    }
+  },
+  "1.0": {
+    "wins": {
+      "SA": 6,
+      "EA": 1,
+      "Greedy": 12
+    },
+    "configs": {
+      "Small-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 3.2,
+          "EA": 3.328,
+          "Greedy": 3.584
+        }
+      },
+      "Small-MLP/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 3.2,
+          "EA": 4.979468641975309,
+          "Greedy": 3.456
+        }
+      },
+      "Small-MLP/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 3.2,
+          "EA": 7.634190150334578,
+          "Greedy": 3.456
+        }
+      },
+      "Medium-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 24.981048888888886,
+          "EA": 25.46270814814815,
+          "Greedy": 25.2397037037037
+        }
+      },
+      "Medium-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 31.516444444444446,
+          "EA": 30.194612374416575,
+          "Greedy": 26.050559999999997
+        }
+      },
+      "Medium-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 36.06528,
+          "EA": 41.03021037037036,
+          "Greedy": 28.06442666666667
+        }
+      },
+      "Large-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 44.71871209876544,
+          "EA": 47.3423220577225,
+          "Greedy": 39.97771851851852
+        }
+      },
+      "Large-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 52.17823604938271,
+          "EA": 59.43290996796104,
+          "Greedy": 42.65377185185185
+        }
+      },
+      "Sparse-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 20.612740740740737,
+          "EA": 20.85015703703704,
+          "Greedy": 20.992
+        }
+      },
+      "Sparse-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 23.570962962962962,
+          "EA": 29.32261158797247,
+          "Greedy": 22.300444444444445
+        }
+      },
+      "Sparse-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 26.24474074074074,
+          "EA": 39.83919758573388,
+          "Greedy": 24.576
+        }
+      },
+      "Transformer-S/4x4-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 21.76,
+          "EA": 21.319111111111113,
+          "Greedy": 22.528
+        }
+      },
+      "Transformer-S/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 25.216,
+          "EA": 26.972444444444445,
+          "Greedy": 23.552
+        }
+      },
+      "Transformer-S/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 29.184,
+          "EA": 33.53678971533517,
+          "Greedy": 21.888
+        }
+      },
+      "Transformer-L/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 62.558814814814816,
+          "EA": 61.83998577777778,
+          "Greedy": 57.01480296296296
+        }
+      },
+      "Transformer-L/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 68.17185185185186,
+          "EA": 74.58638582346518,
+          "Greedy": 54.37629629629629
+        }
+      },
+      "ConvNet/4x4-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 829.8927359999999,
+          "EA": 815.4921752380952,
+          "Greedy": 811.0814984126985
+        }
+      },
+      "ConvNet/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 950.9846044444444,
+          "EA": 888.5144359963268,
+          "Greedy": 781.5816296296297
+        }
+      },
+      "ConvNet/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 1032.2492444444445,
+          "EA": 1069.575030168719,
+          "Greedy": 1165.5057777777777
+        }
+      }
+    }
+  },
+  "2.0": {
+    "wins": {
+      "SA": 6,
+      "EA": 2,
+      "Greedy": 11
+    },
+    "configs": {
+      "Small-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 3.84,
+          "EA": 4.608,
+          "Greedy": 3.84
+        }
+      },
+      "Small-MLP/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 3.84,
+          "EA": 8.094024691358024,
+          "Greedy": 3.84
+        }
+      },
+      "Small-MLP/8x8-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 3.84,
+          "EA": 14.870612149279365,
+          "Greedy": 3.84
+        }
+      },
+      "Medium-MLP/4x4-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 35.66023111111111,
+          "EA": 36.10548148148148,
+          "Greedy": 35.15278222222222
+        }
+      },
+      "Medium-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 43.274240000000006,
+          "EA": 46.14757831179809,
+          "Greedy": 36.19544177777779
+        }
+      },
+      "Medium-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 51.248696888888894,
+          "EA": 67.85558977946857,
+          "Greedy": 38.20930844444445
+        }
+      },
+      "Large-MLP/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 65.65483456790123,
+          "EA": 70.21732345679013,
+          "Greedy": 57.397248000000005
+        }
+      },
+      "Large-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 81.06742518518519,
+          "EA": 100.04712988470564,
+          "Greedy": 62.01419851851852
+        }
+      },
+      "Sparse-MLP/4x4-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 27.51525925925926,
+          "EA": 29.696,
+          "Greedy": 28.520296296296294
+        }
+      },
+      "Sparse-MLP/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 28.97540740740741,
+          "EA": 48.99804565524829,
+          "Greedy": 29.610666666666663
+        }
+      },
+      "Sparse-MLP/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 34.58844444444444,
+          "EA": 70.36944460062526,
+          "Greedy": 30.037333333333333
+        }
+      },
+      "Transformer-S/4x4-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 23.04,
+          "EA": 22.144,
+          "Greedy": 22.528
+        }
+      },
+      "Transformer-S/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 24.832,
+          "EA": 31.29856,
+          "Greedy": 23.552
+        }
+      },
+      "Transformer-S/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 30.592,
+          "EA": 47.41628620483302,
+          "Greedy": 22.912
+        }
+      },
+      "Transformer-L/6x6-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 74.82785185185186,
+          "EA": 76.57308444444445,
+          "Greedy": 67.0776888888889
+        }
+      },
+      "Transformer-L/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 83.69303703703703,
+          "EA": 109.31669623582766,
+          "Greedy": 69.80266666666665
+        }
+      },
+      "ConvNet/4x4-mesh": {
+        "best": "EA",
+        "latencies_us": {
+          "SA": 1106.2321066666664,
+          "EA": 1095.9271836734692,
+          "Greedy": 1214.58496
+        }
+      },
+      "ConvNet/6x6-mesh": {
+        "best": "SA",
+        "latencies_us": {
+          "SA": 1211.965037037037,
+          "EA": 1237.6231577583414,
+          "Greedy": 1241.328
+        }
+      },
+      "ConvNet/8x8-mesh": {
+        "best": "Greedy",
+        "latencies_us": {
+          "SA": 1378.384,
+          "EA": 1827.7708562266587,
+          "Greedy": 1292.936888888889
+        }
+      }
+    }
+  }
+}

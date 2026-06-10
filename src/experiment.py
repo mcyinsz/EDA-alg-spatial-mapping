@@ -13,7 +13,10 @@ import numpy as np
 # Ensure src is importable
 sys.path.insert(0, os.path.dirname(__file__))
 
-from model import Workload, Accelerator, LayerSpec, conv2d_spec, linear_spec, compute_latency, cycles_to_us
+from model import (
+    Workload, Accelerator, LayerSpec, conv2d_spec, linear_spec,
+    compute_latency, cycles_to_us, reset_eval_counter, get_eval_count,
+)
 from baseline import BASELINES
 from solvers.ilp_solver import solve_ilp
 from solvers.sa_solver import solve_sa
@@ -124,13 +127,13 @@ SOLVER_CONFIGS = {
         "fn": lambda wl, acc, seed=0: solve_sa(
             wl, acc, max_iters=3000, init_temp=100.0, cooling_rate=0.995, seed=seed
         ),
-        "runs": 3,
+        "runs": 5,
     },
     "EA": {
         "fn": lambda wl, acc, seed=0: solve_ea(
             wl, acc, lambda_part=4, lambda_place=4, generations=40, seed=seed
         ),
-        "runs": 3,
+        "runs": 5,
     },
     "Greedy": {
         "fn": lambda wl, acc: solve_greedy(wl, acc, kl_passes=8, part_refine_iters=15),
@@ -155,6 +158,7 @@ def run_single(wl_name: str, acc_name: str, solver_name: str) -> dict:
 
     for run in range(cfg["runs"]):
         t0 = time.time()
+        reset_eval_counter()
         try:
             if solver_name in ("SA", "EA"):
                 sol, lat, info = cfg["fn"](wl, acc, seed=run * 42)
@@ -170,6 +174,7 @@ def run_single(wl_name: str, acc_name: str, solver_name: str) -> dict:
                 "intra_comm_time_cycles": lat["intra_comm_time"],
                 "total_time_us": cycles_to_us(lat["total_time"], acc.frequency_ghz),
                 "solve_time_s": info.get("solve_time_s", time.time() - t0),
+                "eval_count": get_eval_count(),
                 "partitioning": sol.partitioning,
                 "placement": [[[r, c] for r, c in layer] for layer in sol.placement],
                 "history": info.get("history", []),
@@ -252,7 +257,12 @@ def run_all_experiments():
             all_results[key] = exp
 
     # Save results
-    suffix = "_inter_only" if not all(a.intra_comm_enabled for a in ACCELERATORS.values()) else ""
+    if not all(a.intra_comm_enabled for a in ACCELERATORS.values()):
+        suffix = "_inter_only"
+    elif all(not a.intra_serialized for a in ACCELERATORS.values()):
+        suffix = "_intra_parallel"
+    else:
+        suffix = ""
     out_path = RESULTS_DIR / f"experiment_results{suffix}.json"
     with open(out_path, "w") as f:
         json.dump(all_results, f, indent=2, default=str)
@@ -300,6 +310,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run spatial mapping experiments.")
     parser.add_argument("--inter-only", action="store_true",
                         help="Disable intra-layer communication (inter-only formulation)")
+    parser.add_argument("--intra-parallel", action="store_true",
+                        help="Use parallel-injection intra comm model (divide by x_i)")
     parser.add_argument("--max-cores-ilp", type=int, default=None,
                         help="Override ILP max_cores threshold")
     args = parser.parse_args()
@@ -310,6 +322,13 @@ if __name__ == "__main__":
         print("=" * 60)
         for acc in ACCELERATORS.values():
             acc.intra_comm_enabled = False
+
+    if args.intra_parallel:
+        print("=" * 60)
+        print("  RUNNING IN INTRA-PARALLEL MODE (intra term / x_i)")
+        print("=" * 60)
+        for acc in ACCELERATORS.values():
+            acc.intra_serialized = False
 
     if args.max_cores_ilp is not None:
         SOLVER_CONFIGS["ILP"]["max_cores"] = args.max_cores_ilp
